@@ -1,3 +1,7 @@
+# GUIDE
+## (in italian)
+---
+
 INSTALLAZIONE:  
 Windows: cerca su Internet (installi un installer e fai quello che dice)  
 Linux / WSL: comando: sudo apt-get install git  
