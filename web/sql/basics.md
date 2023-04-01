@@ -24,6 +24,7 @@ like PATTERN	: (in where) match PATTERN;
 		PATTERN = any sequence to match, plus special signs:  
 		%	: anything (0+ chars)  
 		_	: exactly one char  
+ORDER BY: ...
 select	COL1,COL2,...	:  
 access columns by names COL1,...  
 union		: concatenate commands (must return same number of columns)  
@@ -54,8 +55,14 @@ DATABASE()	: current schema
 HEX(‘string’)	: encode string to hex  
 SLEEP(seconds) : sleep  
 		in select : only executed when where = true  
+
+STRINGS : 
+CONCAT() : 
   
 EXAMPLES :   
 SELECT table_name FROM information_schema.tables WHERE table_schema = DATABASE()  
 // select column named table_name, from table tables, from schema information_schema, filtering rows with table_schema=DATABASE()  
   
+
+TYPES: 
+NULL : any type

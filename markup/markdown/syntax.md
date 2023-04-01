@@ -2,6 +2,7 @@
 
 
 ## STRUCTURE ELEMENTS
+---
 ### HEADERS
 // 6 levels of headers;  
 `# TEXT` : 1-6 \# to indicate level of header
@@ -27,11 +28,12 @@
 
 
 ## ELEMENTS
-
+---
 ### LINKS
 #### inline links:
 // URLs
-`[LINK_TEXT](LINK)` : link to LINK, displayed with text LINK_TEXT
+`[LINK_TEXT](LINK)` : link to LINK, displayed with text LINK_TEXT  
+`[LINK_TEXT](#HEADER)` : reference to any header in same document  
 #### reference links:
 // links to other places of document,  
 // or to declared URLs: behave like variables  
@@ -69,6 +71,7 @@
 
 
 ## TEXT
+---
 ### SPECIAL CHARS
 `\` : escape char
 ### FONT STYLES

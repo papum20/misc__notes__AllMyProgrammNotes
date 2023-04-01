@@ -5,22 +5,23 @@ l=[[1,3],[2,4]]
 itertools.chain(*l)  
 l=[1,3,2,4]  
   
+
   
-datetime  
-  
-bs4	: BeautifulSoup  
-curses : char-based graphics  
-json  
-kivy : graphics for app  
-kivyMD : same  
-math :  
-matplotlib :  
-math (pip install python-math) :  
-numpy : matematica  
-os.path : exists  
-random  
-scipy : scientific  
-time  
+
+[`datetime`](_time/datetime/README.md) : 
+[`bs4`][]	: BeautifulSoup  
+[`curses`][] : char-based graphics  
+[`json`][]  
+[`kivy`][] : graphics for app  
+[`kivyMD`][] : same  
+[`math`][] :  
+[`matplotlib`][] :  
+[`math`][] (pip install python-math) :  
+[`numpy`][] : matematica  
+[`os`][] : 
+[`random`][]  
+[`scipy`][] : scientific  
+[`time`][]  
   
   
 numpy  
