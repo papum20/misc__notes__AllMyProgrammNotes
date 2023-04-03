@@ -4,9 +4,9 @@
   
 matplotlib  
   
-matplotlib.pyplot  
-#functions of same dimensions as axes (vectors)  
-#plots only with 2 vectors / matrix of 2 cols  
+## matplotlib.pyplot  
+// functions of same dimensions as axes (vectors)  
+// plots only with 2 vectors / matrix of 2 cols  
 figure(figsize=) : dimensions/size  
 grid() :  
 legend([list]) :  
@@ -26,3 +26,10 @@ title(string, fontsize=<int>) : (accepts pseudo-latex text)
 xlabel(string) :  
 ylabel(string) :  
   
+### axis
+// returned by subplot
+`.imshow(IMG, str cmap=, int vmin=, int vmax=)` :  
+*	add image to axis  
+*	cmap : color  
+	='gray'
+*	vmin, vmax : values range

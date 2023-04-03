@@ -1,0 +1,54 @@
+{
+    "files.associations": {
+	},
+
+
+/*
+// start bash, not the mintty, or you'll get a new window
+  "terminal.integrated.shell.windows": "C:\\CygWin64\\cygwin64\\bin\\bash.exe",
+  // Use this to keep bash from doing a 'cd ${HOME}'
+  "terminal.integrated.env.windows": {
+    "CHERE_INVOKING": "1"
+  },
+  // Make it a login shell
+  "terminal.integrated.shellArgs.windows": [
+    "-l"
+  ],
+  */
+  	//THEME
+	"workbench.preferredDarkColorTheme": "Monokai Dimmed",
+	"workbench.colorTheme": "Monokai",
+	
+	//EDITOR
+	"editor.selectionClipboard": false,		//vertical selection middle mouse
+
+	//INDENT
+	"editor.detectIndentation": false,
+	"editor.insertSpaces": false,	
+  
+	//ERRORS
+	"problems.decorations.enabled": true,
+	"explorer.decorations.colors": true,
+	"explorer.decorations.badges": true,
+
+	// AUTOCOMPLETE
+	"workbench.activityBar.visible": true,
+
+	// PYTHON
+	"python.linting.enabled": true,
+	"python.linting.pylintEnabled": true,
+	"python.linting.pylintArgs": [
+		"--disable=C0103",
+		"--disable=C0114",
+		"--disable=C0116",
+		"--disable=C0303",
+		"--disable=C0304",
+		"--disable=C0311",
+		"--disable=W0012",
+		"--disable=W0311",
+		"--disable=W0702",
+		"--disable=W0719",
+		"--disable=W1514"
+	]
+
+}

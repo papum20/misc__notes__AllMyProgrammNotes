@@ -27,7 +27,7 @@ Folders can be grouped by topic.
 * `files.md` : standard/relevant files/directories  
 * `functions.md` : language functions/objects/...  
 * `guide.md` : plain guide  
-* `libraries.md` : list of libraries/modules  
+* `libraries.md` : list of libraries/modules, with links to them (in case)  
 * `notes.md` : generic notes  
 * `syntax.md` : language syntax  
 * `README.md` : meta-info (about notes structure/folder...)  
