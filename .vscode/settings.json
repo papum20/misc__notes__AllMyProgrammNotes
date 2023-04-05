@@ -44,6 +44,7 @@
 		"--disable=C0303",
 		"--disable=C0304",
 		"--disable=C0311",
+		"--disable=C0325",
 		"--disable=W0012",
 		"--disable=W0311",
 		"--disable=W0702",

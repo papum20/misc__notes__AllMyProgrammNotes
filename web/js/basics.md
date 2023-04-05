@@ -1,39 +1,27 @@
 # BASICS  
   
-SYNTAX :   
-MISC :   
-; 	: at end of statement (not mandatory)  
-\	: escape char  
-	escapable chars:  
-		\’	:   
-		\”	:   
-		\\	:   
-		\n	:   
-		\t	:   
-		\r	: carriage return  
-		\b	: word boundary  
-		\f	: form feed  
-‘’, “”	: for strings, it’s the same  
-case sensitive  
-  
-VARIABLES :   
+### VARIABLES :   
 when declaration (not	definition)	: type=undefined  
-var VAR_NAME;	: declare a variable (i.e. in memory);  
+`var VAR_NAME`	: declare a variable (i.e. in memory);  
 			VAR_NAME can be modified / reassigned;  
-let VAR_NAME;	: declare a single instance of a variable, with a name;  
+`let VAR_NAME`	: declare a single instance of a variable, with a name;  
 			i.e. its value doesn’t change.  
 VAR_NAME can be modified / reassigned, but throws error;  
-const VAR_NAME	: (read-only)  
+`const VAR_NAME`	: (read-only)  
 			VAR_NAME can’t be reassigned;  
 (but still mutable, can be modified);  
-VAR_NAME = …;	: (without declaration) define a global var  
+`VAR_NAME = ...`	: (without declaration) define a global var  
 chars allowed for VAR_NAME : letters | num | $ | _  
+```
 var|let|const OBJECT = {  
-	property1: val1,	// non-string properties are converted (typecasted) to strings by JS  
-	“property 2”: val2	// needed when there are spaces in the name  
+	property1: val1,
+	“property 2”: val2
 };  
+```
+*	non-string properties are converted (typecasted) to strings by JS  
+*	"" needed when there are spaces in the name  
   
-ASSIGNMENTS :   
+### ASSIGNMENTS :   
 // c-like (rvalue = by value)  
 VAR=		:   
 VAR++		:   
@@ -49,7 +37,7 @@ and remaining to ARR
 // automatic casting :   
 	e.g. int n = 2; string s = n;	// n casted to string  
   
-STATEMENTS :   
+### STATEMENTS :   
 if(...) {...} else if(...) {...} else {...}	:   
 switch(...) { case …: … case …: … default: …}	:   
 		compared with strict equality (===);  
@@ -140,7 +128,7 @@ import {VAR1, …} from “FILE_PATH”	: import var(s) from (local) file;
 import * as MODULE from “FILE_PATH”	: import all as MODULE from …;  
 import VAR from “FILE__PATH”		: import default export as VAR  
   
-OPERATORS :   
+### OPERATORS :   
 %	: remainder;  
 	different from modulus: behaves differently with <0 numbers;  
 **	: exponent  
@@ -186,11 +174,11 @@ all others
 note : comparisons made with casting, but return is not just True/ False, but the effective value that “won”  
 	e.g. var || “10” : returns var if is not a falsy, else “10”  
   
-COMMENTS :   
+### COMMENTS :   
 //  
 /* */  
   
-MISC :   
+## MISC :   
 camelCase		: first letter: lowercase; first letters inner words: uppercase;  
 			(best practice) for var names (mutable);  
 UpperCamelCase	:   
@@ -198,7 +186,7 @@ UpperCamelCase	:
 UPPERCASE		:   
 			(best practice) for const var names;  
   
-DATA TYPES :   
+## DATA TYPES :   
 // (with first letter uppercase)  
 bigint  
 boolean	:   
@@ -219,17 +207,21 @@ symbol
 undefined	:   
 		undefined (keyword)	: element of type undefined  
   
-DERIVED TYPES :   
-multiple objects :   
-array		: actually an object, ordered and indexed with numbers 0,1,...;  
-can store values of different types;  
-	var NAME = [val1, ..];		: array definition  
-	note : mutable elements, even if const array  
-Date		: actually numbers, counted in secs,  
-		so you can perform math operations;  
-		date from 1/1/1970;  
-RegExp	: regular expressions  
-		=/pattern/flags  
+## DERIVED TYPES :   
+### multiple objects :   
+*	**array**
+	*	actually an object, ordered and indexed with numbers 0,1,...;  
+	*	can store values of different types;  
+	*	var NAME = [val1, ..];		: array definition  
+	*	note : mutable elements, even if const array  
+*	**Date**
+	*	actually numbers, counted in secs, so you can perform math operations;  
+	*	date from 1/1/1970;  
+	
+### RegExp
+*	regular expressions;  
+
+=`/PATTERN/FLAGS`  
 without quotes;  
 can contain regex operators;  
 SYNTAX :   

@@ -15,7 +15,10 @@
 // triple backticks  
 ` ``` `  
 `TEXT`  
-` ``` `
+` ``` `  
+// 2 tabs  
+`____ ____line1		`  
+`____ ____line2...	`  
 ### BLOCKQUOTES
 `> TEXT` : text in block for quotes  
 // to group multiple lines in same block, > before each line (including empty ones)
