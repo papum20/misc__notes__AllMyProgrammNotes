@@ -1,5 +1,8 @@
 # LIBRARIES   
   
+
+## HEADERS  
+  
 <dirent.h> : directories  
 	DIR *folder  
 	folder->d_name / d_type  

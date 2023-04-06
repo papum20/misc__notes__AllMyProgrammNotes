@@ -7,3 +7,5 @@ delete : toglie value, non pointer (dangling pointer/NULL pointer)
 (anche delete [] p)  
   
 sizeof (var/type/arr) (in byte)  
+
+
