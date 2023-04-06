@@ -2,17 +2,17 @@
 The external hard-drive of my programming-and-computer-related knowledge.
 Here you can find tons of commands, shortcuts, tips and all that stuff which I either forget repeatedly, or can't remember because I only use them once in a while.
 
-## CONTENTS  
+## TOPICS  
+*	[algorithms](algorithms/README.md)  
+*	[apps](apps/README.md)  
+*	[languages](languages/README.md)  
+*	[markup](markup/README.md)  
 *	[misc](misc/README.md)  
 *	[os](os/README.md)  
-*	[markup](markup/README.md)  
-*	[languages](languages/README.md)  
-*	[tools](tools/README.md)  
-*	[algorithms](algorithms/README.md)  
 *	[shortcuts](shortcuts/README.md)  
+*	[tools](tools/README.md)  
 *	[web](web/README.md)  
 *	[web-development](web-development/README.md)  
-*	[apps](apps/README.md)  
 
 ## STRUCTURE
 In each folder, named as the topic, you can find a list of markdown notes.
@@ -52,7 +52,7 @@ Folders can be grouped by topic.
 `mkentry PATH` : create new entry in PATH, copying files in __template_
 `mklib BASEPATH [-L SUBDIR] NAME [-d] [-f FILENAMES...]` : create BASEPATH/[lib_SUBDIR/]NAME/, containing, optionally, default and/or files.  
 `mklib-list BASEPATH [-L|-l]` : create BASEPATH/libraries.md, containing list and links of libraries in subdirectories.  
-`update-categories [-l LEVELS=0] [PATH=.]` : update structure.
+`update [-l LEVELS=0] [PATH=.]` : update structure.
 
 
 
@@ -60,6 +60,28 @@ Folders can be grouped by topic.
 ---
 ### note:
 some notes are still in italian, some (many) are quite messy/to tide up
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

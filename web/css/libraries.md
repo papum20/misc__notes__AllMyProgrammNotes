@@ -1,8 +1,37 @@
-# LIBRARIES  
-  
-## Animate.css  
-animated	: needed for any other animation  
-bounce	: bounce  
-hinge		: hinge  
-fadeOut	: fade out  
-shake		: shake  
+# WEB/CSS
+
+## CONTENTS  
+*	[basics](basics.md)  
+*	[commands](commands.md)  
+*	[examples](examples.md)  
+*	[files](files.md)  
+*	[guide](guide.md)  
+*	[libraries](libraries.md)  
+*	[notes](notes.md)  
+*	[objects](objects.md)  
+*	[syntax](syntax.md)  
+
+## TOPICS  
+*	[bootstrap](bootstrap/README.md)  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
