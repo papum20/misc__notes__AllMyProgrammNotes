@@ -1,8 +1,5 @@
 # ./APPS  
 
-## CONTENTS  
-*	[libraries](libraries.md)  
-
 ## TOPICS  
 *	[blender](blender/README.md)  
 *	[burp](burp/README.md)  

@@ -3,7 +3,6 @@
 ## CONTENTS  
 *	[blender](blender.md)  
 *	[chrome](chrome.md)  
-*	[libraries](libraries.md)  
 *	[spyder](spyder.md)  
 *	[ubuntu](ubuntu.md)  
 *	[unity](unity.md)  
@@ -11,6 +10,9 @@
 *	[windows11](windows11.md)  
 
 # CONTENTS  
+
+
+
 
 
 

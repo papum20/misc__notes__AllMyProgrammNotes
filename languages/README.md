@@ -1,9 +1,6 @@
 # LANGUAGES/
 
 
-## CONTENTS  
-*	[libraries](libraries.md)  
-
 ## TOPICS  
 *	[assembler](assembler/README.md)  
 *	[autoHotKey](autoHotKey/README.md)  

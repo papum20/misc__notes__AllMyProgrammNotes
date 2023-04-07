@@ -4,7 +4,6 @@
 *	[docker](docker.md)  
 *	[gccg++](gccg++.md)  
 *	[gdb](gdb.md)  
-*	[libraries](libraries.md)  
 *	[vim](vim.md)  
 
 ## TOPICS  

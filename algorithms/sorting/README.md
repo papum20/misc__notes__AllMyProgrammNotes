@@ -57,6 +57,5 @@ merge(A, l, m, r);
   
   
 
-## CONTENTS  
-*	[libraries](libraries.md)  
+
 

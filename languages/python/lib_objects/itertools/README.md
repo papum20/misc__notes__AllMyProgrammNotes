@@ -2,6 +2,5 @@
 
 
 ## CONTENTS  
-*	[libraries](libraries.md)  
 *	[objects](objects.md)  
 

@@ -2,6 +2,5 @@
 \#include bs4
 
 ## CONTENTS  
-*	[libraries](libraries.md)  
 *	[objects](objects.md)  
 

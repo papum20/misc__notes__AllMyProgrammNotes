@@ -7,6 +7,5 @@
 *	[commands](commands.md)  
 *	[elf](elf.md)  
 *	[files](files.md)  
-*	[libraries](libraries.md)  
 *	[net](net.md)  
 

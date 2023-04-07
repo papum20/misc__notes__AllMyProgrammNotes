@@ -1,8 +1,5 @@
 # ./WEB  
 
-## CONTENTS  
-*	[libraries](libraries.md)  
-
 ## TOPICS  
 *	[_notes](_notes/README.md)  
 *	[ajax](ajax/README.md)  

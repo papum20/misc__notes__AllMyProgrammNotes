@@ -1,8 +1,5 @@
 # LANGUAGES-PROGRAMM/PYTHON/_math
 
-## CONTENTS  
-*	[libraries](libraries.md)  
-
 ## TOPICS  
 *	[math](math/README.md)  
 *	[matplotlib](matplotlib/README.md)  
