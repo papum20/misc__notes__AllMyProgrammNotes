@@ -1,5 +1,14 @@
 # BASICS  
   
+## TYPE/KIND SYSTEM
+### TYPES
+
+### KINDS
+type of types / meta-type;  
+`*` : single kind  
+*	e.g.: `* -> *` : kind of function like `foo arg1 = expr1`, of type `foo :: a -> b`
+
+## OLD
 _ : anything  
   
 -- comment  

@@ -1,5 +1,8 @@
 # LANGUAGES-PROGRAMM/PYTHON/_math
 
+## PARENT  
+*	[python](../README.md)  
+
 ## TOPICS  
 *	[math](math/README.md)  
 *	[matplotlib](matplotlib/README.md)  

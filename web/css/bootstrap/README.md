@@ -1,5 +1,8 @@
 # WEB/CSS/BOOTSTRAP
 
+## PARENT  
+*	[css](../README.md)  
+
 ## CONTENTS  
 *	[basics](basics.md)  
 *	[commands](commands.md)  

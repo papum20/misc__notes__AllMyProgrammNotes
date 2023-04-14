@@ -1,6 +1,9 @@
 # LANGUAGES/PYTHON/KIVY/_graphics/kivy
 \#include kivy
 
+## PARENT  
+*	[lib_graphics](../README.md)  
+
 ## CONTENTS  
 *	[basics](basics.md)  
 *	[commands](commands.md)  

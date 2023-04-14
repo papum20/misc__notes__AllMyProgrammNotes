@@ -1,6 +1,9 @@
 # ./LANGUAGES/PYTHON/LIB_GRAPHICS/KIVY/KV  
 
 
+## PARENT  
+*	[kivy](../README.md)  
+
 ## CONTENTS  
 *	[basics](basics.md)  
 *	[commands](commands.md)  

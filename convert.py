@@ -42,6 +42,13 @@ def findSubStr(s:str, l:str, r:str, exclude:str=' '):
 			return (i, j)
 	return (None, None)
 
+def stripRight(s:str, chars:str=' \t\n\v') :
+	i = len(s)
+	while i > 0 and s[i-1] in chars:
+		i -= 1
+	return s[:i]
+
+
 
 
 
@@ -69,10 +76,13 @@ with open(PATH, "r") as fr:
 			# command name
 			elif (':' in line) and not (line[0] in ' \t#*') and ('`' not in line):
 				ind = line.find(' :')
-				line = f"`{line[:ind]}`{line[ind:]}"
-				if last_type != 'COMMAND':
-					line = '\n' + line
-				last_type = 'COMMAND'
+				if ind == -1:
+					ind = line.find('\t:')
+				if ind != -1:
+					line = f"`{stripRight(line[:ind])}` :{line[(ind+2):]}"
+					if last_type != 'COMMAND':
+						line = '\n' + line
+					last_type = 'COMMAND'
 			# command parameter / description / note
 			elif (line[0] in '\t*'):
 				last_type = 'PARAMETER'

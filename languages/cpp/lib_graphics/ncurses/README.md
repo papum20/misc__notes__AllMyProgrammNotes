@@ -1,5 +1,8 @@
 # LANGUAGES/CPP/NCURSES
 
+## PARENT  
+*	[lib_graphics](../README.md)  
+
 ## CONTENTS  
 *	[basics](basics.md)  
 *	[commands](commands.md)  

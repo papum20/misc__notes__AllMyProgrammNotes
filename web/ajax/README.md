@@ -1,5 +1,8 @@
 # WEB/AJAX
 
+## PARENT  
+*	[web](../README.md)  
+
 ## CONTENTS  
 *	[basics](basics.md)  
 *	[commands](commands.md)  

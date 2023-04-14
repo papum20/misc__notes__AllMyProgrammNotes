@@ -1,5 +1,8 @@
 # WEB/JS/JQUERY
 
+## PARENT  
+*	[js](../README.md)  
+
 ## CONTENTS  
 *	[basics](basics.md)  
 *	[commands](commands.md)  

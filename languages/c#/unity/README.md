@@ -1,5 +1,8 @@
 # LANGUAGES/C#/UNITY
 
+## PARENT  
+*	[c#](../README.md)  
+
 ## CONTENTS  
 *	[basics](basics.md)  
 *	[commands](commands.md)  

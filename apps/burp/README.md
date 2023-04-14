@@ -1,5 +1,8 @@
 # APPS/BURP
 
+## PARENT  
+*	[apps](../README.md)  
+
 ## CONTENTS  
 *	[basics](basics.md)  
 *	[commands](commands.md)  

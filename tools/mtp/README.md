@@ -1,5 +1,8 @@
 # TOOLS/MTP
 
+## PARENT  
+*	[tools](../README.md)  
+
 ## CONTENTS  
 *	[basics](basics.md)  
 *	[commands](commands.md)  

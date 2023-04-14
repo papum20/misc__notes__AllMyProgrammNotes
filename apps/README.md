@@ -1,5 +1,8 @@
 # ./APPS  
 
+## PARENT  
+*	[root](../README.md)  
+
 ## TOPICS  
 *	[blender](blender/README.md)  
 *	[burp](burp/README.md)  

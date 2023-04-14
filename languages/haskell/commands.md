@@ -1,10 +1,25 @@
 # COMMANDS  
+
+## EXECUTED WITH
+`stack ghci` : 
+
+## GHCI
+### MISC
+```
+{:
+LINE1
+LINE2
+...
+:}
+```
+*	multiline instructions/expressions  
+
+### COMMANDS
+`:l file_name` : load file_name.hs   
+`:t varName` : type of varName   
+`:k varName` : kind of varName   
+`:quit` :   
+`:reload` : reloads module   
   
-:l file_name : load file_name.hs  
-:quit  
-:reload : reloads module  
-:t function_name : type of function  
   
   
-  
-stack ghci  

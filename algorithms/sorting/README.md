@@ -59,3 +59,7 @@ merge(A, l, m, r);
 
 
 
+
+## PARENT  
+*	[algorithms](../README.md)  
+

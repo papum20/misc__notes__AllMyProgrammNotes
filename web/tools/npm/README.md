@@ -1,5 +1,8 @@
 # WEB/TOOLS/NPM
 
+## PARENT  
+*	[tools](../README.md)  
+
 ## CONTENTS  
 *	[basics](basics.md)  
 *	[commands](commands.md)  

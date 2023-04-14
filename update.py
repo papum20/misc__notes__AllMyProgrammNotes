@@ -89,9 +89,24 @@ def nextHeader(doc:list[str], i:int=0) -> int:
 	elif isHeader(doc[i]): return i
 	else: return nextHeader(doc, i+1)
 
-def addHeader(path:str, headers:list[str], contents:list[list[str]], links:list[list[str]], create:Callable[[], None], n:int=1) :
+def addHeader(
+		path:str,
+	    headers:list[str],
+		contents:list[list[str]],
+		links:list[list[str]],
+		create:Callable[[], None]=None,
+		n:int=1,
+		create_new:bool=False
+		) -> None :
+	"""
+	
+
+	---
+		@n : headers after which to add own headers
+		@create_new : if True, create even if file not existing, but headers not empty
+	"""
 	if not os.path.exists(path):
-		if all([len(c) == 0 for c in contents]):
+		if not create_new or all([len(c) == 0 for c in contents]):
 			return
 		else:
 			create()
@@ -133,20 +148,28 @@ def addHeader(path:str, headers:list[str], contents:list[list[str]], links:list[
 
 			
 
-def updateReadme(path:str, subdirs:list[str], files:list[str]) :
-	headers = ["## CONTENTS", "## TOPICS"]
-	contents = [list(map(removeExtension, files)), subdirs]
-	links = [files, list(map(addReadme, subdirs))]
-	addHeader(addReadme(path), headers, contents, links, lambda : createReadme(path), 1) 
+def updateReadme(path:str, parent:str, subdirs:list[str], files:list[str]) :
+	parent = [] if not parent else [os.path.basename(parent)] if parent != '.' else ['root']
+	parent_lnk = [] if not parent else ['../README.md']
+	headers = ['## PARENT', "## CONTENTS", "## TOPICS"]
+	contents = [parent, list(map(removeExtension, files)), subdirs]
+	links = [parent_lnk, files, list(map(addReadme, subdirs))]
+	addHeader(addReadme(path), headers, contents, links, lambda : createReadme(path), n=1, create_new=True) 
 
 def updateLibraries(path:str, libraries:list[str]) : 
 	headers = ["## CATEGORIES"]
 	contents = [libraries]
 	links = [list(map(addReadme, libraries))]
-	addHeader(addLib(path), headers, contents, links, lambda : createLibraries(path), 1) 
+	addHeader(addLib(path), headers, contents, links, lambda : createLibraries(path), n=1, create_new=True) 
+
+def updateContents(path:str) : 
+	headers = ['## README.md', "## CATEGORIES"]
+	contents = ['README.md']
+	links = ['./README.md']
+	addHeader(path, headers, contents, links, None, n=1, create_new=False) 
 
 
-def recursive(path, levels) :
+def recursive(path, levels, parent=None) :
 	print(path)
 	# create readme
 	createReadme(path)
@@ -168,11 +191,13 @@ def recursive(path, levels) :
 	
 	# go recursive
 	for s in SUBDIRS+LIBRARIES:
-		recursive(os.path.join(path, s), levels-1)
+		recursive(os.path.join(path, s), levels-1, path)
 
 	#overwrite
-	updateReadme(path, SUBDIRS, FILES)
+	updateReadme(path, parent, SUBDIRS, FILES)
 	updateLibraries(path, LIBRARIES)
+	for f in FILES:
+		updateContents(os.path.join(path, f))
 
 
 

@@ -2,6 +2,9 @@
 
 
 
+## PARENT  
+*	[languages](../README.md)  
+
 ## CONTENTS  
 *	[basics](basics.md)  
 *	[commands](commands.md)  

@@ -1,4 +1,7 @@
 # MISC/CHAR
+## PARENT  
+*	[misc](../README.md)  
+
 ## CONTENTS  
 *	[basics](basics.md)  
 *	[commands](commands.md)  
@@ -10,6 +13,16 @@
 *	[syntax](syntax.md)  
 
 ## CHARACTER ENCODING
+
+
+
+
+
+
+
+
+
+
 
 
 

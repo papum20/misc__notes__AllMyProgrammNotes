@@ -18,7 +18,9 @@ rc() : global configurations
 semilogx() : graph with logarithmic scale (on x)  
 semilogy() : //  
 show() :  
-subplot(rows, cols, pos) : pos=index  
+subplot(rows, cols, pos) : subplot at pos  
+*	pos=index (1,2..)  
+*	pos=(i,j) : (tuple) use from index i to j  
 (e.g. graph made of r*c subgraphs, numbered 1..r*c, row by row)  
 suptitle(string) :  
 title(string, fontsize=<int>) : (accepts pseudo-latex text)  

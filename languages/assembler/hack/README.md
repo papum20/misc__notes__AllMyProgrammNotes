@@ -1,4 +1,7 @@
 # LANGUAGES/ASSEMBLER/HACK
+## PARENT  
+*	[assembler](../README.md)  
+
 ## CONTENTS  
 *	[basics](basics.md)  
 *	[commands](commands.md)  
@@ -10,6 +13,16 @@
 *	[syntax](syntax.md)  
 
 ## for nand2tetris
+
+
+
+
+
+
+
+
+
+
 
 
 

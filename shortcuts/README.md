@@ -1,5 +1,8 @@
 # ./SHORTCUTS  
 
+## PARENT  
+*	[root](../README.md)  
+
 ## CONTENTS  
 *	[blender](blender.md)  
 *	[chrome](chrome.md)  
@@ -10,6 +13,16 @@
 *	[windows11](windows11.md)  
 
 # CONTENTS  
+
+
+
+
+
+
+
+
+
+
 
 
 

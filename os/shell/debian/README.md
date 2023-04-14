@@ -1,6 +1,9 @@
 # ./OS/SHELL/DEBIAN  
 
 
+## PARENT  
+*	[shell](../README.md)  
+
 ## CONTENTS  
 *	[bash](bash.md)  
 *	[basics](basics.md)  
