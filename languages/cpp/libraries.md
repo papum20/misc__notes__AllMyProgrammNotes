@@ -20,6 +20,6 @@ sys/stat.h (struct stat: info about file)
 unordered_map (dizionari)  
 vector (vettori)  
 
-## CATEGORIES  
-*	[lib_graphics](lib_graphics/README.md)  
+## README.md  
+*	[README.md](./README.md)  
 

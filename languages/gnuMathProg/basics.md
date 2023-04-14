@@ -43,3 +43,7 @@ var <var_name>;						//variable declaration
 	var <var_name> {<it> in <set>} >= <expression>;	//like “array”, it=index  
 	var <var_name> {<it> in <set>} integer;  
 	var <var_name> {<it1> in <set1>, <it2> in <set2>};  
+
+## README.md  
+*	[README.md](./README.md)  
+

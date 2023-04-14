@@ -36,6 +36,9 @@ type[attribute=”val”]	{...}	: attribute selector
 <sel>[attr*=”val”]		: match any *val*  
 <sel>[attr~=”val”]		: match any * val *  
 (i.e. matches whole word val, with separators before and after)  
+## README.md  
+*	[README.md](./README.md)  
+
 #id			{...}	: id selector  
 pseudo-elements :   
 <tag>::after		{...}	: create an element which is last child  
@@ -326,3 +329,5 @@ prefers-reduced-motion	: accessibility, for sensitivity to motion (e.g. scroll)
   
 FUNCTIONS:  
 calc(expr)	: return result of math expression  
+
+

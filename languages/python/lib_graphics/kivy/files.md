@@ -1,5 +1,8 @@
 # FILES
 
+## README.md  
+*	[README.md](./README.md)  
+
 ## BUILDOZER
 
 https://www.youtube.com/watch?v=VsTaM057rdc&t=514s
@@ -29,3 +32,5 @@ requirements : required packages, with version
 sudo mount -t drvfs C: /mnt/c -o metadata :
 mount C drive to make next command work (windows)
 buildozer -v android debug : compile apk
+
+

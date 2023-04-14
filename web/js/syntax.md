@@ -1,5 +1,8 @@
 # SYNTAX
 
+## README.md  
+*	[README.md](./README.md)  
+
 ## MISC :   
 `;`	: at end of statement (not mandatory)  
 `\`	: escape char  
@@ -14,3 +17,4 @@
 		\f	: form feed  
 `‘’`, `“”`	: for strings, it’s the same  
 case sensitive  
+

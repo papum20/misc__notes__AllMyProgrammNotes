@@ -18,3 +18,7 @@ make <span class=”sr-only”> text only visible when using accessibility:
   
 make sure js loaded after html has fully loaded :   
 $(document).ready(function() {});  
+
+## README.md  
+*	[README.md](./README.md)  
+

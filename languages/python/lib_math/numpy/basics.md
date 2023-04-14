@@ -5,3 +5,6 @@ array[a:b:c] : access elements in range (doesn’t create a copy - use np.copy i
 fancy slicing:  
 slicer can be an object (matrix 2x3)  
   
+## README.md  
+*	[README.md](./README.md)  
+

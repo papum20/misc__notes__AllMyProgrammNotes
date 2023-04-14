@@ -130,6 +130,9 @@ MODULES :
   
 
 
+## README.md  
+*	[README.md](./README.md)  
+
 ## BROWSER OBJECTS
 
 window : main window  
@@ -143,3 +146,5 @@ installed plug-ins
 cookies  
 location : current doc URL  
 history : URLs accessed in navigation  
+
+

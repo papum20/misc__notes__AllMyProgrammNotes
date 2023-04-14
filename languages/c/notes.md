@@ -1,5 +1,8 @@
 # NOTES  
   
+## README.md  
+*	[README.md](./README.md)  
+
 ## OS
 
 SYSTEM CALLS :   
@@ -81,3 +84,5 @@ gid
 who can change entries :  
 root (all)  
 user (only effective, with some operations)  
+
+

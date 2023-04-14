@@ -13,6 +13,9 @@ val << n : binary-shift val by n digits
 val >> n :   
 |= : assign and do or  
 ^= : assign and do xor  
+## README.md  
+*	[README.md](./README.md)  
+
 #string : string (without quotes) to string with quotes  
 a##b : concatenate values (e.g.: a=3,b=0, a##b=30)  
 instruction1, instruction2 : evaluates both, considers second  
@@ -88,4 +91,6 @@ static : make (global) variable only visible from own source file;
   
 GENERAL :  
 MACRO : in compiling, replaced with calling text  
+
+
 

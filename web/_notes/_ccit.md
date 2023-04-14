@@ -102,3 +102,7 @@ ngrok: host a server in local
 crackStation : cose già hashate  
 PayloadsAllTheThings : vulnerabilità  
 hacktricks : vulnerabilità  
+
+## README.md  
+*	[README.md](./README.md)  
+

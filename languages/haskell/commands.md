@@ -1,5 +1,8 @@
 # COMMANDS  
 
+## README.md  
+*	[README.md](./README.md)  
+
 ## EXECUTED WITH
 `stack ghci` : 
 
@@ -23,3 +26,4 @@ LINE2
   
   
   
+

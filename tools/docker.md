@@ -40,3 +40,7 @@ FROM	“str”	: import (install)
 RUN cmd	: run shell command(s)  
 WORKDIR path: dir open at startup  
   
+
+## README.md  
+*	[README.md](./README.md)  
+

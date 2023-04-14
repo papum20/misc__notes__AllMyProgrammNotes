@@ -1,6 +1,9 @@
 # BASICS  
   
 MISC:  
+## README.md  
+*	[README.md](./README.md)  
+
 # : comment  
   
 VARIABLES:  
@@ -66,3 +69,5 @@ sum.o: sum.c sum.h
 	gcc .c sum.c  
 clean:  
 	rm *.o main  
+
+

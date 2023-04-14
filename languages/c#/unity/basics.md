@@ -8,6 +8,9 @@
 array.length  
   
   
+## README.md  
+*	[README.md](./README.md)  
+
 #region NOME_REGION  
 code  
 #endregion  
@@ -22,3 +25,5 @@ type name {
 	get{...};  
 	…  
 };  
+
+

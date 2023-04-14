@@ -1,5 +1,8 @@
 # BASICS  
   
+## README.md  
+*	[README.md](./README.md)  
+
 ### VARIABLES :   
 when declaration (not	definition)	: type=undefined  
 `var VAR_NAME`	: declare a variable (i.e. in memory);  
@@ -287,3 +290,5 @@ myPromise.catch(error =>{...})	: executed if unsuccess (after reject called);
 					error = reject’s arg  
 myPromise.then(result => {...})	: executed if success (after resolve called);  
 					result = resolve’s arg  
+
+

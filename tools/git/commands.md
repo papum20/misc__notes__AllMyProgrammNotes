@@ -109,6 +109,11 @@ ERROR (public key): see terminal/linux
 // es. README.md (showed in GitHub main page)  
 for plain text (txt)  
 #title : make a (bold) title/chapter/header  
+## README.md  
+*	[README.md](./README.md)  
+
 ##subheader  
 newline : double space  
 separator line : “\t-” (“    -”)  
+
+

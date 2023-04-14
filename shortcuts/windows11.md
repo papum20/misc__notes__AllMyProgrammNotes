@@ -40,7 +40,12 @@ Alt+Right	: (file explorer) redo
 Shift+Right : more options than Right mouse  
   
   
+## README.md  
+*	[README.md](./README.md)  
+
 ## KEYS  
   
 Alt+Numpad:  
 126: ~  
+
+

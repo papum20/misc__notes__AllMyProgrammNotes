@@ -1,6 +1,9 @@
 # OBJECTS  
   
 
+## README.md  
+*	[README.md](./README.md)  
+
 ## CLASSES  
 
 ### STRUCTURE
@@ -52,4 +55,6 @@
 
 #### IMAGES  
 `img-responsive` : make img adapt to screen, viewport  
+
+
 

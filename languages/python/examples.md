@@ -9,6 +9,9 @@ class A:
 
 
 
+## README.md  
+*	[README.md](./README.md)  
+
 ###
 def main():
 	…
@@ -24,3 +27,5 @@ you can import the file in another without running it (because if imported __nam
 NOT WRITTEN RULES:
 identifier named _ not to nìbe used (tmp)
 a file is to be run only if it contains if__name__=”__main__”:
+
+

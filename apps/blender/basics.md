@@ -294,3 +294,7 @@ N menu -> camera to view: ?
   
 ZOOM PROBLEM:  
 preferences -> navigation -> enable auto depth  
+
+## README.md  
+*	[README.md](./README.md)  
+

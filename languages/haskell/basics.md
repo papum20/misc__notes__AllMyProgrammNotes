@@ -1,5 +1,8 @@
 # BASICS  
   
+## README.md  
+*	[README.md](./README.md)  
+
 ## TYPE/KIND SYSTEM
 ### TYPES
 
@@ -63,3 +66,5 @@ class class_name type where
 instance class_name type where  
 	-- es.  
 	(>>>>) = (>)  
+
+

@@ -1,5 +1,8 @@
 # LIBRARIES
 
+## README.md  
+*	[README.md](./README.md)  
+
 ## using ...
 System  
 UnityEngine.SceneManagement : scenes management (caricare/scaricare scene)  
@@ -13,6 +16,10 @@ System.Collections.Generic : Lists
 2D Animation  
 2D IK  
 2D PSDImporter  
+
+
+
+
 
 
 

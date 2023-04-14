@@ -7,3 +7,6 @@ dumps(obj) : serializes object as json string
 load(file) : returns deserialized object from file  
 loads(s) : deserializes a json string and returns a python object  
   
+## README.md  
+*	[README.md](./README.md)  
+

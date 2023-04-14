@@ -10,5 +10,9 @@
 	`\` : ignore special character  
 	`‘ ‘` : no command (empty line)  
 
+## README.md  
+*	[README.md](./README.md)  
+
 ## GITHUB
 `README.md` : 
+

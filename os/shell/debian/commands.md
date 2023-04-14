@@ -1,4 +1,7 @@
 # LINUX SHELL  
+## README.md  
+*	[README.md](./README.md)  
+
 ## (verified on Debian)
 
 
@@ -248,3 +251,5 @@ apt
 
 `apt update` : check updatable packages  
 `apt upgrade` : update updatable packages  
+
+

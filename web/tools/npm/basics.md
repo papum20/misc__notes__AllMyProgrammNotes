@@ -11,3 +11,7 @@ Npm install : install all project dependencies
 Npm install DEP : add dependency DEP  
 Npm install DEP --include=dev : add dev-dependency DEP  
 Npm update : update all project dependencies  
+
+## README.md  
+*	[README.md](./README.md)  
+

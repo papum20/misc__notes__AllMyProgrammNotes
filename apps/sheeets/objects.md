@@ -12,3 +12,7 @@ SUM:
 Sumif(if-range; criteria; [sum-range]) :   
 	//Somma.Se()  
 	//Sumif(range; “<>”&A1; [..]) : sum if range != A1  
+
+## README.md  
+*	[README.md](./README.md)  
+

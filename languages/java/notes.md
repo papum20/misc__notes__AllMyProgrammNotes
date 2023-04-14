@@ -48,3 +48,7 @@ LinkedList:
 (implemented as doubly linked list)  
 //slow access at i-element  
 //fast insert/remove  
+
+## README.md  
+*	[README.md](./README.md)  
+

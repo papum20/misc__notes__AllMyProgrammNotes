@@ -1,5 +1,8 @@
 # OBJECTS  
   
+## README.md  
+*	[README.md](./README.md)  
+
 ## FUNCTIONS 
   
 UNITY  
@@ -260,3 +263,5 @@ Vector(2/3)Int :
   
   
 Resources.Load(string) : string = nome obj to load  
+
+

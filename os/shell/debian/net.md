@@ -146,3 +146,7 @@ when trying to connect to host with ssh, it reads config files
 ssh_config looks for keys in default names, written in it (id_rsa, …).  
 in ~/.ssh/config, you can add personalized names, different from defaults, with the line  
 IdentityFile ~/.ssh/your_key_name  
+
+## README.md  
+*	[README.md](./README.md)  
+

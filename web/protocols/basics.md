@@ -123,3 +123,7 @@ method secure if doesn’t generate changes to server’s internal state
 Idempotence	:   
 method idempotent if the effect on the server, of more identical requests is the same as that of just one  
 obs.: can be re-executed by more agents / at different times without side-effects  
+
+## README.md  
+*	[README.md](./README.md)  
+

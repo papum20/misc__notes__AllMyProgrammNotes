@@ -65,6 +65,9 @@ x stampare caratteri speciali:
   
 BASI  
   
+## README.md  
+*	[README.md](./README.md)  
+
 #direttiva al preprocessore (eseguito non nel programma ma nella fase preliminare)  
 (es.: #include <iostream>) include libreria (insieme di definizioni, funzioni…)  
 using namespace:definisce tipo di namespace, ovvero come interpretare alcune parole (tipo cin e cout)  
@@ -371,3 +374,5 @@ cout << … ;
 string a = "123";  
 stringstream bo(a);   //(sstream), stringa in num  
 int x; bo>>x; //x=123  
+
+

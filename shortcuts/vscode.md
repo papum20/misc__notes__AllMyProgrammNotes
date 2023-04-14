@@ -7,3 +7,7 @@ MARKDOWN :
 Ctrl+Shift+V : toggle edit-preview  
 Ctrl+K V : edit + preview side-by-side  
   
+
+## README.md  
+*	[README.md](./README.md)  
+

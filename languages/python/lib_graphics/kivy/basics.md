@@ -19,6 +19,9 @@ class class_name(App):
 	def __init__(self, **kwargs):		#constructor in kivy need a second ** parameter  
 		super(**kwargs)  
   
+## README.md  
+*	[README.md](./README.md)  
+
 ### runs when file opened  
 if __name__==”__main__”:  
 	class_name().run()  
@@ -40,3 +43,5 @@ MISC.:
   
 self.ids = {“id”:object} : dictionary with key=id_name (in kv file)  
 ### or it’s the same as: self.ids.id_name  
+
+

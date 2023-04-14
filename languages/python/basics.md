@@ -1,5 +1,8 @@
 # BASICS  
   
+## README.md  
+*	[README.md](./README.md)  
+
 #!/usr/bin/env python : rende file eseguibile da shell senza comando python  
   
 SYMBOLS:  
@@ -261,3 +264,5 @@ class some_class:
 call: some_class.some_method()  
   
 2. some_class.newMethod = staticmethod(some_class.some_method)  
+
+

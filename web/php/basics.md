@@ -4,6 +4,9 @@ SYNTAX :
 MISC :  
 ; at end of line  
 // comment  
+## README.md  
+*	[README.md](./README.md)  
+
 # comment  
 /* multiline comment */  
   
@@ -46,3 +49,5 @@ string :
 = “...”	: (double quotes) string literal with evaluation  
 	e.g.	“$var” = <value of var>  
 		‘$var’ = $var  
+
+

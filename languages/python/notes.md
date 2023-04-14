@@ -12,3 +12,7 @@ dir() = show files in directory
 help(obj) : spiegazione dell'oggetto  
 dir(obj) : lista di suoi metodi  
 type(obj) : tipo di oggetto (int,str…)  
+
+## README.md  
+*	[README.md](./README.md)  
+

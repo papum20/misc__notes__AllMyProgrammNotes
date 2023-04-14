@@ -289,9 +289,14 @@ COLORS:
 // 16 pre-defined, (256 in some browsers…)  
 // suggested to only use in css  
 use :  
+## README.md  
+*	[README.md](./README.md)  
+
 #HEX : hexadecimal  
 SIZES:  
 // (same as css)  
 px  
 %  
 multiple -sizes  
+
+

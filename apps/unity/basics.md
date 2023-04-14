@@ -1,5 +1,8 @@
 # BASICS  
   
+## README.md  
+*	[README.md](./README.md)  
+
 ## COMPONENTS  
   
 Audio source : (play on awake; loop)  
@@ -74,3 +77,5 @@ Show All : show all
 SIMPLE VERSION (JUST FOR HUMANOIDS) :  
 GameObject -> 3d -> Ragdoll  
 // fill with model rig parts, mass and it creates joints and colliders  
+
+

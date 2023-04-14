@@ -87,3 +87,7 @@ data
 approfondimenti  
 varianti di uri  
 es. short uri  
+
+## README.md  
+*	[README.md](./README.md)  
+

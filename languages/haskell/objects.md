@@ -1,5 +1,8 @@
 # OBJECTS
 
+## README.md  
+*	[README.md](./README.md)  
+
 ## FUNCTIONS
 
 ### LISTS
@@ -9,3 +12,4 @@
 `getLine` : input line  
 `putStrLn :: IO ()` : print string  
 *	e.g.: `putStrLn STRING1` : print STRING1
+

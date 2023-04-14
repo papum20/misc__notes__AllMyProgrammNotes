@@ -9,3 +9,7 @@ delete : toglie value, non pointer (dangling pointer/NULL pointer)
 sizeof (var/type/arr) (in byte)  
 
 
+
+## README.md  
+*	[README.md](./README.md)  
+

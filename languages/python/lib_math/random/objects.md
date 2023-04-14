@@ -10,3 +10,6 @@ randrange(start, stop, step) : random.choice in range()
 shuffle(list) : mischia lista..  
  
  
+## README.md  
+*	[README.md](./README.md)  
+

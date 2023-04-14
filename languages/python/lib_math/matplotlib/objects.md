@@ -4,6 +4,9 @@
   
 matplotlib  
   
+## README.md  
+*	[README.md](./README.md)  
+
 ## matplotlib.pyplot  
 // functions of same dimensions as axes (vectors)  
 // plots only with 2 vectors / matrix of 2 cols  
@@ -35,3 +38,4 @@ ylabel(string) :
 *	cmap : color  
 	='gray'
 *	vmin, vmax : values range
+

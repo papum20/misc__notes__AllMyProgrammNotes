@@ -1,5 +1,8 @@
 # OBJECTS  
   
+## README.md  
+*	[README.md](./README.md)  
+
 ## FUNCTIONS  
   
 BASICS  
@@ -91,3 +94,5 @@ Math
 import java.lang.Math;  
 max(int a, int b) :  
 min(int a, int b) :  
+
+

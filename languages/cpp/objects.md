@@ -1,5 +1,8 @@
 # OBJECTS  
   
+## README.md  
+*	[README.md](./README.md)  
+
 ## FUNCTIONS  
   
 TYPES:  
@@ -180,3 +183,5 @@ v.push_back(elem) : aggiunge alla fine
 ALGORITHM  
 sort(v.begin(), v.end(), funzione lambda (opzionale)) : ordina secondo lambda  
 e.g.: sort(v.begin()+2, v.end()-1, funzione lambda (opzionale))  
+
+

@@ -1,5 +1,8 @@
 # OBJECTS  
   
+## README.md  
+*	[README.md](./README.md)  
+
 ## FUNCTIONS  
   
 command_name, something  
@@ -9,3 +12,5 @@ Run, some_program.extension : runs some_program (it also works to open a folder 
 Send, some text : sends “some text” to the currently active program  
 SetWorkingDir, path : changes current directory  
 WinGetActiveTitle, var_name : saves active window’s title in var_name  
+
+

@@ -27,3 +27,7 @@ ENVIRONMENT VARIABLES :
 LD_LIBRARY_PRELOAD : change linked library  
 	(only for current process)  
 	e.g. LD_…_PRELOAD=./lib.so ./file.c  
+
+## README.md  
+*	[README.md](./README.md)  
+

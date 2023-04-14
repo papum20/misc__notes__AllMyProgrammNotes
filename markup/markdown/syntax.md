@@ -1,6 +1,9 @@
 # SYNTAX
 
 
+## README.md  
+*	[README.md](./README.md)  
+
 ## STRUCTURE ELEMENTS
 ---
 ### HEADERS
@@ -84,3 +87,5 @@
 ##### notes : 
 - text can include spaces
 - can combine bold and italic in whatever order
+
+

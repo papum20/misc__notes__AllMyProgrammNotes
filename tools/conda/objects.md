@@ -24,3 +24,7 @@ conda update conda : update conda
 /S---Install in silent mode.  
 /D=<installation path>---Destination installation path. Must be the last argument. Do not wrap in quotation marks. Required if you use /S.  
   
+
+## README.md  
+*	[README.md](./README.md)  
+

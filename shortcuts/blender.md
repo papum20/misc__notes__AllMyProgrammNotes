@@ -30,3 +30,6 @@ File View	in Shader mode	Shift+Ctrl+T
 		  
 RIGGING:		  
 Paste mirrored		Ctrl+Shift+V  
+## README.md  
+*	[README.md](./README.md)  
+

@@ -18,3 +18,6 @@ prettify()	: return pretty doc
 tag :   
 .get(ATTR)	: ATTR value  
 .string	: text in element  
+## README.md  
+*	[README.md](./README.md)  
+

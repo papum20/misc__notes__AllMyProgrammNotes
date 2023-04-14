@@ -32,3 +32,7 @@ ENVIRONMENT VARIABLES:
 Get-ChildItem Env:	: list of env.vars.  
 [Environment]::GetEnvironmentVariables(“Machine”)	: list of only system vars.  
 [Environment]::GetEnvironmentVariables(“User”) 	: // user  
+
+## README.md  
+*	[README.md](./README.md)  
+

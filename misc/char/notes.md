@@ -170,3 +170,7 @@ note: needed as check, e.g. in transmission, for identifying errors (if a 10 arr
   
 Little Endian, Big Endian :   
 FFFE char reserved to tell if own system is litte/big (if different, other receives FEFF, so can switch all chars)  
+
+## README.md  
+*	[README.md](./README.md)  
+

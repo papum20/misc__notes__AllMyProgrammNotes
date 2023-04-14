@@ -1,5 +1,8 @@
 # OBJECTS  
   
+## README.md  
+*	[README.md](./README.md)  
+
 ## FUNCTIONS
   
 ### CONVERSION :   
@@ -119,6 +122,8 @@ x = var.write('str') : writes str in the file; returns in x number of bytes writ
   
 __name__ = “__main__” if file is being run, else name of the file  
 __main__ = name of the file being run  
+
+
 
 
 

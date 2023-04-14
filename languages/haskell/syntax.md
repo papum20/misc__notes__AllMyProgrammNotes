@@ -1,5 +1,8 @@
 # SYNTAX
 
+## README.md  
+*	[README.md](./README.md)  
+
 ## VARIABLES
 *	everything is a variable (variables, functions, types, operators...)
 ### variable declaration
@@ -99,3 +102,4 @@ varName arg1 arg2 =
 `()` : singleton
 #### function
 `->`
+

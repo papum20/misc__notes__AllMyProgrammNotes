@@ -1,4 +1,7 @@
 # GUIDE
+## README.md  
+*	[README.md](./README.md)  
+
 ## (in italian)
 ---
 
@@ -65,3 +68,5 @@ git diff <branch/commitment> : differenza tra stato attuale e branch o commitmen
 git switch <branch> : cambia branch  
 git checkout <commitment> : cambia branch (se inserito il nome di un branch) o commitment (se inserito l’hash di un commitment come quelli che escono scritti in log)  
 git merge <branch> : unisce branch a master (ovvero crea una cronologia unica e integra i cambiamenti dei due branch in qualche modo; potrebbero esserci dei conflitti (se hanno dei cambiamenti diversi) e in tal caso si devono rimuovere manualmente le parti che creano conflitto)  
+
+

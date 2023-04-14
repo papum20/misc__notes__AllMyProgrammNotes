@@ -29,6 +29,9 @@ add_widget(widget) :
   
   
 t = BoxLayout() :  
+## README.md  
+*	[README.md](./README.md)  
+
 ### items stacked horizontally/vertically  
 orientation = string(“vertical” / “horizontal”)  
 spacing = int (pixel) : space between items  
@@ -273,3 +276,4 @@ SoundLoader.load(str) : load audio in path: str
 kivy  
 self.ids.idname : access to widget in kv file with id:”idname”  
   
+

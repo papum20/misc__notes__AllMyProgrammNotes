@@ -39,3 +39,6 @@ Crypto.Util.number
 // stuff with numbers, e.g. primes  
 .getPrime(bits)	: random prime of n bits  
 .isPrimeNumber(int)	: bool if prime  
+## README.md  
+*	[README.md](./README.md)  
+

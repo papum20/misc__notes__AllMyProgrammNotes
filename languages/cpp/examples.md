@@ -1,6 +1,9 @@
 # EXAMPLES
 
 check if path is a directory:  
+## README.md  
+*	[README.md](./README.md)  
+
 #include <sys/stat.h>  
 bool isDir(const char *path) {  
 	struct stat path_stat;  
@@ -48,3 +51,5 @@ valore nodo >= tutti valori sotto-albero sx, valore nodo <= tutti valori sott-al
   
 ALBERO BINARIO COMPLETAMENTE BILANCIATO:  
 ogni nodo ha 2 rami  
+
+

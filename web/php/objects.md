@@ -35,3 +35,7 @@ string file_get_contents(path)	: get content of link or local file
 I/O :   
 die(string)	: print error string  
 echo(string)	: print string  
+
+## README.md  
+*	[README.md](./README.md)  
+

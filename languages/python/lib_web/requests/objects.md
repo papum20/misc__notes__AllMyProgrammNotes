@@ -72,3 +72,7 @@ OBJECTS :
 .Session : allows to keep an established connection (session), like a browser, thus keeping   
 data, cookies, parameters…  
 .Session.get() :   
+
+## README.md  
+*	[README.md](./README.md)  
+

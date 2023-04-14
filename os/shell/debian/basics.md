@@ -35,6 +35,9 @@ $? : return value of last executed process
 !! : last command  
 && : and  
 || : or, evaluates other if one fails (error)  
+## README.md  
+*	[README.md](./README.md)  
+
 # : comment  
   
 STREAMS:  
@@ -48,3 +51,5 @@ command &> file.txt	: also write error
 command &>> file.txt	: -  
   
   
+
+

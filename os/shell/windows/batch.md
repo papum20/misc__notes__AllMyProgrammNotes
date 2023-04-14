@@ -43,3 +43,7 @@ setlocal : makes set (command) set variables as local
 set <var>=<string> : set environment variable (new or existing)  
 	set /p <var>=<string> : print string and get input to set var  
 start : executes command externally (in another terminal)  
+
+## README.md  
+*	[README.md](./README.md)  
+

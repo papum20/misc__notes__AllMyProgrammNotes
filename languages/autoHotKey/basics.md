@@ -28,6 +28,9 @@ Ctrl
 Alt  
 +  
 Shift  
+## README.md  
+*	[README.md](./README.md)  
+
 #  
 Win  
   
@@ -42,3 +45,5 @@ return
   
 #IfWinActive window_name (es. file_name - Notepad) : script only works if window active  
 #IfWinExist window_name (es. file_name - Notepad) : script only works if window open  
+
+

@@ -30,3 +30,7 @@ set varname=value;%name% : append/add variable
 setx varname “value”	: set permanently (“ ” if value contains spaces)  
 shutdown <type> : shutdown (type: /s=shutdown, /r=restart)  
 Stop-Process -Name <process> :  
+
+## README.md  
+*	[README.md](./README.md)  
+

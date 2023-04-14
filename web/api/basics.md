@@ -110,3 +110,7 @@ responses :
 						$ref: ‘...’  
 			‘<n2>’:  
 				…  
+
+## README.md  
+*	[README.md](./README.md)  
+

@@ -8,3 +8,6 @@ md5 object:
 .digest() : equivalent byte value  
 .hexdigest() : equivalent hexadecimal value  
   
+## README.md  
+*	[README.md](./README.md)  
+

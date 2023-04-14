@@ -164,8 +164,8 @@ def updateLibraries(path:str, libraries:list[str]) :
 
 def updateContents(path:str) : 
 	headers = ['## README.md', "## CATEGORIES"]
-	contents = ['README.md']
-	links = ['./README.md']
+	contents = [['README.md']]
+	links = [['./README.md']]
 	addHeader(path, headers, contents, links, None, n=1, create_new=False) 
 
 

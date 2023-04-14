@@ -1,6 +1,9 @@
 # OBJECTS  
   
 
+## README.md  
+*	[README.md](./README.md)  
+
 ## FUNCTIONS
   
 CONVERSION:  
@@ -166,3 +169,4 @@ va_end() :
 EOF : =-1 (type: int; represents a character of type int;  
 used int just to add it, other than 25 chars)  
 errno : (errno.h)  
+

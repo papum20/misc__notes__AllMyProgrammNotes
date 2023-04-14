@@ -33,3 +33,7 @@ i.e. grayed out and not selectable
 el.remove()		: remove html el  
 el.removeClass(str)	: remove class(es)  
 el.text(“str”)		: replace el’s text with str  
+
+## README.md  
+*	[README.md](./README.md)  
+
