@@ -89,6 +89,7 @@ print(object(s), sep=separator, end=end, file=file, flush=flush)
 ### MISC :   
   
 del(var)	: delete variable  
+enumerate(iterable) : return iterator of pairs (number=0,1,.. element[number] of iterable)  
 type()		:   
 zip()		: empty iterator  
 zip(arg)	: return an iterator to tuples, each with one element (from arg),  

@@ -1,6 +1,6 @@
 # BASICS  
   
-SYNTAX:  
+## SYNTAX 
 end line		doesn’t matter inside element  
 indentation			//  
 attributes order in element	//  
@@ -9,8 +9,9 @@ attributes order in element	//
 [tag’s element]  
 </[tag]> : closing tag  
   
-DEFINITIONS:  
+## DEFINITIONS  
 attributes : <[tag] attr1=val1 attr2=val2> </[tag]>  
+*	`attr=true` : can be omitted to `attr`  
 can’t use all chars:  
 no uppercase  
 dashes automatically convert following letter in uppercase, in dataset  
@@ -31,10 +32,10 @@ SEO : search engine optimization
 note : adding an element in new line adds a space  
   
   
-FEATURES:  
+## FEATURES
 whitespaces : collapsed / kept  
   
-HTML BOX MODEL:  
+## HTML BOX MODEL
 [margin					: distance from other objs  
 (from obj to other obj’ border edge);  
 		overlapping with near objects’ margins:  
@@ -54,7 +55,7 @@ solution2: overflow: hidden
 ]  
   
   
-ELEMENTS:  
+## ELEMENTS
 1) SPECIAL ELEMENTS:  
 <[tag]>		: (i.e. global attributes)  
 class=”val”	: class, to group  
@@ -67,6 +68,7 @@ class=”val”	: class, to group
 for accessibility, additional info…  
 	(event attributes, associate specified script to an action on element/document) :  
 		onclick		:   
+		onHide :  
 		ondoubleclick	:   
 		onkeypress		:   
 		onmouseover	:   

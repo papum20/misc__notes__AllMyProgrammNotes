@@ -1,6 +1,6 @@
 # BASICS  
   
-SYNTAX:  
+## SYNTAX
 /* comment */  
   
 element(s) {			: type selector(s)  
@@ -36,8 +36,7 @@ type[attribute=”val”]	{...}	: attribute selector
 <sel>[attr*=”val”]		: match any *val*  
 <sel>[attr~=”val”]		: match any * val *  
 (i.e. matches whole word val, with separators before and after)  
-## README.md  
-*	[README.md](./README.md)  
+
 
 #id			{...}	: id selector  
 pseudo-elements :   
@@ -92,7 +91,7 @@ in any format: default stops (3 colors-> 0,50,100%);
 optional color-stop for each color: number (px/%/…)  
 indicating the point of the full element where it stops  
   
-CASCADE ORDER:  
+### CASCADE ORDER:  
 declaration are considered in this order (last is more important, overwrites upper ones)  
 user-agent  
 user  
@@ -102,8 +101,8 @@ user’s imortant (!important)
 also, wins the most specific;  
 then wins document order;  
   
-STYLES:  
-ANIMATIONS :   
+## STYLES
+### ANIMATIONS
 // animations go from start to end state, linearly  
 animation-...  
 name			: name  
@@ -112,7 +111,7 @@ iteration-count	: n of iterations
 fill			: ?  
 delay			: delay between iterations  
   
-COLORS:  
+### COLORS
 background-color	: (default=transparent)  
 			=color  
 background-image	: “link”;  
@@ -124,9 +123,10 @@ color			: (also for a) content color (including text)
 filter			: filter  
 			filters of boxes/contents sum  
 			=blur(px) : blur  
+mask-image=IMG : mask image  
 opacity		: non-transparency, 0->1.0 / 0%->100%  
   
-DIMENSIONS/POSITION:  
+### DIMENSIONS/POSITION
 border			:   
 			=length type color  
 border-left-width	:   
@@ -180,7 +180,7 @@ z-index		: overlapping / 3d plan,
 			default=last one is placed on other  
 			=n	: absolute number, no unit, represents payer  
   
-ELEMENTS:  
+### ELEMENTS
 aspect-ratio		=val1 / val2 : aspect ratio  
 border			: (default to none) to be visible, must be set width and style  
 border-left		= width style color;  
@@ -218,7 +218,7 @@ don’t push content’s margin beyond box border (overflow inside)
 =visible	: container expands to contain all content  
 overflow-x|y		:   
   
-FLEX :   
+### FLEX
 flex-direction		: flex direction  
 			=row|row-reverse|column|column-reverse  
 flex-grow		:   
@@ -234,7 +234,7 @@ justify-content	: (in flex) how items are positioned along main axis
 =space-evenly :   
 order			:   
   
-GRID :   
+### GRID
 grid-area		: (child of grid)  
 			= an element of parent’s grid-template-areas;  
 			i.e. selects a space in the declared grid;  
@@ -244,17 +244,17 @@ grid-template-columns : (container with display=grid)
 grid-template-rows	: (container with display=grid)  
 			rows dimensions  
   
-EVENTS:  
+### EVENTS
 // e.g. ::hover  
 cursor			: set cursor type  
   
-MISC:  
+### MISC
 align-items		: (for flex) position items along cross axis (not main axis)  
 			=center|flex-end  
 scroll-behavior	: scroll behavior  
 			=smooth  
   
-TEXT:  
+### TEXT
 font-family		: font type;  
 			use“quotes” for complex names (i.e. made of more words);  
 order=priority (if first font not found, then 2nd, …)   
@@ -291,10 +291,13 @@ text-transform	:
 			=capitalize|uppercase|lowercase|none  
 white-space		:   
 			=normal|pre|nowrap  
+*	`pre-line` :  
+	*	e.g. print `\n` as newline  
+
 word-spacing		:   
 			=length  
   
-TRANSFORMATIONS :   
+### TRANSFORMATIONS
 // applied to already created element (i.e. not readapted, e.g. can be stretched)  
 transform:...   
 rotate(deg) : clockwise  
@@ -305,7 +308,7 @@ skew()
 translate()  
 translate3d()  
   
-AT-RULES:  
+## AT-RULES
 // for contexts / meta-rules  
 @keyframes	: describes initial, intermediate and final states of an animation  
 @keyframe ANIMATION-NAME {  
@@ -314,7 +317,7 @@ AT-RULES:
 @media 	: each @media declaration is independent,  
 		i.e. only one is applied, depending e.g. on device…  
 		specifies media query (alternative properties/rules applied)  
-SYNTAX:  
+### SYNTAX
 @media (feature: value) {  
 	selector {  
 		styles  
@@ -323,11 +326,11 @@ SYNTAX:
 e.g.  
 @media (max-width: val) {...}	: changes when screen becomes low-width;  
 					e.g. portrait, small window  
-FEATURES:  
+### FEATURES
 prefers-reduced-motion	: accessibility, for sensitivity to motion (e.g. scroll)  
 				=reduce|no-preference  
   
-FUNCTIONS:  
+## FUNCTIONS
 calc(expr)	: return result of math expression  
 
 

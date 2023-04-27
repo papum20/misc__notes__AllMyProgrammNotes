@@ -1,12 +1,12 @@
 # ELF  
   
-ELF :  
+## ELF
 readelf ELF :   
 	-h	: header  
 	-l	: segments  
 	-S	: sections  
   
-SECTIONS :  
+## SECTIONS
 .bss : uninitialized global vars  
 	e.g. static int x  
 .data : read and writable data  
@@ -18,7 +18,7 @@ SECTIONS :
 .symtab : symbol table  
 .text : exe instructions (code) of program  
   
-REGISTERS :  
+## REGISTERS  
 x86-32 :   
 // 32b registers  
 general purpose :   
@@ -56,7 +56,7 @@ xmm0-15 : enable use of SIMD instructions;
 // parameters for functions get passed in :   
 rdi, rsi, rdx, rcx, r8, r9, xmm0-7  
   
-x86 INSTRUCTIONS :  
+## x86 INSTRUCTIONS  
 data movement :   
 lea  op1,  op2 :  load  the  memory  address  indicated  by  op2 into the register specified by op1  
 mov op1, op2 : copy the data item referred to by op1 into the location referred to by op2  
@@ -82,6 +82,9 @@ syscall : syscall;
   
 DEFS :  
 interpreter : program that allows ELF to load shared object dynamically at run-time  
+
+## COMMANDS
+`checksec` : check security (mitigations) on  
 
 ## README.md  
 *	[README.md](./README.md)  

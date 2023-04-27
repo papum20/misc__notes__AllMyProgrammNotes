@@ -7,6 +7,8 @@ vect1*vect2 : element by element
 matrix1 @ vect2 : product row by column  
   
 arange(int n) : array={0..n-1}  
+atleast_2d(array) :  
+*	for 1d array, adds empty dimension (useful for transpose)  
 array copy(array) :  
 diag(1-D_array, k=0) : matrix with 1-D_array on diagonal, k=which diagonal  
 	diag(2-D_array) : vector with matrix’s diagonal  
@@ -25,6 +27,8 @@ reshape(array) : keeps elements, changes shape
 std(matrix) : standard deviation  
 sum(matrix, axis=) : sums, along axis  
 transpose(matrix) :  
+*	for a 1d array, doesn't do anything;
+	do instead `np.atleast_2d(A).T`  
 tril(matrix) :   
 triu(marix) : upper diagonal  
 array zeros(lunghezza(int)/dimensioni(tupla), tipo(default:float), qualcosa di memoria('C'/'F', default) ) : array full of zeroes  

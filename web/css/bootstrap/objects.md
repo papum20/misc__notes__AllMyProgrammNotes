@@ -7,15 +7,23 @@
 ## CLASSES  
 
 ### STRUCTURE
-#### CARD
+#### Container
+`Container` : container, required for grid  
+inside:  
+`Row` : grid row  
+*	`xs,md,xl={n}` : n of cols for screen dimensions  
+
+
+#### Card
 `card` : panel
-##### ELEMENTS
+inside:  
 `card-header` : 
 `card-body` : 
 
-#### FLEX
+#### Flex
 `d-flex` : display=flex  
 `flex-{row|column}` : flex direction  
+
 
 #### MEDIA
 `media` : some media positioned alongside content that doesn't wrap around said media  
@@ -41,9 +49,10 @@
 
 ### TEXT  
 `text-center` : center text  
+`text-muted` : grayed out  
 
 ### ELEMENTS
-#### BUTTONS  
+#### button
 `btn` : button (required)  
 `btn-block` : display=block (stretch to full width)  
 `btn-danger` : a color (for a dangerous action)  
@@ -53,8 +62,17 @@
 `btn-info` : a color (intended for a button about info)  
 `btn-primary` : a color (intended for primary button)  
 
-#### IMAGES  
+#### image
 `img-responsive` : make img adapt to screen, viewport  
 
+#### modal
+`Modal` : dialog box  
+*	`show=bool` : if showed  
+
+`Modal.Body` :  
+`Modal.Header` :  
 
 
+## STYLES
+### BOX MODEL
+`mb-N` : margin bottom = N (pixel?)  

@@ -5,7 +5,7 @@ IP - SYNTAX :
 	e.g. :: = 0.0.0.0.0.0  
 	e.g. ::1 = 0.0.0.0.0.1  
   
-NETWORK:  
+## NETWORK:  
 ip :   
 ip addr add [ipaddress/netmask] dev [devicename] :  
 assign address to interface devicename  
@@ -83,7 +83,7 @@ ss : show active/inactive connections
 	-u : only udp  
 	e.g. ss -t -a : all tcp  
   
-openssl COMMAND :   
+## openssl COMMAND :   
 connection:  
 s_client -connect HOSTNAME:PORT : connect and print ssl certificate  
 COMMAND(S) | s_client -connect HOSTNAME:PORT :  
@@ -139,7 +139,13 @@ eval “$(ssh-agent -s)” : start ssh-agent
 ssh-add <path_to_key> : add ssh key to ssh agent (when ssh-agent started, key private)  
 ssh-add -l : list saved keys  
   
-WHERE KEYS ARE FOUND:  
+## WEB
+`curl HOST` : transfer data (send request) from/to server  
+*	`-X METHOD=GET` : select method  
+*	`-d DATA` : data to transfer (i.e. body)  
+*	`-H HEADER` : header to send  
+  
+## WHERE KEYS ARE FOUND:  
 when trying to connect to host with ssh, it reads config files  
 /etc/ssh/ssh_config   
 ~.ssh/config  

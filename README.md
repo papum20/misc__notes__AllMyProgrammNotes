@@ -38,6 +38,7 @@ Folders can be grouped by topic.
 ## GENERAL FILES
 *	`lib_LIBRARY` : folder for a category of libraries/modules/submodules  
 *	`basics.md` : generical info  
+*	`buttons.md` : (app/site) buttons, fields, etc.  
 *	`commands.md` : commands (usually from command-line)  
 *	`examples.md` : examples of code/...  
 *	`files.md` : standard/relevant files/directories  
@@ -45,6 +46,7 @@ Folders can be grouped by topic.
 *	`guide.md` : plain guide  
 *	`libraries.md` : list of libraries/modules, with links to them (in case)  
 *	`notes.md` : generic notes  
+*	`shortcuts.md` : (app/site) shortcuts  
 *	`syntax.md` : language syntax  
 *	`README.md` : meta-info (about notes structure/folder...)  
 

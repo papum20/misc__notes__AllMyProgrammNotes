@@ -23,7 +23,8 @@ var|let|const OBJECT = {
 ```
 *	non-string properties are converted (typecasted) to strings by JS  
 *	"" needed when there are spaces in the name  
-  
+
+
 ### ASSIGNMENTS :   
 // c-like (rvalue = by value)  
 VAR=		:   
@@ -39,6 +40,7 @@ and remaining to ARR
 			skip positions with commas  
 // automatic casting :   
 	e.g. int n = 2; string s = n;	// n casted to string  
+{...foo()} : destructure to elements returned by foo, i.e. take out of structure (return as el1, el2, ..., not [el1, el2, ...])  
   
 ### STATEMENTS :   
 if(...) {...} else if(...) {...} else {...}	:   
@@ -72,8 +74,12 @@ var object = {
 }  
 return		:   
 		(no return) : type undefined  
+
+### ERROR HANDLING
+`try {} catch(error) {}` :  
+`throw error` :  
   
-KEYWORDS :   
+## KEYWORDS :   
 class CLASS {  
 	constructor(...) {  
 this.VAR = VAL;	: class field declaration  
@@ -126,7 +132,9 @@ lista: function(){ return persone.join(', ') }
 export {VAR1, …}				: export var(s)  
 export default VAR				: make as default/fallback export value  
 export default DECLARATION		:   
-import {VAR1, …} from “FILE_PATH”	: import var(s) from (local) file;  
+import {VAR1, …} from “FILE_PATH”	: import var(s) from (local) file;
+*	required `{}` for non-default import  
+*	file with no extension    
 					for local file, path relative to this file path  
 import * as MODULE from “FILE_PATH”	: import all as MODULE from …;  
 import VAR from “FILE__PATH”		: import default export as VAR  

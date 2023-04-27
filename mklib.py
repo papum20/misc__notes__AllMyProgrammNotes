@@ -4,18 +4,25 @@ import sys
 
 def getHelp():
 	print("""\
-	mklib BASEPATH [-L SUBDIR] NAME [-d] [-f FILENAMES...]
+	mklib BASEPATH [-L SUBDIR] NAME [-D|-d] [-f FILENAMES...]
 
 	Create BASEPATH/[lib_SUBDIR/]NAME/, containing, optionally, default and/or files.
 
 	Arguments:
 	BASEPATH		library's language path
 	-L SUBDIR		create library (NAME) in subdir (lib_SUBDIR) of language (BASEPATH)
-	-d				create default files
+	-d				don't create default files
+	-D				(default) create default files
 	-f FILENAMES...	create specified files in library dir
 
 	""")
 	raise Exception("wrong parameters")
+
+
+def removeExtension(f:str):
+	return f[:f.rfind('.')] if '.' in f else f
+
+
 
 
 
@@ -35,12 +42,17 @@ try:
 	if args[i] == '-L':
 		SUBDIR = SUBDIR_START + args[i+1]
 		i += 2
+	if args[i][0] == '-':
+		getHelp()
 	NAME = args[i]
 	i += 1
-	if args[i] != '-d':
-		FILENAMES.clear()
-		args += 1
-	if args[i] == '-f':
+	if i < len(args):
+		if args[i] == '-d':
+			FILENAMES.clear()
+			i += 1
+		elif args[i] == '-D':
+			i += 1
+	if i < len(args) and args[i] == '-f':
 		FILENAMES.extend(args[i+1:])
 		
 except:
@@ -68,5 +80,5 @@ for filename in FILENAMES:
 		if filename == 'README.md':
 			f.write(f"# {PATH.upper()}\n")
 		else:
-			f.write(f"# {filename.upper()}\n")
+			f.write(f"# {removeExtension(filename).upper()}\n")
 		f.close()

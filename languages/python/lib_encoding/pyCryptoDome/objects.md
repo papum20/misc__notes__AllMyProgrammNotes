@@ -1,6 +1,6 @@
 # OBJECTS  
   
- 
+## import 
 pycryptodome  
 import Crypto  
 from Crypto.Util.Padding import pad, unpad  
@@ -24,21 +24,24 @@ cipher = AES.new(...)
 encrypted = AES.encrypt(...)  
 decrypted = AES.decrypt(...)		# using new cipherw  
   
-Crypto.Hash.*  
+## Crypto.Hash.*  
 *.new(...)->* : return object hashed with * method  
 <hashed>.hexdigest()	: in hex  
   
-Crypto.PublicKey  
+## Crypto.PublicKey  
 DSA.import_key(key)->DSA.DsaKey	:   
   
 DSA.DsaKey: 	// key object  
 .x  
 .domain()	: p, q, g  
   
-Crypto.Util.number  
+## Crypto.Util.number  
 // stuff with numbers, e.g. primes  
-.getPrime(bits)	: random prime of n bits  
-.isPrimeNumber(int)	: bool if prime  
+bytes_to_long(b) :   
+getPrime(bits) : random prime of n bits  
+isPrimeNumber(int) : bool if prime  
+long_to_bytes(l) :   
+
 ## README.md  
 *	[README.md](./README.md)  
 

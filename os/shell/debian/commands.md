@@ -34,17 +34,12 @@
 *	``-i`` : show inodes  
 *	``-l`` : long  
 *	``-o`` : -l without groups  
-
-
-`output format: crwxrwxrwx+` : (access rights, special modes)  
-c=type flag; rwx= for User, Groups, Others; +=special character(s)  
-*	``special bits`` : SUID, GUID, sticky bit  
-*	``(no effect on executables)  ``
-*	``suid`` : when executing, take owner's rights  
-
-`guid` : take owner’s group  
-`sticky bit` : only owner can delete files in folder  
-(if folder has write right for others)  
+*	output format: `crwxrwxrwx+` : (access rights, special modes)  
+	*	c=type flag; rwx= for User, Groups, Others; +=special character(s)  
+	*	`special bits` : SUID, GUID, sticky bit (no effect on executables)  
+	*	`suid` : (s at user x) when executing, take owner's rights  
+	*	`sgid` : (s at group x) take owner’s group  
+	*	`sticky bit` : (t at other x) only owner can delete files in folder (if folder has write right for others)  
 
 `mkdir DIR` :  
 *	``-p`` : ignore errors; also make parent dirs if needed  
@@ -105,8 +100,9 @@ c=type flag; rwx= for User, Groups, Others; +=special character(s)
 ## FILE SYSTEM (SYSTEM CALL)   
 
 `chmod [augo] [+-=] [rwxs] file` :   
-*	``[all, user, group, others] [add, remove, set right]  ``
-*	``chmod +x FILE`` : add execute for all  
+*	`[all, user, group, others] [add, remove, set right]  `
+*	e.g.: `chmod +x FILE` : add execute for all  
+*	e.g.: `chmod g+s FILE` : add setgid  
 
 `chmod o-r FILE` : o=others, -=remove rr=read -> remove read from others  
 `umask OCTALS` : set default permission for newly created files  
@@ -121,6 +117,12 @@ c=type flag; rwx= for User, Groups, Others; +=special character(s)
 `cat > FILE` : “cout”  
 `cat  FILE` : “cin”  
 `cat  FILE1  FILE2` :  
+`cut [(-c|-f)LIST] [-dDELIM] [INPUT]` : cut sections  
+*	`-cLIST` : select only these characters  
+*	`-dDELIM` : set delim char  
+*	`-fLIST` : select only these fields (separated by DELIM, like split())  
+*	`LIST=N|N-|N-M|-M` : ranges of chars/fields  
+
 `echo` :   
 *	``-n`` : no new line  
 
@@ -217,10 +219,10 @@ c=type flag; rwx= for User, Groups, Others; +=special character(s)
 
 `yes` : prints y forever  
   
-`DISK:  `
+## DISK:  
 `truncate …` : “create an empty file with specified size”  
   
-`INFO:  `
+## INFO:
 `df` : info on storage  
 *	``df -h`` : human readable (for instance, converts bytes to biggest possible measure)  
 *	``df -BM`` : in MB  
@@ -243,7 +245,7 @@ c=type flag; rwx= for User, Groups, Others; +=special character(s)
 `lsusb` : devices  
 `top` : processes / resources used  
   
-apt  
+## apt  
 `apt autoremove` : remove unnecessary packages  
 `apt search APPLICATION_NAME` :  
 `apt show ` :   
@@ -251,5 +253,7 @@ apt
 
 `apt update` : check updatable packages  
 `apt upgrade` : update updatable packages  
+
+## dpkg
 
 

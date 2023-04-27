@@ -20,7 +20,9 @@ git commit -m “string” -m “description” : commits with another optional 
 git commit -am “string” : adds and commits (only for modified, not untracked)  
 git commit --amend : edit last commit  
 git commit --allow-empty : empty commit  
-git diff <branch> : differences from last change  
+git diff <commit> : differences from last change  
+git diff COMMIT1 COMMIT2 : diff from COMMIT1 to COMMIT2  
+*	`--compact-summary` :   
 (colors as GitHub)  
 git fetch <> :  
 git fetch --all :  
@@ -30,6 +32,7 @@ git log <branch> :
 git log <remote-repo/remote_branch> :   
 	--all :   
 --graph :   
+--oneline :  
 	--oneline :   
 git log -p -- path-to-file : show log of file  
 	--follow : also show history for when it had another name  

@@ -18,3 +18,8 @@
 `‘’`, `“”`	: for strings, it’s the same  
 case sensitive  
 
+## KEYWORDS
+`async FUNCTION(){}` : declare as async  
+`await EXPR` : in async function (promise):  
+*	syntactic sugar instead of managind then and catch  
+`VAR instanceof CLASS` : bool if is instance of  

@@ -11,6 +11,9 @@ void fun(voidfun f, void *opaque) {
 SWAP:  
 int a,b;  
 a ^= b ^= a ^= b;  
+
+## FUNCTIONS
+`execv(argv[1], argv+1)` : exec argv[1] with, as args, all following args  
   
 
 ## README.md  
