@@ -15,9 +15,12 @@
 *	each PARAM contains elements ELEM: PARAM={ELEM1: {...}, ...}
 *	ELEM contains:
 	*	`required: Bool` : if required  
+	*	`select: Bool` : not returned by default  
+		*	e.g. : hide user's password  
 	*	`timestamps: Bool` : automatically save tmiestamps  
 		*	e.g.: `{title:{...},text:{...}},{timestamps:true}` : put outside  
 	*	`type: TYPE` : type  
+	*	`unique: Bool` : must be unique in db    
 
 `create({FIELDS})` : instantiate schema with fields; return a promise  
 *	note: no need for `exec()` (not a query)  
@@ -27,10 +30,17 @@
 `findByIdAndUpdate(ID)` :   
 `Bool isValidObjectId(ID)` : if ID in valid format for mongoDB  
 
+#### Schema.Types.ObjectId
+`ObjectId` :  
+
+`equals(otherId)` : compare  
+
 ## DATABASE
 `Promise connect(URL)` : connect to mongoDB URL  
 
 ### QUERIES
-// query objects methods
-// `QueryObject.METHOD()`
+`Query` : object  
+#### methods
 `exec()` : execute query  
+`select("str"): Query` : also select specified fields  
+*	e.g.: `findOne({username:name}).select("+password +email")` : also return passw, email (normally only username)  

@@ -15,17 +15,20 @@
 `Router()` : return router, i.e. a way to refer to already created express() object  
 
 #### HTTP REQUESTS
-`REQUEST_NAME('URL', (req,res) => {})` :  
+`REQUEST_NAME('path', ...handlers:(req,res,next) => {})` :  
+*	`path` : URL / path  
+*	`...handlers` : 1+ handlers/middleware, executed in order from left  
+
 `URL=something/:param1` : specify space for param1 (usable later)  
 
-`get('URL', (req,res) => {})` : response to get request at URL, using function  
+`get(..)` : response to get request at URL, using function  
 `patch(..)` :  
-`post('URL', (req,res) => {})` :  
+`post(..)` :  
 
 note: can use same endpoint for multiple http methods (but not for multiple instances of same method)  
 
 ### Next Function
-function `next(error)` for middleware  
+function `next(error?)` : (in middleware) call next middleware  
 
 ### Request
 `body` :  

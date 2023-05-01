@@ -9,6 +9,10 @@
 *	`set(new_val)` : updates val  
 *	`<ValType>` can be omitted  
 
+## EVENTS
+### React.mouseEvent
+`stopPropagation` : 
+
 ## HTML
 ### ATTRIBUTES
 `className=CLASS` : class argument  

@@ -72,7 +72,9 @@ inside:
 `Modal.Body` :  
 `Modal.Header` :  
 
-
 ## STYLES
 ### BOX MODEL
+#### marign
 `mb-N` : margin bottom = N (pixel?)  
+`me-N` : margin end (of text)  
+`ms-N` : margin start (of text)  

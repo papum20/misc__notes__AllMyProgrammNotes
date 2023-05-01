@@ -256,4 +256,6 @@
 
 ## dpkg
 
-
+## apt
+`update-grub` : update grub  
+*	e.g.: boot options  

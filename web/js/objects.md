@@ -82,10 +82,13 @@ bool .some(function)	: true if at least one value evaluates function to true;
 undefined .unshift(VAL) : append to start   
   
 ### OBJECT :   
-CLASS_NAME.prototype	: access element of class;  
+`prototype`	: access element of class;  
 				can add/ change class (prototype) parameters  
-e.g. CLASS_NAME.prototype.PARAMETER  
-boolean .hasOwnProperty(str)	: if obj has property named str  
+*	e.g. `CLASS_NAME.prototype.PARAMETER`  
+`hasOwnProperty(str): boolean` : if obj has property named str  
+
+#### static
+`entries(obj): array` : object to array of pairs `<key, val>`  
   
 ### REGEX / MATCHING :   
 str str.match(regex)	: try to match, and return list of matched part(s) of string,  

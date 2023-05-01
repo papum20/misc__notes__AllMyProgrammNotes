@@ -30,8 +30,7 @@ SUBDIR_START = "lib_"
 BASEPATH, SUBDIR, NAME = [""] * 3
 FILENAMES = [
 	'basics.md',
-	'objects.md',
-	'README.md'
+	'objects.md'
 ]
 args = sys.argv
 
@@ -60,6 +59,9 @@ except:
 
 
 PATH = BASEPATH
+FILENAMES.extend([
+	'README.md'
+])
 
 # create SUBDIR
 if len(SUBDIR) > 0:
