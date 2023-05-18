@@ -10,6 +10,11 @@
 `remove()` : (?? not existing)  
 `save()` : save document in DB  
 
+### Model
+`modelName` : model name  
+*	e.g.: =collection name (usually)  
+
+
 ### Schema
 `Schema(PARAMS)` : schema constructor, creating schema with PARAMS elements, as arrays  
 *	each PARAM contains elements ELEM: PARAM={ELEM1: {...}, ...}

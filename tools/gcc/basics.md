@@ -3,7 +3,7 @@
 ## gcc / g++  
   
 T./file : execute file, search it in current directory  
-gcc -c file_name.c : compile (not lin) -> generates obj file (file.o)  
+gcc -c file_name.c : compile (not link) -> generates obj file (file.o)  
 gcc -c -lncurses file_name.c :   
 gcc -c -lpthread file_name.c :   
 gcc -o file.o : linking -> generates .exe  

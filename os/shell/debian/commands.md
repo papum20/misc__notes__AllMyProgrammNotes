@@ -65,9 +65,12 @@
 `gdb` : (disassemble)  
 `ldd` : print shared object dependencies  
 `nm FILE` : symbol table  
-*	``note`` : U=not found  
+*	note: U=not found  
+
 `objdump` : info on object file  
-*	``-D`` : (disassembler)  
+*	`-D` : (disassembler)  
+*	`-h` : section-headers; elf setions  
+
 `readelf` : info on ELF file  
 `readlink FILE` : output linked file  
 `touch FILE` : create file  

@@ -86,6 +86,10 @@ interpreter : program that allows ELF to load shared object dynamically at run-t
 ## COMMANDS
 `checksec` : check security (mitigations) on  
 
+## SECTIONS
+`.bss` : non-initialized global vars  
+`.text` : executable code  
+
 ## README.md  
 *	[README.md](./README.md)  
 

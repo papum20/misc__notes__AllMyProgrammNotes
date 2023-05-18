@@ -1,6 +1,6 @@
 # BASICS  
   
-VIEW - COLUMNS:  
+## VIEW - COLUMNS:  
 No.		: number of pkg (first=1)  
 Time		: time from first pkg, seconds broken down to nanoseconds (first=0)  
 Source	: source address (IPv4, IPv6 or Ethernet address)  
@@ -13,8 +13,8 @@ shows host name
 GET /…	: requesting url  
 … HTTP/…	: http type  
   
-VIEW - ROWS:  
-COLORS:  
+## VIEW - ROWS:  
+### COLORS:  
 light purple	= TCP traffic  
 light blue	= UDP traffic  
 black		= (TCP) packets with problems (e.g. delivered out of order)  
@@ -25,21 +25,21 @@ dark yellow	= Routing
 dark gray	= TCP SYN, FIN and ACK traffic  
 dark blue	= (light blue) DNS traffic  
   
-TYPES:  
+## TYPES:  
 dhcp	:   
 	can help identify hosts for almost any type of computer connected to your network  
 nbns	:   
 	nbns traffic is generated (primarily) by computers running Windows or MacOS  
   
-FILTERS:  
-SYNTAX:  
+## FILTERS:  
+### SYNTAX:  
 and	:   
 !	:   
 eq	: equals  
-FUNCTIONS:  
+### FUNCTIONS:  
 “str1” contains “str2”	:    
 “str1” matches <regexp> :   
-FILTERS:  
+### FILTERS:  
 bootp		: dhcp (dhcp for wireshark 3.0)  
 dhcp		: dhcp  
 dns		: dns  
@@ -61,7 +61,7 @@ tcp.len==int	: data len
 FILTERS - COMBINED:  
 http.request and !(ssdp)	: ?  
   
-FRAME DETAILS:  
+## FRAME DETAILS:  
 type=http:  
 Hypertext Transfer Protocol -> Host: … : http domain  
 type=https:  
@@ -87,7 +87,7 @@ NetBIOS Name Service -> Additional records -> <host name> … ->
 	-> Name	: host name  
 	-> Addr	: ip  
   
-FOLLOW - TCP STREAM - DETAILS:  
+## FOLLOW - TCP STREAM - DETAILS:  
 type=http:  
 User-Agent:  
 Browser used  
@@ -104,11 +104,11 @@ Windows NT 10.0	: Windows 10
 (if Apple mobile device host) OS used	:   
 (if Apple mobile device host) device type	: (i.e. iPhone, iPad or iPod)  
   
-COLORS :  
+## COLORS :  
 red = client request  
 blue = client receiving  
   
-SETTINGS:  
+## SETTINGS:  
 TOP MENUS:  
 View:  
 Time display format  

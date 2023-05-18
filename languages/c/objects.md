@@ -75,11 +75,16 @@ qsort(vector, length, size, function*) : quicksort; function(a,b) returns int >=
 else int < 0  
   
   
-MACRO :  
+## MACRO :  
+_Generic(VAR, type1:"STR1", ...) : return the STR associated with the type of VAR  
+*	done at run-time  
+*	error if no case for VAR type  
+*	(works like switch)  
+
 size_t sizeof() :  
 typeof() :  
   
-SYSTEM CALLS :  
+## SYSTEM CALLS :  
 PROCESS:  
 _exit() : exit without deletes and other freeing stuff (warning)  
 access(“file”, int <right>) : if user has right on file  

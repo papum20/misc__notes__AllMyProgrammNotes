@@ -18,6 +18,7 @@
 *	`--save-dev` : for devDependencies  
 *	`-D` : _alias_ for `--save-dev`
 *	e.g.: `npm install --save-dev typescript` : used to install typescript  
+*	`-g` : globally  
 
 `i PKG` : _alias_ for install  
 `run CUSTOM-COMMAND` : execute custom command added to `"scripts"` in `package.json`  

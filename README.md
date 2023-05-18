@@ -29,11 +29,14 @@ Folders can be grouped by topic.
 			-	`README.md`  
 
 ## GENERAL SYNTAX
--	command format:  
+*	command format:  
 	`command ARGUMENT(S)` : notes  
-	-	command  
-	-	parameters names: uppercase
-	-	colon (`:`) separates command from notes
+	*	command  
+	*	parameters names: uppercase
+	*	colon (`:`) separates command from notes  
+*	language function format:  
+	*	usually follows own language syntax (e.g. for types)  
+
 
 ## GENERAL FILES
 *	`lib_LIBRARY` : folder for a category of libraries/modules/submodules  
@@ -43,12 +46,12 @@ Folders can be grouped by topic.
 *	`examples.md` : examples of code/...  
 *	`files.md` : standard/relevant files/directories  
 *	`functions.md` : language functions/objects/...  
-*	`guide.md` : plain guide  
-*	`libraries.md` : list of libraries/modules, with links to them (in case)  
-*	`notes.md` : generic notes  
+*	`guide.md` : plain text guide  
+*	`libraries.md` : list of libraries/modules (divided by category), with links to them (in case)  
+*	`notes.md` : generical notes  
 *	`shortcuts.md` : (app/site) shortcuts  
 *	`syntax.md` : language syntax  
-*	`README.md` : meta-info (about notes structure/folder...)  
+*	`README.md` : folder content and meta-info (about notes structure/folder...)  
 
 ## COMMANDS
 `mkentry PATH` : create new entry in PATH, copying files in __template_

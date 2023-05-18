@@ -23,6 +23,10 @@ inside:
 #### Flex
 `d-flex` : display=flex  
 `flex-{row|column}` : flex direction  
+`flex-WRAP` : wrap options  
+*	`WRAP=wrap|nowrap|...`  
+
+`justify-content-SIZE-VAL` : justify-content=VAL  
 
 
 #### MEDIA
@@ -74,7 +78,7 @@ inside:
 
 ## STYLES
 ### BOX MODEL
-#### marign
+#### margin
 `mb-N` : margin bottom = N (pixel?)  
 `me-N` : margin end (of text)  
 `ms-N` : margin start (of text)  

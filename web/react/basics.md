@@ -3,7 +3,8 @@
 port: 3000
 
 ## INSTALL
-`npx create-react-app frontend --template typescript` :  
+`npx create-react-app DIR` : create dflt app config in DIR, i.e. with some basic pkgs installed  
+*	`--template typescript` :   
 
 ## LANGUAGE
 declarative:  

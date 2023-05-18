@@ -5,7 +5,7 @@
 
 ## FUNCTIONS
   
-### CONVERSION :   
+### CONVERSION 
 chr(int)		: int code to char  
 hex(int)		: int to hex  
 hexlify(bytes)		: bytes to hex  

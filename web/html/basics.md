@@ -113,6 +113,7 @@ removed/(re-)inserted without any problems
 <html>	:	main: all elements should be in it  
 <link>		:	link document to other sources  
 		href=”link”	:   
+		href="javascript:CODE" : tell to interpret CODE as js  
 rel=”...”	: relationship  
 		rel=”stylesheet”	: <style>  
 <main> 	:	(html5) for readability  
@@ -254,7 +255,12 @@ placeholder	:
 		srcset=”..., …”	: alternative images, for different displays;  
 		sizes=”..., …”		: sizes with which to use each element in srcset  
 		note: svg images include a path, so allow resizing without loss of quality  
+*	onerror=CODE :  
+
 <object> 	: (old) generic (like div)  
+<svg> : svg image  
+*	onload=CODE :  
+
 <video>	:   
   
 8) OTHER ELEMENTS:  
