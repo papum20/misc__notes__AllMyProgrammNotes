@@ -1,4 +1,5 @@
 import sys
+from string import ascii_letters, ascii_lowercase
 
 
 def getHelp():
@@ -37,9 +38,11 @@ def getHelp():
 def findSubStr(s:str, l:str, r:str, exclude:str=' '):
 	i = s.find(l)
 	if i != -1:
-		j = s[i+1:].find(r) + i+1
-		if (j != -1) and (c not in s[i+1:j] for c in exclude):
-			return (i, j)
+		j = s[i+1:].find(r)
+		if j != -1:
+			j += i+1
+			if all([c not in s[i+1:j] for c in exclude]):
+				return (i, j)
 	return (None, None)
 
 def stripRight(s:str, chars:str=' \t\n\v') :
@@ -68,58 +71,110 @@ if len(args) == 1:
 	getHelp()
 
 PATH = args[1]
-last_type = 'NONE'
 
 def convert(path:str):
 	original = list(map(lambda l: l + "\n", readFile(path)))
+	last_type = 'NONE'
 	with open(path, "w") as fw:
-		for line in original:
+		for index, line in enumerate(original):
 
-			# headers : remove :
-			if line[0] == '#':
-				last_type = 'HEADER'
-				if line.strip()[-1] == ':':
-					line = line.strip()[:-1] + '  \n'
 
-			# command name
-			elif (':' in line) and not (line[0] in ' \t#*') and ('`' not in line):
-				ind = line.find(' :')
-				if ind == -1:
-					ind = line.find('\t:')
-				if ind != -1:
-					line = f"`{stripRight(line[:ind])}` :{line[(ind+2):]}"
-					if last_type != 'COMMAND':
-						line = '\n' + line
-					last_type = 'COMMAND'
-					
-			# command parameter / description / note
-			elif (line[0] in '\t*'):
-				last_type = 'PARAMETER'
-				if line[0] == '\t':
-					line = '*' + line
-				first = line[1:].strip()[0]
-				# parameters / examples (code) ...
-				j = line.find(' :')
-				i = line.find(first)
-				if j != -1:
-					for w in NO_CODE:
-						if w in line[:j]:
-							i = line.find(w) + len(w)
-				else:
+			if line.strip() == '```':
+				last_type = 'CODE' if last_type != 'CODE' else 'NONE'
+
+			elif last_type != 'CODE':
+
+				# empty line
+				if line.strip() == "":
+					if last_type != 'HEADER':
+						last_type = 'NEWLINE'
+
+				# args from <arg> to ARG
+				i, j = findSubStr(line, '<', '>', ' ')
+				while i:
+					# don't change in CODE
+					i1, j1 = line[:i].find('`'), line[j+1:].find('`')
+					if i1 != -1 and j1 != -1:
+						break
+
+					line = line[:i] + line[i+1:j].upper() + line[j+1:]
+					i, j = findSubStr(line, '<', '>', ' ')
+
+				# headers : remove :
+				if line[0] == '#':
+					last_type = 'HEADER'
+					if line.strip()[-1] == ':':
+						line = line.strip()[:-1] + '  \n'
+				
+				# make heder
+				elif line[0] in ascii_letters and not any([c in ascii_lowercase for c in line]) and (line.find(':') == -1 or line[line.find(':')+1:].strip() == ""):
+					last_type = 'HEADER'
+					if line.strip()[-1] == ':':
+						line = line.strip()[:-1] + '  \n'
+					line = "## " + line
+
+
+				elif line.startswith('// '):
+					last_type = 'COMMENT'
+
+				# identify command
+				elif '`' in line:
+					if line[0] == '`':
+						last_type = 'COMMAND'
+					else:
+						last_type = 'PARAMETER'
+
+				# command name
+				elif (':' in line) and not (line[0] in ' \t#*'):
+					ind = line.find(' :')
+					if ind == -1:
+						ind = line.find('\t:')
+					if ind != -1:
+						line = f"`{stripRight(line[:ind])}` :{line[(ind+2):]}"
+						if last_type not in ('COMMAND', 'HEADER', 'NEWLINE'):
+							line = '\n' + line
+						last_type = 'COMMAND'
+						
+				# command parameter / description / note
+				elif (line[0] in '\t*'):
+					last_type = 'PARAMETER'
+					if line[0] == '\t':
+						line = '*' + line
+					first = line[1:].strip()[0]
+					# parameters / examples (code) ...
+					j = line.find(' :')
+					i = line.find(first)
 					for w in NO_CODE:
 						if w in line:
 							i = line.find(w) + len(w)
-							j = line.rfind(line.strip()[-1]) + 1
-				line = f"{line[:i]}`{line[i:j]}`{line[j:]}"
+							if j == -1:
+								j = line.rfind(line.strip()[-1]) + 1
+					if j != -1:
+						line = f"{line[:i]}`{line[i:j]}`{line[j:]}"
+				
+				elif (line[0] in ascii_letters):
+					# make header (if all uppercase)
+					# (already done above)
+					if not any([c in ascii_lowercase for c in line]):
+						last_type = 'HEADER'
+						if line.strip()[-1] == ':':
+							line = line.strip()[:-1] + '  \n'
+						line = "## " + line
 
-			# args from <arg> to ARG
-			i, j = findSubStr(line, '<', '>', ' ')
-			while i:
-				line = line[:i] + line[i+1:j].upper() + line[j+1:]
-				i, j = findSubStr(line, '<', '>', ' ')
+					# make comment to header
+					elif last_type == 'HEADER':
+						line = "// " + line
+					
+					# make comment to command
+					else:
+						line = "*\t" + line
 
+
+			# don't add a new line
+			if index == len(original) - 1:
+				line = line.strip("\n")
 			fw.write(line)
-			print(f"-{line}-")
+			#print(f"-{line}-")
 
 				
 

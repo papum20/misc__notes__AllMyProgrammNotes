@@ -124,10 +124,11 @@
 *	`-cLIST` : select only these characters  
 *	`-dDELIM` : set delim char  
 *	`-fLIST` : select only these fields (separated by DELIM, like split())  
+*	`-s` : exclude lines not containing char  
 *	`LIST=N|N-|N-M|-M` : ranges of chars/fields  
 
 `echo` :   
-*	``-n`` : no new line  
+*	``-n`` : no trailing new line  
 
 `edit [file_name]` : text editor  
 `head INPUT` : print first 10 lines  
