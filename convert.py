@@ -48,10 +48,96 @@ def stripRight(s:str, chars:str=' \t\n\v') :
 		i -= 1
 	return s[:i]
 
+def readFile(path:str) -> list[str] : 
+	doc = []
+	with open(path, "r") as fr:
+		doc = fr.read().split("\n")
+	return doc
 
 
 
 
+
+NO_CODE = [
+	'e.g.: ',
+	'note: '
+]
+
+args = sys.argv
+if len(args) == 1:
+	getHelp()
+
+PATH = args[1]
+last_type = 'NONE'
+
+def convert(path:str):
+	original = list(map(lambda l: l + "\n", readFile(path)))
+	with open(path, "w") as fw:
+		for line in original:
+
+			# headers : remove :
+			if line[0] == '#':
+				last_type = 'HEADER'
+				if line.strip()[-1] == ':':
+					line = line.strip()[:-1] + '  \n'
+
+			# command name
+			elif (':' in line) and not (line[0] in ' \t#*') and ('`' not in line):
+				ind = line.find(' :')
+				if ind == -1:
+					ind = line.find('\t:')
+				if ind != -1:
+					line = f"`{stripRight(line[:ind])}` :{line[(ind+2):]}"
+					if last_type != 'COMMAND':
+						line = '\n' + line
+					last_type = 'COMMAND'
+					
+			# command parameter / description / note
+			elif (line[0] in '\t*'):
+				last_type = 'PARAMETER'
+				if line[0] == '\t':
+					line = '*' + line
+				first = line[1:].strip()[0]
+				# parameters / examples (code) ...
+				j = line.find(' :')
+				i = line.find(first)
+				if j != -1:
+					for w in NO_CODE:
+						if w in line[:j]:
+							i = line.find(w) + len(w)
+				else:
+					for w in NO_CODE:
+						if w in line:
+							i = line.find(w) + len(w)
+							j = line.rfind(line.strip()[-1]) + 1
+				line = f"{line[:i]}`{line[i:j]}`{line[j:]}"
+
+			# args from <arg> to ARG
+			i, j = findSubStr(line, '<', '>', ' ')
+			while i:
+				line = line[:i] + line[i+1:j].upper() + line[j+1:]
+				i, j = findSubStr(line, '<', '>', ' ')
+
+			fw.write(line)
+			print(f"-{line}-")
+
+				
+
+
+args = sys.argv
+if len(args) == 1:
+	getHelp()
+
+for path in args[1:]:
+	convert(path)
+
+
+
+
+## OLD, WITH PATH TMP
+
+
+"""
 NO_CODE = [
 	'e.g.: ',
 	'note: '
@@ -126,3 +212,4 @@ with open(PATH, "r") as fr:
 
 				
 				
+"""
