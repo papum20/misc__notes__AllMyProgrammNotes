@@ -53,6 +53,7 @@ git rm <file> : remove file both locally and from repo
 git rm --cached <file> : only remove from repo  
 git rm -r <directory> : remove directory  
 git show <arg> : “search arg in log”  
+`git show COMMIT:PATH` : show PATH at COMMIT  
 git status : repository info  
 git status --ignored : status, showing ignored files  
 git switch <branch> : switch to branch  

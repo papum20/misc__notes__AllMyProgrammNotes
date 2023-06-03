@@ -6,19 +6,11 @@
 
 ## CLASSES  
 
-### STRUCTURE
+### LAYOUT
 #### Container
-`Container` : container, required for grid  
-inside:  
-`Row` : grid row  
-*	`xs,md,xl={n}` : n of cols for screen dimensions  
-
-
-#### Card
-`card` : panel
-inside:  
-`card-header` : 
-`card-body` : 
+`Container` : container  
+*	required for grid  
+`container-fluid` : 100% width  
 
 #### Flex
 `d-flex` : display=flex  
@@ -28,10 +20,99 @@ inside:
 
 `justify-content-SIZE-VAL` : justify-content=VAL  
 
+#### Grid
+// implemented with flexbox  
+// each grid (i.e. row or col) has 12 available slots, which you can dispose and distribute as you want  
+// need inside a `container`  
+`row` :  
+`col` :  
 
-#### MEDIA
+`*-SIZE-N` :  
+*	e.g.: `col-md-4` : column wide `md`, taking `4` out of 12 slots from parent row  
+
+##### alignment
+`align-TARGET-[start|center|end]` : flex vertical alignment  
+*	`align-self-*` : itself (e.g. for col)  
+*	`align-items-*` : children (e.g. for row)  
+
+`justify-content-[start|center|end|around|between|evenly]` : flex horizontal align  
+
+##### order
+// 6 predefined order priorities, from 0 (no order specified) to 5 (less important, i.e. last element)  
+`order-[first|last|N]` :  
+`order-BREAKPOINT-N` : (order is also responsive)  
+
+### FORMS
+// bootstrap slightly changes html forms  
+
+`form-control` : allows bootstrap forms customization  
+
+`form-floating` : wrap an `<input>` and a `<label>` in a `.form-floating` to create one  
+*	e.g.:
+	```html
+	<div class="form-floating">
+		<input ..>
+		<label>..</label>
+	</div>
+	```
+  
+
+### COMPONENTS
+
+`accordion` : vertically collapsing accordion  
+`alert` : alert msgs  
+`badge` :  
+`breadcrumb` : navigate in pages hierarchy  
+`close-btn` :  
+`collapse` :  
+`dropdown` :  
+`list-group` :  
+`modal` : dialog  
+`navbar` :  
+`offcanvas` : hidden sidebar  
+`pagination` : pagination counter  
+`placeholder` : e.g. while loading content  
+`popover` : msg when hover  
+`progress` : progress bar  
+`scrollspy` : automatically update nav or list-group, based on scroll position, to indicate which link is currently active in the viewport  
+`spinner` : loading  
+`toast` : push notification  
+`tooltip` : ?  
+
+#### Button
+`btn` : button (required)  
+
+`btn-block` : display=block (stretch to full width)  
+`btn-COLOR` : predefined colors  
+*	`btn-danger` : a color (for a dangerous action)  
+*	`btn-default` : default color  
+*	`btn-link` : button forwarding to link  
+	*	e.g.: `<button class="btn btn-link" data-toggle="collapse"	data-target="#PANEL_ID>"` : toggle collapse of div with id=PANEL_ID  
+*	`btn-info` : a color (intended for a button about info)  
+*	`btn-primary` : a color (intended for primary button)  
+
+`btn-group` : group btns (hrizontal)  
+`btn-group-veertical` :  
+
+#### Card
+`card` : panel/content container
+`card-header` : 
+`card-body` : 
+
+#### Carousel
+`carousel` :  
+`carousel-inner` : content  
+`carousel-item` : content element  
+`carousel-control[prev|next]` : control `button`s  
+
+#### Nav
+`nav` : navigation elements container  
+`nav-item` : nav element  
+`nav-link` : nav `<a>`  
+
+### MEDIA
 `media` : some media positioned alongside content that doesn't wrap around said media  
-##### ELEMENTS
+
 `media-body` : 
 
 #### NAVBAR
@@ -51,21 +132,8 @@ inside:
 `collapse` : toggle element (required)  
 `show` : show collapse element  
 
-### TEXT  
-`text-center` : center text  
-`text-muted` : grayed out  
 
 ### ELEMENTS
-#### button
-`btn` : button (required)  
-`btn-block` : display=block (stretch to full width)  
-`btn-danger` : a color (for a dangerous action)  
-`btn-default` : default color  
-`btn-link` : button forwarding to link  
-*	e.g.: `<button class="btn btn-link" data-toggle="collapse" data-target="#PANEL_ID>"` : toggle collapse of div with id=PANEL_ID  
-`btn-info` : a color (intended for a button about info)  
-`btn-primary` : a color (intended for primary button)  
-
 #### image
 `img-responsive` : make img adapt to screen, viewport  
 
@@ -76,9 +144,24 @@ inside:
 `Modal.Body` :  
 `Modal.Header` :  
 
+
 ## STYLES
+
 ### BOX MODEL
-#### margin
-`mb-N` : margin bottom = N (pixel?)  
-`me-N` : margin end (of text)  
-`ms-N` : margin start (of text)  
+`g*` : gutters  
+`m*` : margin  
+
+`X-N` : set on all sides to N  
+`Xx*` : x size of property X  
+`Xy*` : y  
+`Xb-N` : bottom = N (pixel?)  
+`Xe-N` : end (of text)  
+*	e.g.: `me-N` : margin end  
+`Xs-N` : start (of text)  
+
+### VISUAL
+`well` : shadow, pad.. well  
+
+### TEXT  
+`text-center` : center text  
+`text-muted` : grayed out  
