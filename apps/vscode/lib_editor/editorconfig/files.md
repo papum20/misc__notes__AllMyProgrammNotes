@@ -1,0 +1,3 @@
+# FILES
+
+`.editorconfig` : configurations  

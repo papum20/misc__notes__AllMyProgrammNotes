@@ -1,7 +1,7 @@
 # OBJECTS
 
 ## README.md  
-	*			[README.md](./README.md)  
+*	[README.md](./README.md)  
 
 ## STYLES
 ### ANIMATIONS
@@ -66,8 +66,7 @@
 `* = val1 val2` : top/bottom=val1, left/right=val2  
 
 #### DISPLAY
-`display` :   
-	*			(controls how items are spaced out/aligned within *	container)  
+`display` : controls how items are spaced out/aligned within *	container  
 *	`=block` : stacked vertically  
 *	`=contents` : contents exist, container not  
 *	`=flex` : make element a flex container, and its children flex items;  

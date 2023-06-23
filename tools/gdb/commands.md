@@ -18,12 +18,10 @@
 	*	e.g. set {int}0x… = 0x…  
 
 `x/nfu addr	: examine` : inspect memory content  
-*	`n` : = (default = 1) how many elements to print  
-*	`f` : = (default = x) print format  
-*	`f` : =s(string) | i(disassembly) | x(hex) | f(float) | d(signed)  
-*	`u` : = (default = w) size of each element to print  
-*	`u` : = b(bytes) | h(halfwords=2B) | w(words=4B) | g(giant words=8B)  
-*	`addr` : =mem address (e.g. 0x…) | $reg | arithmetics (e.g. $reg+1)  
+*	`n` : (default = 1) how many elements to print  
+*	`f = s(string) | i(disassembly) | x(hex) | f(float) | d(signed) ` : (default = x) print format  
+*	`u = b(bytes) | h(halfwords=2B) | w(words=4B) | g(giant words=8B)` : (default = w) size of each element to print  
+*	`addr = mem address (e.g. 0x…) | $reg | arithmetics (e.g. $reg+1)` :   
   
 ## MISC 
 `exit` : exit  
@@ -43,5 +41,6 @@
 `delete N` : delte breakpoint number N  
 `next, n` : next step, i.e. through subroutines  
 `run` : start debugging  
+`run $(COMMAND)` : run shell COMMAND  
 `start` : start (no run)  
 `step, s` : next line of instruction  

@@ -8,48 +8,46 @@
 
 ### SPECIAL ELEMENTS  
 `<[tag]>` : (i.e. global attributes)  
-`class=”val”` : class, to group  
-*		`class=”val1 val2”`	: multiple classes; order doesn’t count  
-*		`id =”val”`	: element id, unique in file  
-*			`=”region”` : requires aria-labelledby=”id” of description element  
-*		`style=”...”`	: (short) css style associated to single element  
-*				(using css syntax)  
-*		`title=”...”`	: secondary text associated to element,  
-*	for accessibility, additional info…  
-*	`(event attributes, associate specified script to an action on element/document)` :  
-*		`onclick	`	:   
-*		`onHide` :  
-*		`ondoubleclick`	:   
-*		`onkeypress	`	:   
-*		`onmouseover`	:   
+*	`class=”VAL”` : class, to group  
+*	`class="VAL1 VAL2”` : multiple classes; order doesn’t count  
+*	`id ="VAL”`	: element id, unique in file  
+*	`”region”` : requires aria-labelledby=”id” of description element  
+*	`style=”...”`	: (short) css style associated to single element (using css syntax)  
+*	`title=”...”`	: secondary text associated to element,  
+	*	for accessibility, additional info…  
+*	`EVENT=CODE|FUNCTION` : (event attributes, associate specified script to an action on element/document)  
+	*	`onclick` :   
+	*	`onHide` :  
+	*	`ondoubleclick` :   
+	*	`onkeypress` :   
+	*	`onmouseover` :   
 
-`(i18n attributes (internationalization), for multiple languages/alphabets)` :  
+*	(i18n attributes (internationalization), for multiple languages/alphabets) :  
 *		`dir=”ltr|rtl”`	: text secondary stream direction (left to right / right to left)  
 
-`lang=”text”` : (usually in html element) language  
+*	`lang=”text”` : (usually in html element) language  
 *	`(interactivity attributes: how to render interactive element, for forms or accessibility)` :  
-*		`accesskey`	: key to focus element  
-*		`autofocus`	: specified element is focused at startup  
-*		`inputmode`	: keyboard to visualize when element is focused  
-*		`tabindex`	: element reachable via tab, after n strokes  
+	*	`accesskey`	: key to focus element  
+	*	`autofocus`	: specified element is focused at startup  
+	*	`inputmode`	: keyboard to visualize when element is focused  
+	*	`tabindex`	: element reachable via tab, after n strokes  
 *	`(custom attributes: can be used in Javascript, alternative to names)` :  
 *		// “modal”  
 *	(WAI-ARIA specification:  
 *	Web Accessibility Initiative - Accessible Rich Internet Applications;  
 
-`for accessibility)` :  
-*		`aria-hidden=”bool”`	: hided for accessibility  
-
-`aria-labelledby=”id”` : needed by attr role=..  
-`role=”...”` : specify role, for accessibility technologies;  
-*	set to preset values  
-*		`tabindex`	: (see above)  
+*	`for accessibility)` :  
+	*	`aria-hidden=”bool”`	: hided for accessibility  
+	*	`aria-labelledby=”id”` : needed by attr role=..  
+*	`role=”...”` : specify role, for accessibility technologies;  
+	*	set to preset values  
+*	`tabindex`	: (see above)  
 
 `<!-- [comment] -->` :	comment  
 `<!DOCTYPE val>` : 	what the doc should be read like  
-*			e.g. <!DOCTYPE html>  
-*			using html	-> strict mode (faster)  
-*			not using html	-> quirk mode (few rules)  
+*	e.g.: `<!DOCTYPE html>' :  
+*	using html	-> strict mode (faster)  
+*	not using html	-> quirk mode (few rules)  
   
 ## STRUCTURE ELEMENTS  
 `<address>` : 	(in footer) for contact info  
@@ -80,27 +78,27 @@
 `<nav>` : 	section / list of links  
 (e.g. homepage bar, with website sections links)  
 `<p>` :	(block) paragraph   
-*		`whitespaces` : collapsed  
+*	whitespaces collapsed  
 
 `<pre>` :	(block) pre-formatted  
-*		`whitespaces` : kept  
+*	whitespaces kept  
 
-`<section>` :	section  
+`<section>` : section  
   
 ### HEAD  
 `<legend>` :	fieldset title  
 `<meta>` :	(in head) additional info  
 *	`charset	=”...”` : charset to use  
-*			`=”UTF-8”`	:   
-*		`name=”viewport” content=”...”` : some configs  
-*			e.g. content=”width=device-width, initial-scale=1”  
-*		`name=”description” content=”...”` : description for browser  
+*	`=”UTF-8”`	:   
+*	`name=”viewport” content=”...”` : some configs  
+*	e.g. `content=”width=device-width, initial-scale=1”` :   
+*	`name=”description” content=”...”` : description for browser  
 
 `<script>` : link js script;  
-*		normally code executed when read, asynchronously,  
-*		i.e. browser reads document top->bottom, and stops for executing code;  
-*		`defer	`	: execute js after html has loaded  
-*		`type=”module”` :   
+*	normally code executed when read, asynchronously,  
+*	i.e. browser reads document top->bottom, and stops for executing code;  
+*	`defer`	: execute js after html has loaded  
+*	`type=”module”` :   
 
 `src=”link”` : link to js  
 `<title>` : (in head) document’s title;  
@@ -142,8 +140,9 @@
 `<td>` : 	(in tr) table data  
 `<th>` : 	(in table/thead) table header: col name (first row)  
 `<tr>` : 	(in table/body) table row  
-*		`col=”..”	`	:   
-*		`colgroup=”..”`	:   
+*	`col=”..”	` :   
+*	`colgroup=”..”`	:   
+*	`scope=[row|col]` : (accessibility) 
 
 `colspan=”..”` : n of rows occupied by cell  
 `rowspan=”..”` : n of cols occupied by cell  
@@ -153,10 +152,10 @@
   
 ### INTERACTABLE ELEMENTS  
 `<form>` :	(form’s widgets container)  
-*		`action		=”link”`	: where to send form output (server-side)  
-*		`method`	: HTTP method  
-*				`=”get”	`	: get request via URL  
-*				`=”post”`	: post request  
+*	`action		=”link”`	: where to send form output (server-side)  
+*	`method`	: HTTP method  
+	*	`=”get”	`	: get request via URL  
+	*	`=”post”`	: post request  
 form elements:  
 
 `<*>` :   
@@ -191,23 +190,23 @@ form elements:
 *			some types come with default validation  
 *	`=”checkbox”`	:   
 
-`=”color”` : shows color wheel to select one  
-`=”date|month|week|time”` :  
+*	`=”color”` : shows color wheel to select one  
+*	`=”date|month|week|time”` :  
 *	browser shows a calendar/… where to select a date/…  
-`=”email”` : (default validation to valid email)  
-*		verify @ is present and domain is (syntactically) correct  
+*	`=”email”` : (default validation to valid email)  
+	*	verify `@` is present and domain is (syntactically) correct  
 
-`=”file”` : input file (defaults to browser’s values)  
-`=”number”` :   
-`=”password”` :   
-*	`=”radio”`	: multiple options  
-*	`=”search”`	: (?)  
+*	`=”file”` : input file (defaults to browser’s values)  
+*	`=”number”` :   
+*	`=”password”` :   
+*	`=”radio”` : multiple options  
+*	`=”search”` : (?)  
 
-`=”submit”` : submits its nearest parent form element  
-*			`=”text”`	:    
-*			`=”url”	`	: verify that follows URL specifications  
-*		`value	=”...”	`	: value sent  
-*					(default) in radio: [name]=on  
+*	`=”submit”` : submits its nearest parent form element  
+*	`=”text”` :    
+*	`=”url”	` : verify that follows URL specifications  
+*	`value=”...”` : value sent  
+	*	(default) in radio: [name]=on  
 
 `<option>` : (in select, datalist) option for `<select>`;  
 *	should have a value to submit, usually  
@@ -222,23 +221,21 @@ form elements:
 `<embed>` : embed multimedial object  
 `<iframe>` : embed html page in html page  
 `<img>` :	(self-closing) (inline) image  
-*		`src=”link”`	: image link  
-*		`alt=”text”`	: alternative value (if src not available)  
-*		`height=”...”`	: force image height (pixel)  
-*		`width=”...”`	: force image width (pixel)  
-*		`notes` :	in pixel bad idea, useful to pre-load (readjust later);  
-*			if not given, image is rendered at last;  
-*			only giving height is a good idea  
+*	`src=”link”`	: image link  
+*	`alt=”text”`	: alternative value (if src not available)  
+*	`height=”...”`	: force image height (pixel)  
+*	`width=”...”`	: force image width (pixel)  
+*	`notes` :	in pixel bad idea, useful to pre-load (readjust later);  
+	*	if not given, image is rendered at last;  
+	*	only giving height is a good idea  
 (1. proportions are kept, calculated; 2; height gives structure)  
-*		`srcset=”..., …”`	: alternative images, for different displays;  
-*		`sizes=”..., …”	`	: sizes with which to use each element in srcset  
-*		note: `svg images include a path, so allow resizing without loss of quality`  
+*	`srcset=”..., …”`	: alternative images, for different displays;  
+*	`sizes=”..., …”	`	: sizes with which to use each element in srcset  
+*	note: `svg images include a path, so allow resizing without loss of quality`  
 *	`onerror=CODE` :  
 
 `<object>` : (old) generic (like div)  
 `<svg>` : svg image  
-*	`onload=CODE` :  
-
 `<video>` :   
   
 ### OTHER ELEMENTS  
@@ -247,7 +244,7 @@ form elements:
 `<figcaption>` :	in figure, add caption  
 `<hr>` :	(self-closing) line separator  
 `<style>` :	add style to elements  
-*		e.g. STYLE[CSS-like styles/rules]/STYLE  
+*	e.g.: `STYLE[CSS-like styles/rules]/STYLE` :   
 
   
 ## ENTITIES  

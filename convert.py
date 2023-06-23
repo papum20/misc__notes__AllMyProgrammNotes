@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import sys
 from string import ascii_letters, ascii_lowercase
 

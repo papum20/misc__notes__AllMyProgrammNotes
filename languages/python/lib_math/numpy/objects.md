@@ -2,10 +2,6 @@
   
 
 ## numpy  
-`array[row, col]` : access  
-`vect1*vect2` : element by element  
-`matrix1 @ vect2` : product row by column  
-  
 `arange(int n)` : array={0..n-1}  
 `atleast_2d(array)` :  
 *	`for 1d array, adds empty dimension (useful for transpose)`  

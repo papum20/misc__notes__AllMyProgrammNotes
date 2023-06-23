@@ -42,6 +42,33 @@
 `order-[first|last|N]` :  
 `order-BREAKPOINT-N` : (order is also responsive)  
 
+#### hr
+`[v|h]r` : vertical/horizontal layout divider
+*	`<hr class=hr />` :    
+*	`<div class=vr></div>` :    
+`[v|h]r[-blurry]` : hr blurried at ends  
+*	`<hr class="hr hr-blurry" />` :  
+
+#### Table
+`table` :  
+
+`table-COLOR` : (for either `table`, `tr`, `th` elements)  
+`table-bordered` : all borders around  
+`table-borderless` :   
+`table-sm` : cut paddings  
+`table-striped` :  
+
+`table-active` :  
+`table-hover` : hover effect on row  
+
+`table-align-[top|middle|bottom]` : vertical align  
+
+`caption` : (accessibility) table content description   
+*	`<caption>DESCRIPTION</caption>` :  
+`caption-top` : show caption above table  
+`table-responsive` : wrap a table to make responsive (horizontal scrolling)  
+*	`<div class="table-responsive">` :  
+
 ### FORMS
 // bootstrap slightly changes html forms  
 
@@ -110,6 +137,9 @@
 `nav-item` : nav element  
 `nav-link` : nav `<a>`  
 
+#### Panel
+`panel` : some text with padding around  
+
 ### MEDIA
 `media` : some media positioned alongside content that doesn't wrap around said media  
 
@@ -147,9 +177,14 @@
 
 ## STYLES
 
-### BOX MODEL
+### SIZING
+`w*` : width  
+`h*` : heigth  
+`m[w|h]*` : max width/height  
+
 `g*` : gutters  
 `m*` : margin  
+`p*` : padding  
 
 `X-N` : set on all sides to N  
 `Xx*` : x size of property X  
@@ -159,9 +194,21 @@
 *	e.g.: `me-N` : margin end  
 `Xs-N` : start (of text)  
 
+### COLORS
+`COLOR=[primary|secondary|succcess|danger|info|light|dark|white]` :  
+
+`[bg|border|text]-COLOR` :  
+
 ### VISUAL
+`d-[none|inline|inline-block|block|table|table-cell|table-row|flex|inline-flex]` : display  
 `well` : shadow, pad.. well  
 
 ### TEXT  
-`text-center` : center text  
+`text-[start|center|end]` : text alignment  
+*	`text-[left|right]` : until **bootstrap 4**  
+`text-[justify]` :   
+`text-[nowrap|truncate]` :   
+`text-[lowercase|uppercase|capitalize]` :   
 `text-muted` : grayed out  
+`font-weight-[bold|normal|light]` :   
+`font-italic` :   

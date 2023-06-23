@@ -6,11 +6,18 @@
 
 ## FUNCTIONS
   
-## CONVERSION  
+### CMD
+`getopt(nt argc, char *argv[], const char *optstring)` : reads command line arguments (starting with `-`), returns the next one, or `-1` if read all  
+*	`optstring` : sequence of letters (args); `A:` requires a value, `A::` has optional val  
+*	`char *optarg` : stores the argument value  
+*	`int optind` :  
+*	`int opterr` :  
+*	`int optopt` :  
 
+### CONVERSION  
 `strtol(const char *str, char **endptr, int base)` : string to long, from base (0=automatic)  
   
-## IN/OUT  
+### I/O  
 `printf(char *format, arg1, arg2, arg3, ...)` 
 *	`%` : prints everything
 *		e.g.: `%%d`  
@@ -40,7 +47,7 @@
 
 `write(int buffer, “string”, int dim)` : prints to stream buffer (1=stdout) up to dim chars  
   
-## MEMORY  
+### MEMORY  
 `asm(“string”)` : acces register named “string”  
 `free(pointer)` : gives memory back to OS  
 `malloc(int size)` : allocates size memory; returns pointer to it (NULL if free mem not found)  
@@ -48,9 +55,8 @@
 
 `sizeof( )` :  
   
-  
 
-## FILE   
+### FILE   
 `fclose(FILE* )` : (important for w mode, or os could not save)  
 `feof(FILE* )` : bool end of file  
 `fgets(string, int, FILE*)` : reads max int char  
@@ -67,18 +73,18 @@
 *	when ended writing, allocates spaces and “saves it”  
 `rewind(FILE * )` : restart stream  
   
-### dirent.h  
+#### dirent.h  
 `closedir(DIR *)` :  
 `opendir(DIR *)` :  
 `readdir(DIR *)` :  
   
-## FUNCTIONS  
+
+### FUNCTIONS  
 `qsort(vector, length, size, function*)` : quicksort; function(a,b) returns int >= 0 if a>=b,  
 *	else int  0  
   
   
 ## MACRO   
-
 `_Generic(VAR, type1:"STR1", ...)` : return the STR associated with the type of VAR  
 *	done at run-time  
 *	error if no case for VAR type  
@@ -87,91 +93,7 @@
 
 `size_t sizeof()` :  
 `typeof()` :  
-  
-## SYSTEM CALLS   
-## PROCESS  
-
-`_exit()` : exit without deletes and other freeing stuff (warning)  
-`access(“file”, int RIGHT)` : if user has right on file  
-`atexit(FUNCTION)` : defines exit routine  
-`exit(int)` : ; argument=exit value (err)  
-`fork()` : “clones” current process, making both continuing from fork();  
-*	return: parent->child pid, child->0  
-
-`getcwd(NULL, 0)` : current working directory (in terminal)  
-`int getpid()` : process id  
-`syscall(SYSCALL_NUMBER, SYSCALL_PARAMETER(S))` :  
-*	e.g.: `syscall(__NR_write_, 1, “hello”, 5)`  
-  
-## FILE  
-
-`fopen(“file_name/path”, “mode”)` : FILE *fin = fopen();						“mode” = “r”/”w” (r -> NULL if error) (w deletes all and overwrites)  
-*	`es.: fopen(“filename”, mode, O666)` : O=permissions (like chmod)  
-  
-
-`lseek(, offset, int whence)` : move “cursor” in file to offset  
-*	whence=(SEEK_SET:set to offset, SEEK_CUR, SEEK_END:set to eof)  
-
-`pread()` : read, with offset parameter=where to start  
-`pwrite()` : /  
-`size_t write(STREAM(?), “string”, MAX_CHARS)` :   
-  
-`dup(int oldfd), dup2(int oldfd, int newfd), dup3()` : duplicate file descriptor (identifier for open file (int))  
-*	(only dup2 used)  
-*	dup3 allows use of flags  
-
-`pipe(int fd[2])` : write to descriptor fd[1], read, in fd[0]  
-  
-## EVENTS  
-`poll(struct pollfd*)` : waits for a set (array) of file descriptors to become ready for I/O  
-  
-## MEMORY  
-`execve(char *pathname, char *argv[], char *envp[])` :  
-*	argv=command(s), last element = 0 (‘\0’)  
-*	envp=environment (variables(?))  
-`execve(char* program, char* args[], NULL)` : exec program with args  
-`mmap(addr, length, prot, flags, fd, offset)` : maps files/devices into memory  
-*	es. for loading libraries (dynamic libraries: only load called functions,  
-*	then the mapping can be deleted, or not)  
-
-`mmap(NULL, (struct stat s;fstat(fd,&s)).st_size, PROT_READ, 0, (fd=open(...)), 0)` :  
-*	creates link in memory to file fd, at address addr, or nearby  
-(or anywhere if NULL); length (size) of file, with offset  
-
-`munmap()` :   
-  
-## FILE SYSTEM  
-`stat(char *pathname, struct stat *statbuf)` : stat (info) of file  
-`lstat(char *pathname, struct stat *statbuf)` : for symbolic link,  
-*	get reference to file itself, instead of referenced file  
-`link()` : (called by ln)  
-`chdir()` :   
-`getcwd()` : pwd  
-`mkdir()` :   
-`rmdir()` :   
-`symlink()` : (called by ln -s)  
-`unlink()` :   
-`chmod()` :   
-`umask()` :   
-  
-## USERS  
-`getresuid()` : users table (ref. 6. s.o.)  
-`getresgid()` :   
-  
-## SIGNALS  
-`kill()` : send signal  
-`signal(..., function)` : declare how to manage (function) when received signal  
-  
-## NETWORKS  
-`accept()` :   
-`bind()` :   
-`connect()` :   
-`socket()` :   
-  
-## OTHER(?)  
-`shm_open()` : create/open/unlink shared memory objects  
-*	(followed by mmap for use)  
-  
+ 
 ## LIBRARIES  
 ### stdarg.h  
 
