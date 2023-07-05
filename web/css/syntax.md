@@ -17,7 +17,7 @@ ELEMENTS {						/* type selector(s) */
 ```
 
 `TAG` : select by tag  
-`.class-name` : class selector  
+`.CLASS-NAME` : class selector  
 `#id` : id selector  
 `SEL1, SEL2` : multiple selection  
 `*`	: (generic selector)  

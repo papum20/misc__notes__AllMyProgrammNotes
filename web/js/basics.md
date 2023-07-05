@@ -64,6 +64,17 @@ template literal : `${val}`	(with backstick)
 `location` : current doc URL  
 `history` : URLs accessed in navigation  
 
+## EVENTS
+// e.g. `onClick`, `onMouseHover`...  
+can be assigned an event-handler function, like:  
+```js
+eventHandler(event) {
+	...
+}
+...
+<Button onClick="eventHandler"/>
+```
+where the event parameter is passed automatically.  
 
 ## SHORTHAND CHARACTER CLASSES 
 // \c	: shortcut, with c lowercase  
@@ -97,3 +108,4 @@ no comments: convention: “_*” is a comment (st starting with underscore _)
 `pending` : since when created  
 `fulfilled` : with resolve  
 `rejected` : with reject  
+

@@ -48,6 +48,13 @@
 `entries(obj): array` : object to array of pairs `<key, val>`  
 
 
+## EVENT
+`event.*` : event object properties (in event handlers)  
+
+`currentTarget` : (some difference from target)  
+`target` : "calling element", as object (containing html attributes as fields)  
+*	e.g.: `event.target.value` : value attribute of calling html tag  
+
 ## HTTP
 `fetch('URL', init?) -> Promise` : http request  
 *	e.g.: `init={method = GET}` : http method  

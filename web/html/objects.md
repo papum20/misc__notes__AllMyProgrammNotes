@@ -152,10 +152,10 @@
   
 ### INTERACTABLE ELEMENTS  
 `<form>` :	(form’s widgets container)  
-*	`action		=”link”`	: where to send form output (server-side)  
-*	`method`	: HTTP method  
-	*	`=”get”	`	: get request via URL  
-	*	`=”post”`	: post request  
+*	`action=”LINK”`	: where to send form output (server-side)  
+*	`method` : HTTP method  
+	*	`=”get”	` : get request via URL  
+	*	`=”post”` : post request  
 form elements:  
 
 `<*>` :   

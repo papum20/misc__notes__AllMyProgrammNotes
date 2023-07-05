@@ -9,24 +9,33 @@
 *	`-r` : list remote branches  
 *	`-a` : list all branches  
 *	`-v` : -verbose  
+
 `branch -d BRANCH` : delete branch  
 `branch -D BRANCH` : (stronger, when asked)  
 `checkout COMMIT-HASH/BRANCH` : go back to previous commitment  
 `checkout -b BRANCH-NAME` : new branch and move to it  
-`checkout --track origin/branch` : creates branch named branch that tracks  
-	`*	remote branch`  
+`checkout --track origin/BRANCH` : creates branch `BRANCH` that tracks remote `BRANCH`  
+`clean` :  remove untracked files from the working tree  
+*	`-d` : remove directories  
+*	`-f` : force  
+*	`-n` : don’t actually remove anything, just show what would be done  
+*	`-X` : Remove only files ignored by git  
+
 `commit -m “string”` : applies changes to be committed and saves them with string (some information)  
 *	`(to be committed -> nothing to be committed)`  
+
 `commit -m “string” -m “description”` : commits with another optional string  
 `commit -am “string”` : adds and commits (only for modified, not untracked)  
 `commit --amend` : edit last commit  
 *	`--allow-empty` : empty commit  
+
 `diff COMMIT` : differences from last change  
 `diff COMMIT1 COMMIT2` : diff from COMMIT1 to COMMIT2  
-*	`--stat` :   
-(colors as GitHub)  
+*	`--stat` : (colors as GitHub)  
+
 `fetch` :  
 *	`--all` :  
+
 `init` : create an empty repository (.git folder)  
 `log` : log of changes (commitments) (“in current branch”)  
 `log BRANCH` :  
@@ -34,8 +43,10 @@
 *	`--all` :   
 *	`--graph` : show timeline  
 *	`--oneline` :   
+
 `log -p -- path-to-file` : show log of file  
 *	`--follow` : also show history for when it had another name  
+
 `merge BRANCH` : merges BRANCH current branch  
 `rebase NEWBASE` : replaces current banch’s history with the one ending in newbase  
 // merge keeps histories visible; rebase hides old history  
@@ -53,6 +64,7 @@
 `show COMMIT:PATH` : show PATH at COMMIT  
 `status` : repository info  
 *	`--ignored` : status, showing ignored files  
+
 `switch BRANCH` : switch to branch  
   
 ## GitHub (/ remote repo)  

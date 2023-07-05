@@ -210,5 +210,5 @@
 `text-[nowrap|truncate]` :   
 `text-[lowercase|uppercase|capitalize]` :   
 `text-muted` : grayed out  
-`font-weight-[bold|normal|light]` :   
+`fw-[bold|normal|light]` : font-weight  
 `font-italic` :   

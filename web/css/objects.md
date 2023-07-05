@@ -87,20 +87,24 @@
 `border` : (default to none) to be visible, must be set width and style  
 	*			border-left		= width style color;  
 `border-left-style` :   
-*			`=solid	`	: full  
-*			`=double`	: double  
-	*			border-radius		=tl tr br bl;	//(px), corners  
-	*			smooth borders (corners)   
+*	`=solid	` : full  
+*	`=double` : double  
+	*	border-radius		=tl tr br bl;	//(px), corners  
+	*	smooth borders (corners)   
 
-`box-shadow` : offset=any num; >0: right/up;  
-	*			blurRadius=any num; blurRadius>0 makes less sharp edges;  
-		*				height/width determined by element,  
-	*			but can use spreadRadius to spread  
-	*			=h-distance v-distance color  
-	*			= offsetX offsetY [blurRadius=0] [spreadRadius=0] color;  
+`border-radius` : round corners  
+*	`=NUMBER`  
+
+`box-shadow` :  
+*	`=offsetX offsetY [blurRadius=0] [spreadRadius=0] color` :    
+	*	`offset=MNUMBER` : >0 means right/up  
+	*	`blurRadius=NUMBER` : blurRadius>0 makes less sharp edges  
+	*	height/width determined by element,  
+	*	use spreadRadius to spread  
+	*	`spreadRadius=h-distance v-distance color` :    
 
 `box-sizing` :   
-		*				=border-box  
+*	`=border-box`  
 
 `clip-path` : specify clip path -> everything inside is visible, outside not  
 *			`=inset(n%)`	: inside of %  
@@ -211,12 +215,12 @@
 transform:...   
 
 `rotate(deg)` : clockwise  
-	*			rotate3d()  
-	*			*			scale()  
-	*			*			scale3d()  
-	*			skew()  
-	*			translate()  
-	*			translate3d()  
+`rotate3d()` :  
+`scale()` :  
+`scale3d()` :  
+`skew()` :  
+`translate()` :  
+`translate3d()` :  
   
 ## AT-RULES
 // for contexts / meta-rules  

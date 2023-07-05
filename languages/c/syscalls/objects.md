@@ -16,15 +16,28 @@
 *	e.g.: `syscall(__NR_write_, 1, “hello”, 5)`  
   
 ### FILE  
-`fopen(“file_name/path”, “mode”)` : FILE *fin = fopen();
-*	`mode='r'|'w'` : (r -> NULL if error) (w deletes all and overwrites)  
+
+default file descriptors:  
+```c
+#include <unistd.h>
+#define STDIN_FILENO	0
+#define STDOUT_FILENO	1
+#define STDERR_FILENO	2
+```
+
+`int fileno(FILE *stream)` : from FILE* to fd  
+`FILE *fopen(char *path, char *mode)` :  
+*	`mode='r|w'` : (r -> NULL if error) (w deletes all and overwrites)  
 *	e.g.: `fopen(“filename”, mode, O666)` : O=permissions (like chmod)  
+
+`FILE *fdopen(int fd, const char *mode)` : open stream from fd  
+*	note: closing the stream, closes the fd  
 
 `lseek(fd, OFFSET, int whence)` : move “cursor” in file to OFFSET  
 *	`WHENCE=`:
 	*	`SEEK_SET` : set to offset
-	*	`SEEK_CUR` : current cursor pos
-	*	`SEEK_END` : set to eof    
+	*	`SEEK_CUR` : set to current+offset
+	*	`SEEK_END` : set to eof+offset  
 
 `open(const char *pathname, int flags, mode_t mode)` :   
 *	`flags=`:  

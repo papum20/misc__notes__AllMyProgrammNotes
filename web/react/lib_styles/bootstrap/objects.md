@@ -6,18 +6,30 @@
 
 #### Form
 `Form` :  
+*	`onSubmit=FUNCTION` : submit function (using `<Button type="submit">`)  
+
+`Form.Check` :  
+*	`label: string` : showed aside option  
+*	`type="radio|checkbox"` :  
+
 `Form.Control` : input  
 *	`placeholder="text"` :   
 *	`as="textarea"` : textarea  
 	*	`rows={N}` : default n of rows  
+
 `Form.Control.Feedback` : screen text showed when submit successfull (type=valid) or not (invalid)   
 *	`type="valid|invalid"` : 
+
 `Form.Footer` :   
-`Form.Group` : group  
+`Form.Group` : group; used to send  
 *	`contorlId="str"` : (accessibility)  
+*	note: don't use `onSubmit` on it, but on parent `Form`  
 
 `Form.Label` :  
+`Form.*` :  
+*	`onChange: function` : event handler on change  
 
+#### Navbar
 `Navbar` :  
 *	`expand="sm|lg"|Bool` : if expand collapse-navbar when window large enough;
 	*	`sm|lg` is the size of window such that it expands,
