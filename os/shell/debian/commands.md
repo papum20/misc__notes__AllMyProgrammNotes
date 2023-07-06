@@ -8,10 +8,11 @@
 ## FILE SYSTEM   
 ### cd
 `cd` :  
-*	```-L``` : follow symbolic link  
+*	`-L` : follow symbolic link  
 
 `cd -` : to previous directory  
 `cd` : = `cd /home/USER/`  
+
 ### find
 `find DIR` : list (recursively) elements in dir  
 *	```-maxdepth LEVELS``` : 	  
@@ -134,8 +135,18 @@
 `head INPUT` : print first 10 lines  
 *	``head -N INPUT`` : print first n lines  
 
-`grep “string”` : search  
-`grep -v “string”` : “inverse”, i.e. excludes pattern  
+`grep PATTERN [FILE]` : search pattern in file  
+*	`-v PATTERN` : “inverse”, i.e. excludes pattern  
+*	`-A|B NUM` : include NUM lines after/before  
+
+`sed '/START/[,/END/]CMD' [FILE]` : "stream editor for filtering and transforming text"  
+*	filter file text from regex `START` (to `END`) and apply command `CMD`  
+*	`-E` : extended (modern) regex
+*	default: old regex
+*	`-n` : don't print all
+*	commands:
+	*	`p` : print (like grep)  
+
 `sort TEXT` : (default) sort lines  
 *	``sort -r`` : reverse order  
 

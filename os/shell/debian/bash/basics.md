@@ -1,0 +1,4 @@
+# BASICS
+
+## SCOPING
+dynamic?  
