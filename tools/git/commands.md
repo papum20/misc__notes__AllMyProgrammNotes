@@ -108,15 +108,20 @@
 `ssh [-v] [-vvv] [-T] git@github.com` : test connection [v=verbose, vvv=very verbose, T=?]  
   
 ## GIT-GITHUB linking   
-*	`generate ssh key`  
-*	`save it in github->settings (public key)`  
-*	`copy github repository link (SSH link !)`  
-*	`use it for git remote add`  
-*	`add key to ssh-agent:`  
-*	`eval “$(ssh-agent -s)”		//start ssh-agent`  
-*	`ssh-add PATH_TO_KEY	//add private key`  
-*	`(ssh-add -l)			//check: saved keys`  
-*	`ERROR (public key): see terminal/linux`  
+
+```bash
+generate ssh key
+save it in github->settings (public key) 
+copy github repository link (SSH link !) 
+use it for git remote add
+# add key to ssh-agent:
+## single time:
+eval “$(ssh-agent -s)”	#start ssh-agent  
+ssh-add PATH_TO_KEY		#add private key 
+(ssh-add -l)			#check: saved keys 
+```
+add key forever:  
+[~/.ssh/config][_ERROR_SSH_PUBLICKEY]   
   
 
 ## README.md  
@@ -124,3 +129,6 @@
 
 
 
+<!-- REFS & LINKS -->
+
+[_ERROR_SSH_PUBLICKEY]: ../../os/shell/debian/net/commands.md

@@ -58,6 +58,10 @@
 `rmdir ` :  
   
 ## FILES   
+`basename FILE` : print without path  
+`basename FILE SUFFIX` : print without path and trailing SUFFIX  
+*	e.g.: remove extension
+
 `cp SRC DST` : copy  
 `cp SRCS.. DST` : copy all files in dir  
 `dd if=FROM_PATH of=TO_PATH` : Copy a file, converting and formatting according to the operands  
@@ -141,11 +145,14 @@
 
 `sed '/START/[,/END/]CMD' [FILE]` : "stream editor for filtering and transforming text"  
 *	filter file text from regex `START` (to `END`) and apply command `CMD`  
+*	`/REGEX/` : REGEX between slashes
 *	`-E` : extended (modern) regex
 *	default: old regex
 *	`-n` : don't print all
 *	commands:
 	*	`p` : print (like grep)  
+	*	`s/REGEX/REPLACEMENT/` : replace `REGEX`
+		*	e.g.: `sed 's#.*/##; s#[.][^.]*$##'` : remove extension and path
 
 `sort TEXT` : (default) sort lines  
 *	``sort -r`` : reverse order  
@@ -231,6 +238,7 @@
 *	``-L max-lines`` :   
 *	``-l[max-lines]`` : like -L  
 *	``-n max-args`` : use at most max-args arguments per command line  
++	`-I REPLACE-STR` : replace occurrences of `REPLACE-STR` in command with argument received (implies `-L 1`)
 
 `yes` : prints y forever  
   

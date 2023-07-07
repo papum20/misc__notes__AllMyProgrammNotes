@@ -1,5 +1,12 @@
 # EXAMPLES
 
+## I/O STREAMS
+
+Remove extension and path from filename (filenames in all directories):
+```bash
+find . -name '*' | sed 's#.*/##; s#[.][^.]*$##'
+```
+
 ## dpkg
 list installed packages, sorted by size (also shows pkgs uninstalled but not purged):  
 ```dpkg-query -Wf '${Installed-Size}\t${Package}\n' | sort -n```  

@@ -2,7 +2,10 @@
 
 ## DELIMITERS
 format, depending on where (different commands, languages, ...)  
+`REGEX` :  
 `/REGEX/` :  
+*	e.g.: `sed` :  
+
 `{REGEX}` :  
 
 ## SPECIAL CHARS

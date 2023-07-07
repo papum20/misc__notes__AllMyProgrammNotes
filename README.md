@@ -54,6 +54,12 @@ Folders can be grouped by topic.
 *	`README.md` : folder content and meta-info (about notes structure/folder...)  
 
 ## COMMANDS
+`.bash_aliases` : (not a real command) to copy in ~/.bash_aliases in order to use these commands more easily  
+*	(at the moment) the commands are intended to only be used in the repo folder  
+
+`cd $allMyProgrammNotes_DIR` : move to your repo folder (installed in your user dir)  
+
+`docentry ENTRY FILE` : print ENTRY found in FILE  
 `mkentry PATH` : create new entry in PATH, copying files in __template_
 `mklib BASEPATH [-L SUBDIR] NAME [-d] [-f FILENAMES...]` : create BASEPATH/[lib_SUBDIR/]NAME/, containing, optionally, default and/or files.  
 `mklib-list BASEPATH [-L|-l]` : create BASEPATH/libraries.md, containing list and links of libraries in subdirectories.  

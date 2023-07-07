@@ -91,7 +91,7 @@ do
 done
 ```
 
-for :
+For:
 ```bash
 for J in ARR 
 do

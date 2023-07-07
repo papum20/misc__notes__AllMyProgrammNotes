@@ -20,8 +20,11 @@ FOLDERS:
 	/proc/	cpuinfo :   
 		meminfo :   
 /usr/include/x86_64-linux-gnu/asm/unistd_64.h : syscalls numbers  
+
 ~/.bashrc : executed at startup for user  
 ~/.profile : executed at login for user  
+~/.ssh/config : config for ssh; see `man ssh_config`  
+*	e.g.: `IdentityFile ~/.ssh/PRIVATE_RSA` : (line in config) use rsa key
   
 ENVIRONMENT VARIABLES :  
 LD_LIBRARY_PRELOAD : change linked library  

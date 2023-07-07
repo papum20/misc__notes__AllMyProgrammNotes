@@ -1,5 +1,6 @@
 # EXAMPLES
 
+## ARGUMENTS
 passing short arguments :  
 ```bash
 # userReg-flags.sh -f 'John Smith' -a 25 -u john
@@ -14,6 +15,18 @@ done
 ```
 ref: [baeldung][BAELDUNG]
 
+
+## BOOL
+
+check file extension:  
+*	right part of `==` checks for linux pattern
+	```bash
+	if [[ $file == *.txt ]] ...
+	```
+*	right part of `=~` checks for regex
+	```bash
+	if [[ $file == ... ]] ...
+	```
 
 
 <!-- LINKS & REFS -->
