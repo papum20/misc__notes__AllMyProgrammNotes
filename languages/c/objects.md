@@ -37,16 +37,32 @@
 *	%c char  
 *	`%x` : hexadecimal  
 *	`%02x` : significant digits  
-  
+
+`sprintf(STR, FORMAT, ...)` : printf formatted FORMAT to STR  
+`snprintf(STR, N, FORMAT, ...)` : sprintf with n  
+
 `scanf(char *format, *arg1, *arg2, *arg3, ... )` :		(&arg)  
 *	%c char, copied in the first byte pointed by the pointer  
 *	%10c 10 char, copied in the first 10 bytes pointed by the pointer  
 *	%s string, copied starting from the pointer, and added ‘\0’ at the end  
 *	%d / f / lf  
   
+`fclose(FILE* )` : (important for w mode, or os could not save)  
+`feof(FILE* )` : bool end of file  
+`fgets(string, int, FILE*)` : reads max int char  
+`fgets(char*, int, *FILE)` : reads max int chars in FILE (or until end of row i.e. “\n”) and stores it in char*  
+`fprintf(FILE* , “%..”, ..)` :  
+`fread(void *ptr, size_t size, size_t nmemb, FILE *stream)` : reads nmemb times, from stream, something of size size, and saves to ptr  
+`fscanf(FILE* , “..”, &..)` :  
+`getline(char **buffer, int *buffer_len, stream)` : reads line and saves in buffer;  
+*	allocates dynamically memory, i.e. adjustes size (and modifies buffer_len)  
 
-`write(int buffer, “string”, int dim)` : prints to stream buffer (1=stdout) up to dim chars  
-  
+`open_memstream(char **string, int *size)` : opens file in write mode (like fopen);  
+*	when ended writing, allocates spaces and “saves it”  
+
+`rewind(FILE * )` : restart stream  
+
+
 ### MEMORY  
 `asm(“string”)` : acces register named “string”  
 `free(pointer)` : gives memory back to OS  
@@ -57,27 +73,13 @@
   
 
 ### FILE   
-`fclose(FILE* )` : (important for w mode, or os could not save)  
-`feof(FILE* )` : bool end of file  
-`fgets(string, int, FILE*)` : reads max int char  
-`fgets(char*, int, *FILE)` : reads max int chars in FILE (or until end of row i.e. “\n”) and stores it in char*  
-`fprintf(FILE* , “%..”, ..)` :  
-`fread(void *ptr, size_t size, size_t nmemb, FILE *stream)` : reads nmemb times, from stream, something of size size, and saves to ptr  
-`fscanf(FILE* , “..”, &..)` :  
-`getline(char **buffer, int *buffer_len, stream)` : reads line and saves in buffer;  
-*	allocates dynamically memory, i.e. adjustes size (and modifies buffer_len)  
+
 `getopt_long(argc, argv, short_options, static struct options long_options[], NULL)` : get program call parameters; returns short_option (? if error);  
 *	needs a declared static struct options NAME[] = {{“command-name”, arg, NULL, command-short-char’},..}  
 *	arg=(no_argument or 0, required_argument or 1)  
-`open_memstream(char **string, int *size)` : opens file in write mode (like fopen);  
-*	when ended writing, allocates spaces and “saves it”  
-`rewind(FILE * )` : restart stream  
-  
-#### dirent.h  
-`closedir(DIR *)` :  
-`opendir(DIR *)` :  
-`readdir(DIR *)` :  
-  
+
+`realpath()` : get absolute path of file, resolved (resolve symlinks)  
+
 
 ### FUNCTIONS  
 `qsort(vector, length, size, function*)` : quicksort; function(a,b) returns int >= 0 if a>=b,  

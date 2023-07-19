@@ -29,10 +29,18 @@
 
 `create({FIELDS})` : instantiate schema with fields; return a promise  
 *	note: no need for `exec()` (not a query)  
+
 `find()` : find query, i.e. return all elements which match filter  
 *	note: to use return val as var, need to call `.exec()`  
-`findById(id)` : find, with id  
+
+`findById(ID)` : find, with id  
+*	note: `findOne({ _id:ID })` : equivalent, except..
+*	note: `findById(undefined)` : translated to `findOne({ _id:null })`
+
 `findByIdAndUpdate(ID)` :   
+`findOne(FILTER)` : return first matching filter  
+*	note: `findOne(undefined)`, `findOne({ _id:undefined })`, `findOne({})` : all equivalent, return arbitrary document
+
 `Bool isValidObjectId(ID)` : if ID in valid format for mongoDB  
 
 #### Schema.Types.ObjectId

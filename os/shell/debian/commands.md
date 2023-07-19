@@ -193,6 +193,10 @@
 + filters in, - filter out, @ indicates library pattern, without is symbol pattern (function), wildcard allowed  
 
 `ps` : processes  
+*	`-a` : all associated with a terminal
+*	`-A|-e` : all
+*	`-u` : show owner user
+
 `strace PROCESS` : list of system call made;  
 *	``(relies on ptrace syscall)  ``
 *	``-f`` : follow forks  

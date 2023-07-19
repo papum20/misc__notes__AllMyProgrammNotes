@@ -48,22 +48,34 @@ default file descriptors:
 
 `pread()` : read, with offset parameter=where to start  
 `pwrite()` : /  
-`size_t write(STREAM(?), “string”, MAX_CHARS)` :   
+`sendfile()` : copy between files  
+`size_t write(FD, “string”, MAX_CHARS)` :   
   
 `dup(int oldfd), dup2(int oldfd, int newfd), dup3()` : duplicate file descriptor (identifier for open file (int))  
 *	(only dup2 used)  
 *	dup3 allows use of flags  
 
 `pipe(int fd[2])` : write to descriptor fd[1], read, in fd[0]  
+`write(int buffer, “string”, int dim)` : prints to stream buffer (1=stdout) up to dim chars  
+  
+#### paths
+`readlink()` : resolve link  
+`symlink()` : create symlink  
+`unlink()` : remove file, or remove link  
   
 ### EVENTS  
 `poll(struct pollfd*)` : waits for a set (array) of file descriptors to become ready for I/O  
   
 ### MEMORY  
 `execve(char *pathname, char *argv[], char *envp[])` :  
-*	argv=command(s), last element = 0 (‘\0’)  
-*	envp=environment (variables(?))  
-`execve(char* program, char* args[], NULL)` : exec program with args  
+*	`argv` : command(s), last element = 0 (‘\0’)  
+*	`envp` : environment (variables...)
+*	e.g.: `execve(char *program_path, char *args[], NULL)`
+*	note: command must be a path, e.g. `/bin/ls`
+
+`execp(char *pathname, char *argv[])` : if command doesn't start with slash `/`, search the file
+*	e.g.: allows `ls` instead of `/bin/ls`
+
 `mmap(addr, length, prot, flags, fd, offset)` : maps files/devices into memory  
 *	es. for loading libraries (dynamic libraries: only load called functions,  
 *	then the mapping can be deleted, or not)  
