@@ -188,7 +188,9 @@ def convert(path:str):
 
 					# make comment to header
 					elif last_types[0] == 'HEADER':
-						line = "// " + line
+						# line = "// " + line
+						# remove for now, as it's not accurate
+						pass
 					
 					# make comment to command
 					elif len(last_types) > 0 and last_types[0] == 'COMMAND':

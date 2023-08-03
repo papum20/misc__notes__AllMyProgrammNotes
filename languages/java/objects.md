@@ -62,7 +62,7 @@
 ### System.out  
 //std output  
 `System.out.println(string / object)` : prints argument and line separator  
-*				if object: calls objectType.toString()  
+*	if object: calls objectType.toString()  
   
 ## TIME  
 

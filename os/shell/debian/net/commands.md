@@ -159,6 +159,8 @@ e.g.: ssh -l daniele.dugo@studio.unibo.it dalibor.cs.unibo.it
 `curl HOST` : transfer data (send request) from/to server  
 *	`-X METHOD=GET` : select method  
 *	`-d DATA` : data to transfer (i.e. body)  
+*	`-i` : include headers in response
+	*	note: with `OPTIONS` method, allowed methods are returned in `Allow` header
 *	`-H HEADER` : header to send  
   
 ## WHERE KEYS ARE FOUND  
