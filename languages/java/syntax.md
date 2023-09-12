@@ -20,6 +20,7 @@ type var_name = val;
 ## KEYWORDS  
 `if-else / for / while / try-catch()` : like c++  
 `import` : import some_path;  
+`import static PKG.VARIABLE` : import static variable    
 `new` : some_class var = new some_class();  
 `try {}` :  
 `catch(ExceptionType var_name) {}` :  

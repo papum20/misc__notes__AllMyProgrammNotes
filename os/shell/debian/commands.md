@@ -49,8 +49,9 @@
 `pushd` : cd, allows to go back  
 `pwd` : current path  
 `rm` : remove  
-*	``-r`` : recursive  
-*	``-f`` : force (also rm --force)   
+*	`-r` : recursive  
+*	`-f` : force (also rm --force)   
+*	`rm A{B1,B2}` : match `AB1`, `AB2`
 
 
 `(oss)` : if file being used: removed name, then file after execution ended  
@@ -140,8 +141,10 @@
 *	``head -N INPUT`` : print first n lines  
 
 `grep PATTERN [FILE]` : search pattern in file  
-*	`-v PATTERN` : “inverse”, i.e. excludes pattern  
 *	`-A|B NUM` : include NUM lines after/before  
+*	`-n` : also print in which line was found
+*	`-r` : recursive - used for searching directory instead of single file
+*	`-v PATTERN` : “inverse”, i.e. excludes pattern  
 
 `sed '/START/[,/END/]CMD' [FILE]` : "stream editor for filtering and transforming text"  
 *	filter file text from regex `START` (to `END`) and apply command `CMD`  
@@ -186,11 +189,17 @@
   
 ## PROCESSES   
 
+`disown [JOBSPEC|PID]` : unlink process from terminal
+*	default: `JOBSPEC` : current job
+
 `ltrace FILE` : intercept and record dynamic library calls;  
 *	``(relies on ptrace syscall)  ``
 *	``-e FILTER`` : filter library calls  
 *	``FILTER`` : e.g.: +F1-F2+@PATH1-@PATH.so* :  
 + filters in, - filter out, @ indicates library pattern, without is symbol pattern (function), wildcard allowed  
+
+`nohup COMMAND` : make command no hang up when closing terminal  
+*	e.g.: `nohup COMMAND &` :  
 
 `ps` : processes  
 *	`-a` : all associated with a terminal

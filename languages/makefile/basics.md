@@ -24,6 +24,9 @@ rule: dependencies
 	… $< …  
   
 COMMAND LINE:  
+`make` :  
+*	`-n` : print without executing anything
+
 make <var>=<val> <target> : passing command line arguments =  
 	assigning values to variables  
 $(<var>) : to use argument, like normal variables  
@@ -31,8 +34,8 @@ $(<var>) : to use argument, like normal variables
 FUNCTIONS:  
 //function use : $(function arg1, arg2, …)  
 // $=eval  
-(dir <text>) :   
-(notdir <text>) :   
+(dir <text>) : extract just dir path  
+(notdir <text>) : remove dir name from path  
 (patsubst pattern, replacement, text) :  
 replaces all pattern occurrences in text with replacement  
 (warning <text>) : prints text (debug)  
