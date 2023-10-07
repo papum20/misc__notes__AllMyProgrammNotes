@@ -1,5 +1,14 @@
-# BASICS  
-  
+# BASICS
+
+## Db elements
+
+database : contains tables, views, triggers etc.  
+schema : identified by a name; contains tables, types, constraints, views, domains etc.  
+*	belongs to user who created it
+
+
+## old notes
+
 WHAT IS SQL  
 interact with database;  
 represented as scheme(s)/ table(s) (rows x cols);  
@@ -66,6 +75,3 @@ SELECT table_name FROM information_schema.tables WHERE table_schema = DATABASE()
 
 TYPES: 
 NULL : any type
-## README.md  
-*	[README.md](./README.md)  
-

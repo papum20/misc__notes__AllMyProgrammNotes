@@ -10,4 +10,4 @@ in `index.jsx`/`index.tsx`:
 ```js
 import "bootstrap/dist/css/bootstrap.min.css";
 ```
-
+to show bootstrap css  
