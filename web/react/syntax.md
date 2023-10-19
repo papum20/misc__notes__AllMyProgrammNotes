@@ -18,6 +18,10 @@ e.g.:
 `{EXPR}` : use var value in html parts  
 *	e.g.: `<Button id={ID}>{SOME_TEXT}</Button>`  
 
+## COMPONENTS
+`const Component = (arg) => {...}` : component with one arg of tipe object, parameters arguments passed  
+`const Component = ({arg}) => {...}` : component with one arg, which was passed as parameter  
+
 ## HTML
 `<> </>` : **fragment** (empty tag)  
 *	e.g.: `{<>{}</>}` is valid, `{{}}` not  

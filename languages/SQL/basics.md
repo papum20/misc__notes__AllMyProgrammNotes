@@ -3,9 +3,22 @@
 ## Db elements
 
 database : contains tables, views, triggers etc.  
+index : to enhance query time, only present in physical level  
 schema : identified by a name; contains tables, types, constraints, views, domains etc.  
 *	belongs to user who created it
 
+## operations
+
+select : doesn't remove duplicates by dflt, x cost  
+union : removes by dflt, bc, commonly, expected result is a set  
+algebra :  
+*	`select`, `project`, `rename` : expressed with `SELECT FROM WHERE`, using 1 table
+*	`join` :
+	*	implicit : using >1 table (`FROM=cartesian product`, `WHERE=selection`, `SELECT=projection`)
+	*	explicit : `JOIN`
+
+nested queries : sometimes more efficient than simple conditions  
+views : like other relations (tables), can be queried  
 
 ## old notes
 

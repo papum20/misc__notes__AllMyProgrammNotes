@@ -39,7 +39,7 @@
 
 `position` : position of container with respect to stream  
 *	`=absolute`	: position where specified;  
-				*						in case can hide other elements in same position  
+	*	in case can hide other elements in same position  
 *	`=fixed` : absolute with respect to viewport,  
 	*	i.e. doesn’t scroll  
 *	`=relative`	: moved by a variation from its position  
@@ -134,20 +134,21 @@
   
 ### FLEX
 `flex-direction` : flex direction  
-		*				=row|row-reverse|column|column-reverse  
+*	=row|row-reverse|column|column-reverse  
 
 `flex-grow` :   
 `flex-shrink` :   
 `flex-wrap` : how items behave, when container too small  
-		*				=nowrap  
-*			`=unwrap` : (default) don’t wrap, shrink if needed  
+*	`=nowrap` :    
+*	`=unwrap` : (default) don’t wrap, shrink if needed  
 
 `=wrap` : wrap to next row/col   
 `justify-content` : (in flex) how items are positioned along main axis  
 (pos, space around)  
-	*			=center  
-`=space-between` : first to the extreme left, last to end, and then subdivide and assign space in between  
-`=space-evenly` :   
+*	=center  
+*	`=space-between` : first to the extreme left, last to end, and then subdivide and assign space in between  
+*	`=space-evenly` :   
+
 `order` :   
   
 ### GRID
