@@ -23,46 +23,41 @@
 *	`add static route to remote network, updating routing table of a node`  
 *	e.g. `add 192.168.0.0/16` : wildcard : anything matching mask  
 
-`iptables [-t table] {-A|-C|-D|-V} chain rule-specification` : ip tables manager  
+`iptables [-t TABLE] {-A|-C|-D|-V} CHAIN RULE_SPECIFICATION` : ip tables manager  
 *	`-t TABLE` : specify table  
-*	`-t nat` : nat; chain = …  
-	`*	PREROUTING` : altering pkt as soon as comes in  
-	`*	POSTROUTING` : altering packets as about to go out  
+	*	default tables: `nat`, `filter`, `docker`, others
 *	`-A` : append rule(s) to end of chain  
 *	`-D` : delete  
-
-`-F, --flush [chain]` : delete all rules in chain, or all chains if not speficifed  
-*	`-R chain rulenum rule` : replace rulenum with rule;  
-	`*	numbered 1,2,...`  
-
-`rule` :   
-*	`-d, --destination address[/mask][,...]`  
-*	`-i, --in-interface name` : interface via which pkt was received  
-(INPUT/PREROUTING)  
-*	`-j extension` : action to perform if matched rule;  
-	`*	if not specified j or g, nothing is done`  
-*	`-o, --out-interface name` : name : interface via which pkt will be sent  
-(OUTPUT/POSTROUTING)  
-*	`-p protocol`  
-*	`-s, --source address[/mask][,...]`  
-*	`extensions` :   
-*	`DNAT` : (only for nat) change dest addr  
-	`*	--to-destination addr` : new address  
-*	`MASQUERADE` : (only for nat) mapping  
-*	`SNAT` : (nat) change src addr  
-	`*	--to-source addr` :   
-
-`iptables -t nat -A POSTROUTING -o [devicename] --source [sourcenet_ipadress/netmask] -j MASQUERADE` :   
-*	`control masquerade (source NAT) configuration`  
-
-`iptables -t nat -A PREROUTING -p [protocol] -d [source_ip] --dport [source_port] -j DNAT --to-destination [destination_ip]:[destination_port]` :   
-*	`control port forwarding (destination NAT);`  
-*	`i.e. each connection, using protocol, to source_ip:source_port, is forwarded to destination_ip:destination_port;`  
-*	e.g. `protocol = tcp`  
+*	`-F, --flush [CHAIN]` : delete all rules in chain, or all chains if not speficifed  
+*	`-R CHAIN RULENUM RULE` : replace rulenum with rule (numbered from 1)
+*	`CHAIN`:
+	*	`PREROUTING` : altering pkt as soon as comes in  
+	*	`POSTROUTING` : altering packets as about to go out  
+*	`RULE` :   
+	*	`-d, --destination ADDR[/mask][,...]`  
+	*	`-i, --in-interface NAME` : interface via which pkt was received (INPUT/PREROUTING)  
+	*	`-j EXTENSION` : action to perform if matched rule  
+		*	if not specified j or g, nothing is done
+	*	`-o, --out-interface NAME` : interface via which pkt will be sent  
+	(OUTPUT/POSTROUTING)  
+	*	`-p PROT` : protocol to match 
+		*	e.g.: `-p tcp` : 
+	*	`-s, --source ADDRESS[/MASK][,...]`  
+	*	`DNAT [--to-destination ADDR]` : (only for nat) change dest addr  
+		*	e.g.: `iptables -t nat -A PREROUTING -p [protocol] -d [source_ip] --dport [source_port] -j DNAT --to-destination [destination_ip]:[destination_port]` : port forwarding (change destination NAT)
+	*	`MASQUERADE` : (only for `nat`) forwarding, i.e. replace with own ip  
+		*	e.g.: `iptables -t nat -A POSTROUTING -o [devicename] --source [sourcenet_ipadress/netmask] -j MASQUERADE` : masquerade (change source NAT)  
+	*	`SNAT [--to-source ADDR]` : (nat) change src addr  
 
 `netstat` : (deprecated, use ss, or other commands suggested in man)   
 *	show active/inactive connections  
 *	`-a` : all types  
+*	`-i` : list network intefaces
+	*	names:
+		*	`eth*` : real net interface
+		*	`ens*` : same as eth
+		*	`veth*` : created by docker
+		*	`br-*` : bridge
 *	`-n, --numeric` : don’t resolve names, keep numbers  
 *	`-p` : show pid, process  
 
@@ -71,20 +66,18 @@
 *	`-n` : no DNS resolution (could be very slow otherwise)/  
 *	`-sT` : (default?) TCP connect scan;  
 nmap asks underlying os to establish connection with target machine:port by issuing the connect system call  
-
-`-sV` : (?) find out versions  
-*	note: `very slow, probably faster with -T4 (?)`  
-
-`-sU` : UDP scans; can be combined with TCP  
-`-P*` : select ping types  
+*	`-sV` : (?) find out versions  
+	*	note: `very slow, probably faster with -T4 (?)`  
+* `-sU` : UDP scans; can be combined with TCP  
+* `-P*` : select ping types  
 *	`-Pn` : apply functions to all hosts, even when not up (until time limit)  
 *	`-p* PORT-RANGES` : port ranges to scan  
-	`*	-p-` : (default) 1:65535  
-	`*	-p A-B,C-D,...` : ranges  
-	`*	-p ,B` : default start=1 (if not specified)  
-	`*	-p A,` : default end=65535 (if not specified)  
-	*	note: `0 is only scanned if specified`  
-	`*	-p U:[RANGE],T:[RANGE]...` :  
+*	-p-` : (default) 1:65535  
+*	-p A-B,C-D,...` : ranges  
+*	-p ,B` : default start=1 (if not specified)  
+*	-p A,` : default end=65535 (if not specified)  
+*	note: `0 is only scanned if specified`  
+*	-p U:[RANGE],T:[RANGE]...` :  
 *	specify ranges for each protocol (TCP, U=UDP, S=SCTP, P=IP)  
 
 `ss` : show active/inactive connections  

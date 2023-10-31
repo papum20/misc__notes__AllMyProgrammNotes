@@ -21,6 +21,7 @@
 `bool every(function)` : return true if each value evaluates function to true;  
 `filter(function)` : keep elements such that function(x) = true;  
 `forEach(function)` : applies function to each element;  
+`from(arr)` : copy an array-like/iterable  
 `join(sep)` : join using sep  
 `indexOf(item)` : index of item  
 `array map(function)` : return a copy with function(x) for each x;  
@@ -31,7 +32,7 @@
 `array slice(start, end)` : return from start to end (excluded)  
 `bool some(function)` : true if at least one value evaluates function to true;  
 `sort(function)` : sort using function;  
-		*				function returns 1 / -1;  
+*	`function(a,b)` : returns 0 if equal, a negative value if first args less than second, otherwise positive
 
 `splice(pos, n, subst)` : remove n elements at pos, add subst’ elements at pos  
 `undefined unshift(VAL)` : append to start   

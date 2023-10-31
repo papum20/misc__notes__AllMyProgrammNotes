@@ -31,10 +31,12 @@
 *	``// hard link:  ``
 
 `ls [PATH=.]` : list of files  
-*	``-1`` : vertical  
-*	``-i`` : show inodes  
-*	``-l`` : long  
-*	``-o`` : -l without groups  
+*	`-1` : vertical  
+*	`-d` : list dirs, not contents
+	*	e.g.: `ls -d ${PWD}/*` : list abs paths in `.`
+*	`-i` : show inodes  
+*	`-l` : long  
+*	`-o` : -l without groups  
 *	output format: `crwxrwxrwx+` : (access rights, special modes)  
 	*	c=type flag; rwx= for User, Groups, Others; +=special character(s)  
 	*	`special bits` : SUID, GUID, sticky bit (no effect on executables)  
@@ -142,6 +144,8 @@
 
 `grep PATTERN [FILE]` : search pattern in file  
 *	`-A|B NUM` : include NUM lines after/before  
+*	`-E` : enable extended regex
+	*	e.g: enable `|`
 *	`-n` : also print in which line was found
 *	`-r` : recursive - used for searching directory instead of single file
 *	`-v PATTERN` : “inverse”, i.e. excludes pattern  
@@ -230,6 +234,11 @@
 `passwd [user]` : change user’s password (own if no arg); (executed as root)  
 `su [USER]` : switch user  
 `sudo useradd user` : create new user (not interactive)  
+`usermod` : modify user  
+*	`-a` : add to groups (to use with `-G`)
+*	`-G GROUPS...` : specify list of groups
+*	e.g.: `usermod -aG GROUP USER` : add `USER` to `GROUP`
+
 `who` : list connected hosts/users  
   
 ## MISC  

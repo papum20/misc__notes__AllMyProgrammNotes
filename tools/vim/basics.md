@@ -1,6 +1,15 @@
 # BASICS
 
-## vi(m)  
+(vi(m))  
+
+## INSTALL
+
+Sometimes (like in some docker containers) apt won't find vi/vim: search `apt-file` : 
+```bash
+apt-get install apt-file -y && \
+	apt-file update && \
+	apt-get install vim
+```
   
 ## SHELL COMMANDS
 `vimtutor` : tutorial  

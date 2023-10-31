@@ -24,3 +24,6 @@
 `run CUSTOM-COMMAND` : execute custom command added to `"scripts"` in `package.json`  
 `start` : short-hand, but not defined: user should define start as custom command  
 `uninstall PKG` :  
+`view PKG[@VERSION] [INFO]` : info on `PKG`  
+*	`INFO=dependencies|versions` : only such such info
+*	`--josn` : output format

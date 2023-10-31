@@ -47,6 +47,9 @@
 `log -p -- path-to-file` : show log of file  
 *	`--follow` : also show history for when it had another name  
 
+`ls-files` : ls in repo
+*	`--stage` : show staged contents' mode bits, object name, stage number
+
 `merge BRANCH` : merges BRANCH current branch  
 `rebase NEWBASE` : replaces current banch’s history with the one ending in newbase  
 // merge keeps histories visible; rebase hides old history  
@@ -66,6 +69,8 @@
 *	`--ignored` : status, showing ignored files  
 
 `switch BRANCH` : switch to branch  
+`update-index` : update repo with info about files
+*	`--chmod=MODE FILE...` : update `FILE`/`FILES` permissions
   
 ## GitHub (/ remote repo)  
 // row colors: green = updated, red = deleted, white = unchanged  

@@ -3,7 +3,14 @@
 ## DOCKER    
 `docker COMMAND` : (possible commands follow)   
 
-`build -t IMAGE` : build image from dockerfile  
+`build PATH` : build image from dockerfile in `PATH`  
+*	`-t TAG` : name it tag
+*	`-f PATH` : (default `./Dockerfile`) use dockerfile `PATH`
+
+`container inspect [NAME|ID]` : info (as json)  
+*	`--format FORMAT` : filter only selected format
+*	e.g.: get IPAddress, Name
+
 `container ls` : list executing containers  
 `container prune` : remove containers  
 `docker images` : list images saved on local  
@@ -16,12 +23,15 @@
 `pull IMAGE` : download image from docker hub  
 `rmi IMAGE` : delete image  
 `run IMAGE` : run (new) container  
+*	`--entrypoint CMD` : run container with entrypoint command  
+*	`--rm` : rm container after  
+*	`-i` : interactive
+*	`-t` : allocate pseudo terminal
 *	e.g.: `docker run -it ubuntu:20.04 bash` :  
 
-`run –entrypoint <newcmd> IMG` : run container, overwriting default entrypoints with newcmd  
 `stop ID` : stop/remove container  
 `system df` : disk usage of images and containers  
-  
+`volume prune` :    
   
   
 ## DOCKER-COMPOSE 
