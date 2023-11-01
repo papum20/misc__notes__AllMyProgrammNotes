@@ -116,6 +116,13 @@
 *	e.g.: `chmod g+s FILE` : add setgid  
 
 `chmod o-r FILE` : o=others, -=remove rr=read -> remove read from others  
+`getfacl FILE` : get acl permissions
+`setfacl FILE` : set acl permissions
+*	`-m ACL_SPEC` : modify with new permissions
+	*	`ACL_SPEC={u|g|o}{GROUP|USER}:[rwx]` : set rwx permissions for users/groups/others
+	*	e.g.: `setfacl -m g:docker:rwx file` : add rwx for group docker to file
+*	`-R` : recursive
+
 `umask OCTALS` : set default permission for newly created files  
 *	``(with parameters in decimals/base 8 working as in chmod)  ``
 *	e.g.: ``umask 0777`` : all permissions  
@@ -228,9 +235,12 @@
 `sudo adduser user group` : add user to group  
 `chgrp [GROUP] file` : change file’s group  
 `chown [USER[:GROUP]] file` : change file’s owner/group  
+*	`-R` : recursive
+
 `chroot` : change root  
 *	e.g.: ``chroot /mnt/PARTITION/ /bin/bash`` : start a chrooted bash  
 
+`id USER` : user and groups id
 `passwd [user]` : change user’s password (own if no arg); (executed as root)  
 `su [USER]` : switch user  
 `sudo useradd user` : create new user (not interactive)  

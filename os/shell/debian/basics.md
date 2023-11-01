@@ -1,4 +1,12 @@
 # BASICS  
+
+## INSTALL
+
+### apt packages
+
+`acl` : `setfacl`, `getfacl`  
+
+## OLD
   
 types of selection of files:  
 *(pattern-list) : matches zero or more occurrences of the specified patterns  
