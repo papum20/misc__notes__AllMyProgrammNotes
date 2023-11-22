@@ -31,9 +31,6 @@
 	"explorer.decorations.colors": true,
 	"explorer.decorations.badges": true,
 
-	// AUTOCOMPLETE
-	"workbench.activityBar.visible": true,
-
 	// PYTHON
 	"python.linting.enabled": true,
 	"python.linting.pylintEnabled": true,

@@ -13,6 +13,11 @@
 
 `container ls` : list executing containers  
 `container prune` : remove containers  
+`cp FROM TO` : cp from/to local/container
+*	`FROM/TO=[CONTAINER:]PATH` :  
+*	`--archive` : in archive format (copy uid/gid info)
+	*	e.g.: `cp --archive CONTAINER:FROM TO` : make backup to `TO`
+
 `docker images` : list images saved on local  
 `exec ID CMD` : execute command `CMD` on container identifed by `ID`  
 *	`-i` : interactive (i/o)

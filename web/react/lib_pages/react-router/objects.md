@@ -6,6 +6,10 @@
 `Link` : link, but don't refresh all page (like `href`), just replace right content  
 *	`to="LINK"` : (required)  
 
+`NavLink` : like `Link`, but adds nav styling
+*	`activeClassName` : class to apply to active link
+*	e.g.: sets automatically the active link, adding styling
+
 `Routes` : container of `Route` elements  
 
 `Route` : add route  

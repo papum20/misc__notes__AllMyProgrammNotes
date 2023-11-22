@@ -15,6 +15,7 @@
 `checkout COMMIT-HASH/BRANCH` : go back to previous commitment  
 `checkout -b BRANCH-NAME` : new branch and move to it  
 `checkout --track origin/BRANCH` : creates branch `BRANCH` that tracks remote `BRANCH`  
+`checkout SRC_BRANCH -- FILE` : merge `FILE` from `SRC_BRANCH` into current branch  
 `clean` :  remove untracked files from the working tree  
 *	`-d` : remove directories  
 *	`-f` : force  
@@ -61,7 +62,7 @@
 `reset COMMIT-HASH` : undo to hash  
 `reset --hard COMMIT-HASH` : undo to hash and remove changes  
 `rm FILE` : remove file both locally and from repo  
-`rm --cached FILE` : only remove from repo  
+`rm --cached FILE` : only remove from repo (stop tracking)  
 `rm -r DIRECTORY` : remove directory  
 `show ARG` : “search arg in log”  
 `show COMMIT:PATH` : show PATH at COMMIT  

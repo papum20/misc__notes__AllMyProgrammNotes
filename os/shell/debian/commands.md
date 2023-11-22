@@ -167,6 +167,7 @@
 	*	`p` : print (like grep)  
 	*	`s/REGEX/REPLACEMENT/` : replace `REGEX`
 		*	e.g.: `sed 's#.*/##; s#[.][^.]*$##'` : remove extension and path
+	*	`$#` : matched part in REGEX, to refer in REPALCEMENT
 
 `sort TEXT` : (default) sort lines  
 *	``sort -r`` : reverse order  
@@ -231,14 +232,20 @@
   
 ## USERS   
 
-`sudo adduser user` : create new user (interactive)  
-`sudo adduser user group` : add user to group  
+`addgroup [[-g GID]|[USER]] GROUP` : add `USER` to `GROUP` or create `GROUP`
+*	`-g GID` : assign gid to group
+
+`adduser user` : create new user (interactive)  
+`adduser user group` : add user to group  
 `chgrp [GROUP] file` : change file’s group  
 `chown [USER[:GROUP]] file` : change file’s owner/group  
 *	`-R` : recursive
 
 `chroot` : change root  
 *	e.g.: ``chroot /mnt/PARTITION/ /bin/bash`` : start a chrooted bash  
+
+`groupadd GROUP` : create group
+*	`-g GID` : assing gid
 
 `id USER` : user and groups id
 `passwd [user]` : change user’s password (own if no arg); (executed as root)  

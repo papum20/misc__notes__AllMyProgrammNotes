@@ -2,6 +2,50 @@
 
 rsa: 2048 bit  
 
+## Modular arithmetics
+
+### quadratic residues
+
+uses:
+*	elliptic curves  
+
+quadratic residue : iff has square root mod n (`a` iff `pow(b,2,n)==a`)  
+quadratic non-residue : else  
+*	prop: 
+	*	a residue * a residue = a residue
+	*	a residue * a non residue = a non residue
+	*	a non residue * a non residue = a residue
+	*	tip: like `+1,-1`
+	*	e.g.: pow(a residue, n) = a residue, for any n
+
+
+Legendre's Symbol : `(a / p) ≡ pow(a,(p-1)/2), p)`, for `p>2` prime
+*	`(a/p) = 1` : if a is a quadratic residue and `a%p != 0`
+*	`(a/p) = -1` : if a is a quadratic non-residue mod p
+*	`(a/p) = 0` : if `a%p == 0`
+
+square root `r` of `a` when `p%4=3`, `p>2` prime (note that `p%4` is either 1 or 3) : `r=+-pow(a,(p-1)/4,p)`
+*	proof:
+	1.	if `p%4=3` then, in `mod p`, `pow(pow(+-a,(p+1)/4),2)=pow(a,(p+1)/2)=pow(a,(p-1)/2+1)=pow(a,(p-1)/2)*a`
+	2.	since a is a quadratic residue, `pow(a,(p-1)/2)=1 mod p`
+*	src: https://crypto.stackexchange.com/a/20994
+
+Tonelli-Shanks : square root `r` for any `p>2` prime
+*	e.g.: implemented in sage `Mod.sqrt()`
+
+### linear congruences system
+
+linear congruences system :
+```
+x%n1=a1
+...
+x%nk=ak
+```
+
+Chinese remainder theorem : if `ni` coprimes, unique solution `x`  
+*	proof: from `x%n1=a1` you can rewrite `x=a+k*p` for any k
+*	e.g.: sage `crt()`
+
 
 ## RSA
 ### NOTATION

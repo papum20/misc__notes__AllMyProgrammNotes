@@ -22,6 +22,8 @@
 `filter(function)` : keep elements such that function(x) = true;  
 `forEach(function)` : applies function to each element;  
 `from(arr)` : copy an array-like/iterable  
+*	note: shallow copy
+
 `join(sep)` : join using sep  
 `indexOf(item)` : index of item  
 `array map(function)` : return a copy with function(x) for each x;  

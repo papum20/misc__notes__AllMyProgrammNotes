@@ -29,6 +29,11 @@
 *	file must have exe mode  
 
 `help COMMAND` : get help on command  
+
+`set logging enabled on` : enable logging to currently selected logging file  
+*	note: need to set file before
+
+`set logging file FILE` : select file for logging  
   
 ## RUNNING
 `break` : add breakpoint  

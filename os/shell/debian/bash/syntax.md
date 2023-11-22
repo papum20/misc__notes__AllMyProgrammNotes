@@ -23,8 +23,19 @@
 `"EXPR"` : string, which allows `${}` evaluation inside  
 
 ### BOOL
-`[ EXPR ]` : evaluate expressions with `-OP` operators  
-*	note: spaces important
+
+`EXPR` : test return value of a command  
+
+`[ EXPR ]` : basic eval  
+*	note: recognized by any terminal/etc.
+*	e.g.: `[ $var == 1 ]` : error if var not defined
+
+`[[ EXPR ]]` : advanced eval  
+*	recognizes regex, empty var
+*	note: specific to bash not recognized by any terminal/etc.
+
+`[ -z $VAR ]` : true if variable not set (i.e. not set or set to empty (string))  
+`[ -n $VAR ]` : true if variable set to non empty string  
 
 `((EXPR))` : evaluate expressions with "normal" operators  
 `! CONDITION` : not  
@@ -35,6 +46,8 @@
 
 ### COMPARE
 `-OP` :  
+*	note: use **spaces** around compare operator  
+
 `le|ne|ge` : 
 
 `e PATH` : file exists  
