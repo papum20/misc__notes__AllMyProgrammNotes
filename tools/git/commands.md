@@ -33,6 +33,7 @@
 `diff COMMIT` : differences from last change  
 `diff COMMIT1 COMMIT2` : diff from COMMIT1 to COMMIT2  
 *	`--stat` : (colors as GitHub)  
+*	`-w` : ignore all spaces
 
 `fetch` :  
 *	`--all` :  
