@@ -45,6 +45,7 @@
 *	e.g. `CLASS_NAME.prototype.PARAMETER`  
 
 `freeze(“VAR”)` : make object VAR immutable  
+`fromEntries(ARR)` : object from array of arrays, each containing the pair of key and val (val optional)  
 `hasOwnProperty(str): boolean` : if obj has property named str  
 
 #### static
