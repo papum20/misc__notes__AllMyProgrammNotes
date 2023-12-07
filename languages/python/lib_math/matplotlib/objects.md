@@ -10,6 +10,10 @@ matplotlib
 ## matplotlib.pyplot  
 // functions of same dimensions as axes (vectors)  
 // plots only with 2 vectors / matrix of 2 cols  
+`axis(val)` : set axises
+*	`val="on"` : show
+*	`val="off"` : don't show
+
 figure(figsize=) : dimensions/size  
 grid() :  
 legend([list]) :  

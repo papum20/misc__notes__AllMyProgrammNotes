@@ -69,6 +69,9 @@
 `cp SRCS.. DST` : copy all files in dir  
 `dd if=FROM_PATH of=TO_PATH` : Copy a file, converting and formatting according to the operands  
 `diff FILE1 FILE2` : difference  
+*	`q` : files summary
+*	`u` : unified - nicer, like git diff (with context, +,-)
+
 `file FILE` : info about file  
 `gdb` : (disassemble)  
 `ldd` : print shared object dependencies  

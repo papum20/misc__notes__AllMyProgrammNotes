@@ -6,6 +6,7 @@
 `atleast_2d(array)` :  
 *	`for 1d array, adds empty dimension (useful for transpose)`  
 `array copy(array)` :  
+`clip(array, min, max)` : return the `array` with values clipped in range  
 `diag(1-D_array, k=0)` : matrix with 1-D_array on diagonal, k=which diagonal  
 *	`diag(2-D_array)` : vector with matrix’s diagonal  
 `dot()` :   
@@ -29,6 +30,11 @@
 `triu(marix)` : upper diagonal  
 `array zeros(lunghezza(int)/dimensioni(tupla), tipo(default:float), qualcosa di memoria('C'/'F', default) )` : array full of zeroes  
 
+### functions
+
+`cos(array:Array)` : (like `sin`)  
+`sin(array:Array)` : compute sin for each point in `array`  
+
 ## TYPES  
 // float32  
 class array:  
@@ -48,6 +54,7 @@ class array:
 `normal(loc=, scale=, size=)` : random numbers with gauss distribution  
 `rand(int n, int m)` : random array, shape = n*m  
 `randint(low, high=, size=, dtype=)` : rand with ints, in range  
+`seed(s:int)` : set seed `s`  
 
 ## numpy.linalg (linear algebra)  
 `cond()` :  
