@@ -25,7 +25,7 @@ e.g.: `x^2 + 2` :
 *	the variables is both returned and injected in the env
 
 `var(['x', 'y', ...])` :  
-`var()'x', 'y', ...)` :  
+`var('x', 'y', ...)` :  
 
 ## factors
 `factor(n)` : factorize n  

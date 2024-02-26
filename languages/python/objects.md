@@ -57,6 +57,12 @@
   
 `complex.real()` :  
 `complex.imag()` :   
+
+##### decimal
+
+`decimal` : package  
+
+`Decimal(int)`: get int of undefined length  
   
 ## DATA STRUCTURES  
 `insieme.count(elem)` : conta elem in insieme  
