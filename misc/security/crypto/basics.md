@@ -4,7 +4,7 @@ rsa: 2048 bit
 
 ## Modular arithmetics
 
-**finite field** : **Fp** - `{0,1,...,p-1}` set of integers modulo `p` prime  
+**finite field** : **Fp**/**GF(p)** (_galois field_) - `{0,1,...,p-1}` set of integers modulo `p` prime  
 *	**inverse** element : there's always an inverse element `b` for every `a` in the set...
 	*	for addition : ...such that `a+b=0`
 	*	for multiplication : ...such that `a*b=1`
@@ -16,6 +16,7 @@ rsa: 2048 bit
 					a**(p-2) a a**(-1) = a**(-1) mod p
 					a**(p-2) = a**(-1) mod p
 					```
+	*	proof: there's a `b` inverse of `a` mod `p` iff `gcd(a,p)=1`, always true for finite fields (but not for rings)
 *	`a**(p-1) mod p` : `p-1` - for any `a` in `Fp`  
 *	`a**(kp) mod p` : `a` - for `k` integer  
 
