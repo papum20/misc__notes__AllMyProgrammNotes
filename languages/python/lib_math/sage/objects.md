@@ -1,36 +1,70 @@
 # OBJECTS
 
-## Objects
+## equations
+`crt(a,b,m,n)` : chinese remainder theorem, solve for `x=a mod m`, `x=b mod n`    
+`crt(a:[], b:[])` : chinese remainder theorem, solve for `x=a_i mod b_i`  
+`solve_mod(eqns,modulus)->List[]` : return solutions to modular equation  
 
-### class
-`Mod(a, m)` : create class `a` mod `m`  
-*	e.g.: 
-	```
-	a = Mod(2, 5)	# a = 2
-	a**3			# a = 2**3 mod 5 = 3 
-	```  
-
-#### methods
-
-`sqrt()` : self sqrt mod n  
-
-### equation
+### (Equation)
 Expression using numbers, operators, variables.  
 e.g.: `x^2 + 2` :  
 
-### variable
+### Matrix
+`Matrix(rows: List[float])` : matrix  
+*	e.g.:
+		```python
+		>>> matrix([[1,2],[3,4]])
+		[1 2]
+		[3 4]
+		```
+`Matrix(finite_ring, rows)` : matrix in finite field/ring  
+*	e.g.: `Matrix( GF(5), [[1,2],[3,4]] )` :  
+
+### (Variable)
 `var('x y...')` : create and return symbolic variables, with given names  
 *	the variables is both returned and injected in the env
 
 `var(['x', 'y', ...])` :  
 `var()'x', 'y', ...)` :  
 
-## Fucntions
-
+## factors
 `factor(n)` : factorize n  
-`crt(a,b,m,n)` : chinese remainder theorem, solve for `x=a mod m`, `x=b mod n`    
-`crt(a:[], b:[])` : chinese remainder theorem, solve for `x=a_i mod b_i`  
+`xgcd(a, b)->Tuple[g,s,t]` : return gcd and Bezout's coefficients  
+
+## modular arithmetics
 `discrete_log(a, base:Mod)` : discrete log of `a` in `base`, where base is obtained with `Mod`  
 `inverse_mod(a, m)` : inverse of `a` mod `m`, i.e. `pow(n,-1,mod)`  
-`solve_mod(eqns,modulus)->List[]` : return solutions to modular equation  
-`xgcd(a, b)->Tuple[g,s,t]` : return gcd and Bezout's coefficients  
+
+### EllipticCurve
+`E = EllipticCurve(ring: Ring, invariants: List[float])` :  
+
+`E.order()` :  
+
+### finite fields
+`GF(dimension: int)` : finite field/ring of `dimension`  
+`GF(dimension: int, s: string)` : ??  
+*	e.g.:
+		```python
+		>>> k = GF(9, 'a')
+		>>> for i,x in enumerate(k):  print("{} {}".format(i, x))
+		0 0
+		1 a
+		2 a + 1
+		3 2*a + 1
+		4 2
+		5 2*a
+		6 2*a + 2
+		7 a + 2
+		8 1
+		```
+
+
+### Mod
+`M = Mod(a, m)` : create class `a` mod `m`  
+*	e.g.: 
+	```
+	a = Mod(2, 5)	# a = 2
+	a**3			# a = 2**3 mod 5 = 3 
+	```  
+
+`M.sqrt()` : self sqrt mod n  

@@ -4,6 +4,23 @@ rsa: 2048 bit
 
 ## Modular arithmetics
 
+**finite field** : **Fp** - `{0,1,...,p-1}` set of integers modulo `p` prime  
+*	**inverse** element : there's always an inverse element `b` for every `a` in the set...
+	*	for addition : ...such that `a+b=0`
+	*	for multiplication : ...such that `a*b=1`
+		*	`pow(a,p-2,p)` :
+			*	proof:
+					```
+					a**(p-1) = 1 mod p
+					a**(p-1) a**(-1) = a**(-1) mod p
+					a**(p-2) a a**(-1) = a**(-1) mod p
+					a**(p-2) = a**(-1) mod p
+					```
+*	`a**(p-1) mod p` : `p-1` - for any `a` in `Fp`  
+*	`a**(kp) mod p` : `a` - for `k` integer  
+
+**ring** : set of integers modulo `n` not prime  
+
 ### quadratic residues
 
 uses:
@@ -37,12 +54,12 @@ Tonelli-Shanks : square root `r` for any `p>2` prime
 
 linear congruences system :
 ```
-x%n1=a1
+x=a1 mod n1
 ...
-x%nk=ak
+x=ak mod nk
 ```
 
-Chinese remainder theorem : if `ni` coprimes, unique solution `x`  
+**Chinese remainder theorem** : if `ni` coprimes, unique solution `x=a mod N`, where `N=n1*...*nk`  
 *	proof: from `x%n1=a1` you can rewrite `x=a+k*p` for any k
 *	e.g.: sage `crt()`
 

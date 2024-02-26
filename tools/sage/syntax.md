@@ -2,3 +2,4 @@
 
 ## Operators
 `^^` : xor  
+`^` : power/exponent  

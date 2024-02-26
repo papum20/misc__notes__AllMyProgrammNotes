@@ -99,13 +99,15 @@
 `od FILE` : (octal dump) to octal (from char)  
 `od -cx FILE` : (hexadecimal) to hexadecimal  
 `tar` : tar files  
-*	``-f`` : use file ARCHIVE (?)  
-*	``-v`` : verbose  
-*	``-x`` : extract  
-*	``-z`` : gzip  
-*	e.g.: ``tar zxvf TAR`` : extracts tar gz file  
-*	e.g.: ``tar zxvf TAR -C DESTINATION`` : to destination folder  
-*	e.g.: ``tar zxvf TAR --directory DESTINATION`` : /  
+*	`-c` : compress  
+*	`-f` : use file ARCHIVE (?)  
+*	`-v` : verbose  
+*	`-x` : extract  
+*	`-z` : gzip  
+*	e.g.: ``tar czvf TAR DIR`` : compress DIR to TAR  
+*	e.g.: ``tar xzvf TAR`` : extracts tar gz file  
+*	e.g.: ``tar xzvf TAR -C DESTINATION`` : to destination folder  
+*	e.g.: ``tar xzvf TAR --directory DESTINATION`` : /  
 
 `tree` : file system tree (for current directory)  
 `xxd [infile]` : make hexdump  

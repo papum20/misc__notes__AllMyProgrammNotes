@@ -8,8 +8,6 @@
 ## I/O   
 `alert(string)` : browser alert msg  
   
-## BASE DATA TYPES
-
 ## CONVERSION   
 `int parseInt(str)` : str to int  
 `int parseInt(str, int radix)` : str to int, in base radix  
@@ -102,6 +100,65 @@ toLocaleDateString(..) : just like `toLocaleString()`, only using date and not t
   
 ### Error
 `message` : error msg  
+
+
+## DOM
+
+### document
+The HTML DOM Document Object is the owner of all other objects in your web page.   
+`document` : the object of the following attrs/methods   
+
+#### Finding HTML Elements
+`getElementById(ID)` :  
+`getElementsByClassName(NAME)` :  
+`getElementsByTagName(NAME)` :  
+
+#### Adding and Deleting Elements
+`appendChild(ELEM)` :  
+`createElement(ELEM)` : create an HTML element  
+`removeChild(ELEM)` :  
+`replaceChild(NEW, OLD)` :  
+`write(TEXT)` : Write into an HTML output stream opened with open  
+
+#### Adding Events Handlers
+`getElementById(id).onclick = function(){code}` : Adding event handler code to an onclick event  
+
+#### Finding HTML Objects
+`anchors` : Returns all `<a>` elements that have a name attribute  
+`applets` : Deprecated  
+`baseURI` : Returns the absolute base URI of the document  
+`body` : Returns the `<body>` element  
+`cookie` : Returns the document's cookie  
+`doctype` : Returns the document's doctype  
+`documentElement` : Returns the `<html>` element  
+`documentMode` : Returns the mode used by the browser  
+`documentURI` : Returns the URI of the document  
+`domain` : Returns the domain name of the document server  
+`domConfig` : Obsolete  
+`embeds` : Returns all `<embed>` elements  
+`forms` : Returns all `<form>` elements  
+`head` : Returns the `<head>` element  
+`images` : Returns all `<img>` elements  
+`implementation` : Returns the DOM implementation  
+`inputEncoding` : Returns the document's encoding (character set)  
+`lastModified` : Returns the date and time the document was updated  
+`links` : Returns all `<area>` and `<a>` elements that have a href attribute  
+`readyState` : Returns the (loading) status of the document  
+`referrer` : Returns the URI of the referrer (the linking document)  
+`scripts` : Returns all `<script>` elements  
+`strictErrorChecking` : Returns if error checking is enforced  
+`title` : Returns the `<title>` element  
+`URL` : Returns the complete URL of the document  
+
+### element
+`element` :  
+
+#### Changing HTML Elements
+`attribute = new value` : Change the attribute value of an HTML element  
+`innerHTML =  new html content` : Change the inner HTML of an element  
+`outerHTML = new html content` : Change the outer HTML of an element  
+`setAttribute(attribute, value)` : Change the attribute value of an HTML element  
+`style.property = new style` : Change the style of an HTML element  
 
 
 ## OTHER MODULES
