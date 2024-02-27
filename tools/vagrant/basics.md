@@ -1,7 +1,7 @@
 # BASICS
 
 ## REQUIREMENTS
-needs vm provider (virtual box)  
+Needs vm provider (virtual box).  
 
 ## BOXES
-pre-made VMs: vagrant uses these to fastly create a VM  
+Pre-made VMs: vagrant uses these to fastly create a VM  

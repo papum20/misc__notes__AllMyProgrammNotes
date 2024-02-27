@@ -10,9 +10,11 @@
 `destroy` : remove resources created  
 
 `global-status` : list envs  
+`halt` : stop execution  
 `init` : init Vagrant env;  
 *	create `Vagrant` config file  
 
 `init BOX` : init using BOX vm img  
+`status` :   
 `ssh` : connect to started vagrant  
 `up` : start vm (with `Vagrant` file)  
