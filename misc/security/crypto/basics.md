@@ -59,7 +59,7 @@ quadratic non-residue : else
 	*	e.g.: pow(a residue, n) = a residue, for any n
 
 
-Legendre's Symbol : `(a / p) ≡ pow(a,(p-1)/2), p)`, for `p>2` prime
+Legendre's Symbol : `(a / p) ≡ pow(a,(p-1)/2, p)`, for `p>2` prime
 *	`(a/p) = 1` : if a is a quadratic residue and `a%p != 0`
 *	`(a/p) = -1` : if a is a quadratic non-residue mod p
 *	`(a/p) = 0` : if `a%p == 0`
@@ -127,7 +127,7 @@ Steps:
 `totient(n)` = `phi(n)` = number of 0<=x<=n prime with n  
 `totient(n)=(p-1)*(q-1)` : if p!=q primes  
 `totient(n)=p*(p-1)` : if n=p**2
-e.g.: `tot(20)=tot(2**2*5)=20*(1-1/2)*(1-1/5)=2*(2-1)*(5-1)=8`: (wikipedia)  
+e.g.: `tot(20)=tot(2**2*5)=20*(1-1/2)*(1-1/5)=2*(2-1)*(5-1)=8`: (wikipedia) ?  
 
 ### FORMULAS
 `d=e**-1 mod tot`  
@@ -163,6 +163,7 @@ e.g.: `tot(20)=tot(2**2*5)=20*(1-1/2)*(1-1/5)=2*(2-1)*(5-1)=8`: (wikipedia)
 	3.	`dec(x**e * c) = dec(x**e) * dec(c) = x * dec(c)`, so `m=dec(c) = dec(x**e * c) / x`  
 	4.	alternative: `dec(x**e * c)=mx%n`, so `m` is the inverse of `x`
 		*	note: easy to calc, as `x` and `n` are mutually prime  
+
 #### find d
 *	mod inverse is not hard, the hard part is to factorize n and get p, q  
 #### decrypt when gcd(e,phi)!=1
