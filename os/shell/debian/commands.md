@@ -202,7 +202,13 @@
 `df` : drives mounted/disk usage  
 *	``df -h`` : (human-readable)  
 
-`sudo fdisk` : show disk partitions  
+`sudo fdisk` : show/edit disk partitions  
+*	`-l` : list
+
+`sudo fdisk DISK` : edit disk partition, with fdisk gui  
+
+`sudo mkfs DISK` : mk fs  
+`sudo mkfs.ext4` :  
   
 ## PROCESSES   
 
@@ -255,6 +261,10 @@
 `id USER` : user and groups id
 `passwd [user]` : change user’s password (own if no arg); (executed as root)  
 `su [USER]` : switch user  
+`sudo COMMAND` : exec as super-user  
+*	`-i` : launch interactive shell as sudo
+*	`-l` : list commands executable as current user running sudo
+
 `sudo useradd user` : create new user (not interactive)  
 `usermod` : modify user  
 *	`-a` : add to groups (to use with `-G`)
