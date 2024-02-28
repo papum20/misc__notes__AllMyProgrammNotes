@@ -44,6 +44,9 @@ Properties and definitions:
 
 **ring** : set of integers modulo `n` not prime  
 
+### exponentiation
+`q=gcd(N,mod(q**e,N))` : if `N=pq` primes, for any exp `e`  
+
 ### quadratic residues
 
 uses:
@@ -89,7 +92,7 @@ x=ak mod nk
 ```
 
 **Chinese remainder theorem** : if `ni` coprimes, unique solution `x=a mod N`, where `N=n1*...*nk`  
-*	proof: from `x%n1=a1` you can rewrite `x=a+k*p` for any k
+*	proof: from `x%n1=a1` you can rewrite `x=a+k*ni` for any k
 *	e.g.: sage `crt()`
 
 
