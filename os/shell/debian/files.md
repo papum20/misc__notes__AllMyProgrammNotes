@@ -38,6 +38,7 @@
 
 ### /usr
 `/usr/include/x86_64-linux-gnu/asm/unistd_64.h` : syscalls numbers  
+`/usr/share/dict/words` : list of english words  
 
 ### $HOME
 `~/.bashrc` : executed at startup for user  

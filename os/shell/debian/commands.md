@@ -101,10 +101,12 @@
 `tar` : tar files  
 *	`-c` : compress  
 *	`-f` : use file ARCHIVE (?)  
+*	`-t` : list archive content  
 *	`-v` : verbose  
 *	`-x` : extract  
 *	`-z` : gzip  
 *	e.g.: ``tar czvf TAR DIR`` : compress DIR to TAR  
+*	e.g.: ``tar tvzf TAR`` : list contents  
 *	e.g.: ``tar xzvf TAR`` : extracts tar gz file  
 *	e.g.: ``tar xzvf TAR -C DESTINATION`` : to destination folder  
 *	e.g.: ``tar xzvf TAR --directory DESTINATION`` : /  
@@ -280,12 +282,16 @@
 
 `clear` : clears terminal and starts from first row  
 `history` : history of commands given  
-`man COMMAND` : manual  
-`man -k KEYWORD` :  
-`man man` : manual for manual  
-`man ascii` :   
-`man 2 SYSTEM_CALL` :   
-`es.: man 2 write` : write()  
+`man [SECTION] COMMAND` : manual  
+*	`-k KEYWORD` :  
+*	e.g.: `man man` : manual for manual  
+*	e.g.: `man ascii` :   
+*	e.g.: `man 2 SYSTEM_CALL` :   
+	*	e.g.: `man 2 write` : write()  
+
+`md5sum [FILE]` : md5 hash of `FILE`
+*	e.g.: `echo -n STRING | md5sum` : hash of string (remove `\n` with `-n`)  
+
 `reset` : reset terminal  
 `timedatectl` : time for pc/os/hw…  
 `xargs` : build and execute command lines from standard input  

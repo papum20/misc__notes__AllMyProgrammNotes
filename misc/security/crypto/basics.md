@@ -114,6 +114,9 @@ Steps:
 1.	input as 4x4 matrix
 2.	10 rounds of transformations
 
+##### modes of operation
+**modes of operation** : used to work on m longer than 1 block  
+
 ### stream ciphers
 
 
@@ -180,3 +183,7 @@ e.g.: `tot(20)=tot(2**2*5)=20*(1-1/2)*(1-1/5)=2*(2-1)*(5-1)=8`: (wikipedia) ?
 	m = pow(ct_q, d_q, q)
 	```
 	
+
+## Xor
+
+th: `X`,`Y` rand var over `{0,1}**n`, `X` uniform distribution, `Y` arbitrary; then `Z:xor(X,Y)` uniform rand var over `{0,1}**n`  
