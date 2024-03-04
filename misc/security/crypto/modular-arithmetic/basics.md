@@ -34,9 +34,11 @@ Properties and definitions:
 					a**(p-2) a a**(-1) = a**(-1) mod p
 					a**(p-2) = a**(-1) mod p
 					```
+	*	the inverse is **unique**, if exists
 	*	proof: there's a `b` inverse of `a` mod `p` iff `gcd(a,p)=1`, always true for finite fields (but not for rings)
 *	`a**(p-1) mod p` : `p-1` - for any `a` in `Fp`  
 *	`a**(kp) mod p` : `a` - for `k` integer  
+*	`p**phi(q)=1 mod q` : _euler's theorem_ - if `p`,`q` coprime, with `phi` totient
 
 **ring** : set of integers modulo `n` not prime  
 

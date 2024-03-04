@@ -30,3 +30,54 @@ states :
 
 Can `@Override` default events.  
 
+## Views
+
+`View` : a self-contained object/component of the screen 
+*	also views containers (`ViewGroup`) 
+*	**declarative** : declared in xml
+	*	e.g.:
+		```xml
+		<TextView
+			android:id="@+id/textView"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Hello World!" />
+		```
+*	**programmatic** : created in java/kotlin
+	*	e.g.: `public TextView textView = new TextView(this)` : java
+	*	e.g.: `lateinit TextView textView = TextView(this)` : kotlin
+		*	`lateinit` : as not exists at compile
+*	e.g.: text, button
+
+`ViewContainer` : invisible container of views, defines layout stucture for views inside
+*	extends `View`
+
+`Layout` : extends `ViewContainer`
+*	needs to specify `layout_height`, `layout_width`
+
+`LinearLayout` : row/col  
+
+### events
+Can be handled via:
+*	`android:onClick="FUNCTION"` : xml
+*	`onTouchEvent()` : java/kotlin event handlers
+*	`button.setOnClickListener(onClickListener)` : java/kotlin event listeners, takes as argument obj implementing OnClickListener interface
+	*	```java
+		button.setOnClickListener(new OnClickListener() {
+			@Override
+				public void onClick(View view) { /* Behavior */ }
+		});
+		```
+		: java
+	*	```java
+		button.setOnClickListener(
+			v -> { /* Behavior */ }
+		);
+		```
+		: java lambda
+	*	```kotlin
+			button.setOnClickListener{
+				/* Behavior */
+			}
+		```
+		: kotlin lambda

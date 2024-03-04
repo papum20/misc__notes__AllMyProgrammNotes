@@ -11,10 +11,14 @@ rsa: 2048 bit
 `d=` :   
 `e=` :   
 #### totient function
-`totient(n)` = `phi(n)` = number of 0<=x<=n prime with n  
-`totient(n)=(p-1)*(q-1)` : if p!=q primes  
+`totient(n)` = `phi(n)` = number of x coprime with n s.t. 0<=x<=n  
+*	`phi(p)=p-1` : if `p` prime
+*	`phi(x*y)=phi(x)*phi(y)` : if `x`,`y` coprime
+	*	`totient(n)=(p-1)*(q-1)` : if p!=q primes  
+*	note: `p**phi(q)=1 mod q` if `p`,`q` coprime - euler's th uses phi
 `totient(n)=p*(p-1)` : if n=p**2
 e.g.: `tot(20)=tot(2**2*5)=20*(1-1/2)*(1-1/5)=2*(2-1)*(5-1)=8`: (wikipedia) ?  
+
 
 ### FORMULAS
 `d=e**-1 mod tot`  
