@@ -2,6 +2,19 @@
 
 rsa: 2048 bit  
 
+## Diffie-Hellman
+
+**diffie-hellman** : uses discrete log as hard problem.  
+*	input:
+	*	`p` : prime, defining the field `Fp` (multiplicative group)
+	*	`g` : generator of `Fp`
+	*	`a` : `a<p` - private key 
+*	steps:
+	*	`c=g**a mod p` : encrypted
+
+**safe prime** : `p=2q+1` with `p`,`q` prime - avoid efficient attacks if not safe (_pohlig hellman_)  
+
+
 ## RSA
 
 ### NOTATION

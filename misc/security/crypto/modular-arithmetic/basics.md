@@ -45,6 +45,26 @@ Properties and definitions:
 ## exponentiation
 `q=gcd(N,mod(q**e,N))` : if `N=pq` primes, for any exp `e`  
 
+## multiplicative groups
+
+**multiplicative group** : `Zp*={1,2,...,p-1}` - finite field where elements cyclically generate all the other elements  
+*	`Fg(x)=g*x mod p` : generator function, for generator `g`
+
+**generator** : `g` - iff cycling to `1` (`g**x mod p` for `x=1,2,...,p-1`) doesn't occur before `p-1` times  
+*	**order** : `k` - smallest `k` s.t. `g**k=1 mod p`
+	*	th: `k|p-1`
+	*	obs: `g` generator iff `k=p-1`
+*	algo: test if `g` is a generator - iff `g**((p-1)/q)!=1 mod p` for any prime factor `q` of `p-1`
+	*	proof:
+		*	`p-1=ku`
+		*	if `u!=1` (because not a generator), `u=qv`, thus `p-1=kqv`
+		*	`g**k=1 mod p` since `k` is its order
+		*	so `g**k = 1 = (g**k)**v = g**kv = g**((p-1)/q) = 1 mod p`
+
+src:
+*	https://crypto.stackexchange.com/questions/40654/find-the-generators-of-multiplicative-group-of-units-efficiently?newreg=5899d2f2288b407980ddb4133d7864c5
+*	https://crypto.stackexchange.com/questions/102292/proof-that-checking-if-gk-bmod-p-ne1-finds-a-generator-of-a-cyclic-group/102301#102301
+
 ## quadratic residues
 
 uses:
