@@ -1,5 +1,15 @@
 # BASICS  
 
+## Commands
+
+### types
+
+*	alias :  
+*	built-in :  
+*	external : in fs (in `$PATH`)  
+*	function :  
+*	keyword :  
+
 ## INSTALL
 
 ### apt packages

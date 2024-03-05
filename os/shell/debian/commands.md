@@ -204,6 +204,7 @@
 `df` : drives mounted/disk usage  
 *	``df -h`` : (human-readable)  
 
+`sudo e2fsck DEV` : fs check
 `sudo fdisk` : show/edit disk partitions  
 *	`-l` : list
 
@@ -211,6 +212,9 @@
 
 `sudo mkfs DISK` : mk fs  
 `sudo mkfs.ext4` :  
+`sudo mount -a` : mount all, according to fstab  
+`sudo resize2fs DEV [SIZE]` : resize
+*	e.g.: if expanding and there's empty space, can omit size and will fill
   
 ## PROCESSES   
 
@@ -277,6 +281,7 @@
   
 ## MISC  
 
+`. FILE` : execute lines in `FILE` as a script  
 `alias` : display alias  
 *	``alias [...]`` : define alias  
 
@@ -294,6 +299,7 @@
 
 `reset` : reset terminal  
 `timedatectl` : time for pc/os/hw…  
+`type COMMAND` : type of command  
 `xargs` : build and execute command lines from standard input  
 *	``-L max-lines`` :   
 *	``-l[max-lines]`` : like -L  
