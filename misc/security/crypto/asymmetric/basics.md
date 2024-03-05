@@ -3,6 +3,7 @@
 rsa: 2048 bit  
 
 ## RSA
+
 ### NOTATION
 `m` : plain text msg  
 `c` : encrypted msg  
@@ -10,7 +11,15 @@ rsa: 2048 bit
 `n=p*q` :   
 `d=` :   
 `e=` :   
-#### totient function
+
+### factorization
+
+#### elliptic curve factorization method
+Much more effective if there's at least one small prime (up to approximately 80 bits / 25 decimal digits).  
+
+e.g.: `ecm.factor(n)` : sage  
+
+### totient function
 `totient(n)` = `phi(n)` = number of x coprime with n s.t. 0<=x<=n  
 *	`phi(p)=p-1` : if `p` prime
 *	`phi(x*y)=phi(x)*phi(y)` : if `x`,`y` coprime

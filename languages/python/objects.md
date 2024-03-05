@@ -74,6 +74,8 @@
 `list(elements)` : convert to list  
 *	es.: list(range(..))  
 
+`reduce(function, iterable)` :  
+
 `sum(list, start=0)` : sum of elements in list, starting from start parameter+first element,  
 *	and using the result for the next summation  
   

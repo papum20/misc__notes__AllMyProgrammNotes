@@ -1,5 +1,11 @@
 # OBJECTS
 
+## elliptic curves
+`ecm.PROP` : pkg `ecm`  
+
+`factor(N)` : return a (probable) prime factorization with elliptic curve factorization method  
+`find_factor(N)` : return 2 factors of `N`, of which one is prime  
+
 ## equations
 `crt(a,b,m,n)` : chinese remainder theorem, solve for `x=a mod m`, `x=b mod n`    
 `crt(a:[], b:[])` : chinese remainder theorem, solve for `x=a_i mod b_i`  
