@@ -9,17 +9,17 @@ Properties and definitions:
 	*	fix another element I∈S, such that ∀s∈S:I⊙s=s
 *	Now I will list a set of properties and behind some properties I'll write names. If all the previous points apply, then the name can be applied to the named tuple.
 	*	(closure under addition) ∀s1,s2∈S:(s1⊕s2)∈S
-	*	(additive associativity) ∀s1,s2,s3∈S:(s1⊕s2)⊕s3=s1⊕(s2⊕s3) . We can now call (S,⊕) a semigroup.
-	*	(additive identity) ∃O∈S:∀s∈S:O⊕s=s⊕O=s . We can now call (S,⊕,O)  a monoid.
-	*	(additive inverses) ∀s∈S:∃s′∈S:s′+s=s+s′=O . We can now call (S,⊕,O)  a group.
-	*	(additive commutativity) ∀s1,s2∈S:s1⊕s2=s2⊕s1 . We can now call (S,⊕,O)  an abelian group.
+	*	(additive associativity) ∀s1,s2,s3∈S:(s1⊕s2)⊕s3=s1⊕(s2⊕s3) . We can now call (S,⊕) a **semigroup**.
+	*	(additive identity) ∃O∈S:∀s∈S:O⊕s=s⊕O=s . We can now call (S,⊕,O)  a **monoid**.
+	*	(additive inverses) ∀s∈S:∃s′∈S:s′+s=s+s′=O . We can now call (S,⊕,O)  a **group**.
+	*	(additive commutativity) ∀s1,s2∈S:s1⊕s2=s2⊕s1 . We can now call (S,⊕,O)  an **abelian group**.
 	*	(multiplicative closure) ∀s1,s2∈S:s1⊙s2∈S
-	*	(multiplicative associativity) ∀s1,s2,s3∈S:s1⊙(s2⊙s3)=(s1⊙s2)⊙s3 . We can now call (with 6 and 7) (S,⊙)  a semigroup.
-	*	(multiplicative identity) ∃I∈S:∀s∈S:I⊙s=s⊙I=s . We can now call (with 6-8) (S,⊙,I)  a monoid.
+	*	(multiplicative associativity) ∀s1,s2,s3∈S:s1⊙(s2⊙s3)=(s1⊙s2)⊙s3 . We can now call (with 6 and 7) (S,⊙)  a **semigroup**.
+	*	(multiplicative identity) ∃I∈S:∀s∈S:I⊙s=s⊙I=s . We can now call (with 6-8) (S,⊙,I)  a **monoid**.
 	*	(right distributivity) ∀s1,s2,s3∈S:(s1⊕s2)⊙s3=(s1⊙s3)⊕(s2⊙s3)
-	*	(left distributivity) ∀s1,s2,s3∈S:s1⊙(s2⊕s3)=(s1⊙s2)⊕(s1⊙s3) . We can now call (S,⊕,⊙,O,I)  a ring. Note: In some definitions having a multiplicative identity is optional.
-	*	(multiplicative commutativity) ∀s1,s2∈S:s1⊙s2=s2⊙s1 . We can now call (S,⊕,⊙,O,I)  a commutative ring.
-	*	(multiplicative inverses) ∀s∈(S∖{O}):∃s′∈S:s⊙s′=s′⊙s=I . We can now call (S,⊕,⊙,O,I)  a field.
+	*	(left distributivity) ∀s1,s2,s3∈S:s1⊙(s2⊕s3)=(s1⊙s2)⊕(s1⊙s3) . We can now call (S,⊕,⊙,O,I)  a **ring**. Note: In some definitions having a multiplicative identity is optional.
+	*	(multiplicative commutativity) ∀s1,s2∈S:s1⊙s2=s2⊙s1 . We can now call (S,⊕,⊙,O,I)  a **commutative ring**.
+	*	(multiplicative inverses) ∀s∈(S∖{O}):∃s′∈S:s⊙s′=s′⊙s=I . We can now call (S,⊕,⊙,O,I)  a **field**.
 *	src: https://crypto.stackexchange.com/questions/55147/what-is-the-main-difference-between-finite-fields-and-rings#:~:text=But%20finite%20fields%20have%20another,of%20same%20order%20are%20isomorphic.
 
 **finite field** : **Fp**/**GF(p)** (_galois field_) - `{0,1,...,p-1}` set of integers modulo `p` prime  

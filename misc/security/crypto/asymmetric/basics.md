@@ -4,7 +4,7 @@ rsa: 2048 bit
 
 ## Diffie-Hellman
 
-**diffie-hellman** : uses discrete log as hard problem.  
+**diffie-hellman** : uses **discrete log** as hard problem.  
 *	input:
 	*	`p` : prime, defining the field `Fp` (multiplicative group)
 	*	`g` : generator of `Fp`
@@ -14,6 +14,48 @@ rsa: 2048 bit
 
 **safe prime** : `p=2q+1` with `p`,`q` prime - avoid efficient attacks if not safe (_pohlig hellman_)  
 
+
+## ECC
+
+**Elliptic Curve Cryptography** : uses **scalar multiplication** as trapdoor f   
+*	`E(Fp) = {(x,y) | x,y ∈ Fp, y**2 = x**3+ax+b} ∪ O` : uses an **elliptic curve** over a **finite field** `Fp`
+	*	so it's a "curve modulo the characteristic `p`", a collection of points
+		*	foreach point, `x`,`y` are integers in `Fp` 
+		*	`a`,`b` are integers in `Fp`
+	*	can be visualized as cartesian plane of integers with `x`,`y` in `[0,p[`
+		*	obs: same cartesian math applies
+
+**Elliptic Curve** : defined as set of solutions to a **Weierstrass equation** `E`, together with a **point at infinity** `O`   
+
+`Y**2 = X**3+aX+b` : **Weierstrass equation** -  
+
+**point addition** : operator which takes two points on some curve and produces a third point on the curve  
+*	`lambda = (y2-y1)/(x2-x1)`
+	*	`lambda = (dE/dx)(dE/y) = (3x**2+a)/(2y)` : for tangent (if `x1=x2`)
+*	`x3 = lambda**2-x1-x2`
+*	`y3 = lambda(x1-x3)-y1`
+*	steps:
+	1.	given `P` and `Q`, track a line and find a third intersection `R=(x,y)` with `E`
+		*	use the tangent if `P = Q`
+	2.	`P+Q = R' = (x,-y)` - reflection of `R` over the x-axis
+		*	`P+(-P) = O` : if there's no third intersection `R`
+*	defines an **abelian group**
+*	**point at infinity** : `O` - identity operator
+	*	a single point located at the end of every vertical line at infinity
+	*	properties:
+		1.	`P+O = O+P = P`
+		2.	`P+(−P) = O`
+		3.	`(P+Q)+R = P+(Q+R)`
+		4.	`P+Q = Q+P`
+	*	`4a**3 + 27b**2 != 0` : `O` must satisfy this
+		*	to ensure there are no singularities on `E`
+
+**scalar multiplication** : repeated **point addition**
+*	hard to find `n` s.t. `Q = nP`
+*	e.g.: `Q = 2P = P+P` : 
+
+src:
+*	https://curves.xargs.org/
 
 ## RSA
 
