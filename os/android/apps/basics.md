@@ -49,14 +49,6 @@ Can `@Override` default events.
 		*	`lateinit` : as not exists at compile
 *	e.g.: text, button
 
-`ViewContainer` : invisible container of views, defines layout stucture for views inside
-*	extends `View`
-
-`Layout` : extends `ViewContainer`
-*	needs to specify `layout_height`, `layout_width`
-
-`LinearLayout` : row/col  
-
 ### events
 Can be handled via:
 *	`android:onClick="FUNCTION"` : xml
@@ -81,3 +73,20 @@ Can be handled via:
 			}
 		```
 		: kotlin lambda
+
+### subclasses
+
+### groups and layouts
+
+`ViewGroup` : invisible container of views, defines layout stucture for views inside
+*	extends `View`
+
+`Layout` : extends `ViewContainer`
+*	needs to specify `layout_height`, `layout_width`
+
+`LinearLayout` : row/col  
+
+### widgets
+Views with their own behavior implemented.  
+
+`TextView` :   

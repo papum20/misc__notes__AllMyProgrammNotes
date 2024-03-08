@@ -32,6 +32,8 @@
 `String` : `"string"`  
 `TYPE?` : nullable type  
 
+`VAL as TYPE` : **cast** to `TYPE` -  
+
 ### inference
 `42` : int  
 `42L` : long  
@@ -129,6 +131,9 @@ val duck = Animal("duck", 2)
 
 dog.sound // Will access the getter, not the property
 ```
+
+**setters**, **getters** : are implicit
+*	e.g.: `className.prop = val` : calls `setProp()`, so can use even if `prop` private
 
 **scope functions** : (6) -  
 ```kotlin

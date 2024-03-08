@@ -5,10 +5,21 @@
 ### types
 
 *	alias :  
-*	built-in :  
+*	built-in : not searched as external commands
+	*	so, on execution, shell doesn't invoke an external script
 *	external : in fs (in `$PATH`)  
 *	function :  
 *	keyword :  
+
+## Processes
+
+### Signals
+Way of communication.  
+
+Signals are only read by proc at wakeup
+*	e.g. after exception or called by scheduler
+
+Signals of same type aren't collected, while proc is inactive; just a flag is set to `1` for such signal.  
 
 ## INSTALL
 

@@ -239,13 +239,24 @@
 *	``(relies on ptrace syscall)  ``
 *	``-f`` : follow forks  
   
-## SIGNAL   
+### signals   
 
-`kill` : sends (kill) signal  
-`kill -N PID` : send signal number n  
-`kill` : = kill -9  
-`kill -9 PROC` : (force) interrupt  
-`kill -15 PROC` : (ask interrupt)  
+`kill [-N] PID` : send signal number `N` 
+*	`-l`,`-L` : list signal names
+*	default: `N=9`
+*	signals :
+	*	`15` : ask interrupt
+	*	`9` : force interrupt
+
+`trap [-lp] [[CODE] SIGNAL ...]` : register **signal handler** to os, so on `SIGNAL` from the calling process, `CODE` is executed  
+*	signals :
+	*	`DEBUG` : thrown by shell before executing each command
+	*	`RETURN` : thrown by shell after a function call return, or the import of a source file
+	*	`ERR` : è lanciato dalla shell ad ogni comando che fallisce
+	*	`EXIT` : è lancato dalla shell in uscita (sia causata da exit, fine script, o qualsiasi segnale
+di terminazione - tranne ovviamente KILL)
+*	e.g.: if executed from terminal, it's for terminal's process signals
+*	e.g.: if in a script, it's for that script
   
 ## USERS   
 
@@ -279,9 +290,13 @@
 
 `who` : list connected hosts/users  
   
+## Variables
+  
 ## MISC  
 
-`. FILE` : execute lines in `FILE` as a script  
+`source FILE` : execute lines in `FILE` as a script  
+*	`.` : alias for `source`
+
 `alias` : display alias  
 *	``alias [...]`` : define alias  
 
