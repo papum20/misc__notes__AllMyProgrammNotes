@@ -1,5 +1,7 @@
 # BASICS
 
+## Groups categories
+
 Properties and definitions:
 *	Take:
 	*	a set S
@@ -42,8 +44,13 @@ Properties and definitions:
 
 **ring** : set of integers modulo `n` not prime  
 
-## exponentiation
+## Basic operations
+
+### exponentiation
 `q=gcd(N,mod(q**e,N))` : if `N=pq` primes, for any exp `e`  
+
+### division
+`a/b mod p = a*inverse(b) mod p` : no need for floats  
 
 ## multiplicative groups
 
@@ -100,7 +107,7 @@ Tonelli-Shanks : square root `r` for any `p>2` prime
 	*	solutions: divide both sides by `d` to find solution `c`, then all `n/d` solutions are `c+kd` for any `k`
 	*	obs: _finite field_ - always, as `d=1` with prime
 
-## linear congruences system
+### linear congruences system
 
 linear congruences system :
 ```

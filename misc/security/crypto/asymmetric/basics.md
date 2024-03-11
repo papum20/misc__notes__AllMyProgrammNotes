@@ -49,13 +49,39 @@ rsa: 2048 bit
 		4.	`P+Q = Q+P`
 	*	`4a**3 + 27b**2 != 0` : `O` must satisfy this
 		*	to ensure there are no singularities on `E`
+*	**negate** : `-(x,y) = (x,-y)` 
 
 **scalar multiplication** : repeated **point addition**
-*	hard to find `n` s.t. `Q = nP`
+*	**Elliptic Curve Discrete Logarithm Problem** : (**ECDLP**) - hard to find `n` s.t. `Q = nP`
+	*	complexity: `p**1/2`
 *	e.g.: `Q = 2P = P+P` : 
+*	algo: for `n*P` 
+	```python
+	Q = P
+	R = O
+	while n > 0:
+		if n%2 == 1:
+			R = R + Q
+		Q = Q + Q
+		n = floor(n/2)
+	return R
+	```
 
 src:
 *	https://curves.xargs.org/
+
+### Key exchange
+
+#### ECDH?
+`G` : generator point  
+`nA` : private key of Alice  
+`nB` : private key of Bob
+`Qa` : `nA*G` - public key of Alice  
+`Qb` : `nB*G` - public key of Bob  
+`S` : `nA*Qb = nB*Qa = nA*nB*G` - shared secret  
+`sha1(S.x)` : used as key  
+*	e.g.: for **AES**
+*	`x` is enough to know, since only 2 possible `y` associated
 
 ## RSA
 
