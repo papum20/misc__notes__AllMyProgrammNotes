@@ -98,7 +98,7 @@ src:
 
 ### Key exchange
 
-#### ECDH?
+#### ECDH
 `G` : generator point  
 `nA` : private key of Alice  
 `nB` : private key of Bob
