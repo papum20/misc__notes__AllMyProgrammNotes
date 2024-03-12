@@ -4,7 +4,7 @@ rsa: 2048 bit
 
 ## Diffie-Hellman
 
-**diffie-hellman** : uses discrete log as hard problem.  
+**diffie-hellman** : uses **discrete log** as hard problem.  
 *	input:
 	*	`p` : prime, defining the field `Fp` (multiplicative group)
 	*	`g` : generator of `Fp`
@@ -14,6 +14,100 @@ rsa: 2048 bit
 
 **safe prime** : `p=2q+1` with `p`,`q` prime - avoid efficient attacks if not safe (_pohlig hellman_)  
 
+
+## ECC
+
+**Elliptic Curve Cryptography** : uses **scalar multiplication** as trapdoor f   
+*	`E(Fp) = {(x,y) | x,y ∈ Fp, y**2 = x**3+ax+b} ∪ O` : uses an **elliptic curve** over a **finite field** `Fp`
+	*	so it's a "curve modulo the characteristic `p`", a collection of points
+		*	foreach point, `x`,`y` are integers in `Fp` 
+		*	`a`,`b` are integers in `Fp`
+	*	can be visualized as cartesian plane of integers with `x`,`y` in `[0,p[`
+		*	obs: same cartesian math applies
+
+**Elliptic Curve** : defined as set of solutions to a **Weierstrass equation** `E`, together with a **point at infinity** `O`   
+
+`Y**2 = X**3+aX+b` : **Weierstrass equation** -  
+
+**point addition** : operator which takes two points on some curve and produces a third point on the curve  
+*	`lambda = (y2-y1)/(x2-x1)`
+	*	`lambda = (dE/dx)(dE/y) = (3x**2+a)/(2y)` : for tangent (if `x1=x2`)
+*	`x3 = lambda**2-x1-x2`
+*	`y3 = lambda(x1-x3)-y1`
+*	steps:
+	1.	given `P` and `Q`, track a line and find a third intersection `R=(x,y)` with `E`
+		*	use the tangent if `P = Q`
+	2.	`P+Q = R' = (x,-y)` - reflection of `R` over the x-axis
+		*	`P+(-P) = O` : if there's no third intersection `R`
+*	defines an **abelian group**
+*	**point at infinity** : `O` - identity operator
+	*	a single point located at the end of every vertical line at infinity
+	*	properties:
+		1.	`P+O = O+P = P`
+		2.	`P+(−P) = O`
+		3.	`(P+Q)+R = P+(Q+R)`
+		4.	`P+Q = Q+P`
+	*	`4a**3 + 27b**2 != 0` : `O` must satisfy this
+		*	to ensure there are no singularities on `E`
+*	**negate** : `-(x,y) = (x,-y)` 
+
+**scalar multiplication** : repeated **point addition**
+*	**Elliptic Curve Discrete Logarithm Problem** : (**ECDLP**) - hard to find `n` s.t. `Q = nP`
+	*	complexity: `p**1/2`
+*	e.g.: `Q = 2P = P+P` : 
+*	**double-and-add** : 
+	*	algo: for `n*P`, from lsb
+		```python
+		Q = P
+		R = O
+		while n > 0:
+			if n%2 == 1:
+				R = R + Q
+			Q = Q + Q
+			n = floor(n/2)
+		return R
+		```
+	*	algo: from msb (msb-1)
+		```python
+		R = P
+		for b in bits_representation(n)[1:]: # traversing from second MSB to LSB
+			R = R + R
+			if b == 1:
+				R = R + P
+		return R
+		```
+	*	vulnerability: side-channel; different time for different if branches
+*	**double-and-add** : 
+	*	algo: for `n*P` 
+		```python
+		R0 = O
+		R1 = P
+		for b in bit_representation(n):	# with msb on left
+			if b == 0:
+				R1 = R0 + R1
+				R0 = R1 + R1
+			else:
+				R0 = R0 + R1
+				R1 = R1 + R1
+		return R0
+		```
+	*	if branches require same time
+
+src:
+*	https://curves.xargs.org/
+
+### Key exchange
+
+#### ECDH?
+`G` : generator point  
+`nA` : private key of Alice  
+`nB` : private key of Bob
+`Qa` : `nA*G` - public key of Alice  
+`Qb` : `nB*G` - public key of Bob  
+`S` : `nA*Qb = nB*Qa = nA*nB*G` - shared secret  
+`sha1(S.x)` : used as key  
+*	e.g.: for **AES**
+*	`x` is enough to know, since only 2 possible `y` associated
 
 ## RSA
 

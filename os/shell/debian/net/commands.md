@@ -10,10 +10,13 @@
 `ip` :   
 `ip addr add [ipaddress/netmask] dev [devicename]` :  
 *	assign address to interface devicename  
+*	`ip a` : same
+
 `ip addr del [ipaddress/netmask] dev [devicename]` :  
 *	remove address assigned to interface devicename  
+
 `ip route` : list routes  
-`ip route …` :   
+*	`ip r` : same
 *	`add` :  
 *	`change` :  
 *	`del` :  
@@ -134,13 +137,13 @@ return codes:
 
 `who` : 	  
   
-`ssh` :   
+`ssh [PARAMS] HOST [COMMAND]` :   
+*	`COMMAND` : if specfìified, exec command directly
 *	`-i KEY` : (identity file) use private key  
-
-`ssh -l NAME HOST` : login name  
-e.g.: ssh -l daniele.dugo@studio.unibo.it dalibor.cs.unibo.it  
-`-X …` : enable X11, i.e. allow graphic applications  
 *	`-J` : proxy jump  
+*	`-l NAME` : login name  
+	*	e.g.: ssh -l daniele.dugo@studio.unibo.it dalibor.cs.unibo.it  
+*	`-X …` : enable X11, i.e. allow graphic applications  
   
 `ssh-agent` :   
 `eval “$(ssh-agent -s)”` : start ssh-agent  

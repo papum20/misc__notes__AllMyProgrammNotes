@@ -1,5 +1,57 @@
 # SYNTAX
 
+## Command call
+Bash calls an `exec` for an invoked command, thus replacing itself (with its associated `pid`) with the new process for the command.  
+
+## Redirections
+Shell can close a proc's stream to a file, and replace it with another file descriptor
+*	obs: proc doesn't see change (directly), has always the fd's
+
+_precedence_ : right to left 
+*	e.g.: `ls > file 2>&1` : first redirects `stderr` to `stdout`, then `stdout` to `file` (so both go to `file`)
+
+`N> FILE` : redirect output fd number `N` to `FILE`, overwriting it  
+*	if `N` doesn't exist, the new fd is **created** for `FILE` for the process
+*	`> FILE` : if `N` omitted, it's `stdout`
+*	e.g.: `1` for `stdout`, `2` for `stderr`
+*	e.g.: `exec 2>/dev/null` : redirect **permanently** for all executions
+
+`N>&-` : close fd `N`
+*	e.g.: `exec 2>&-` : reset `exec 2>/dev/null`
+
+`N>&M` : redirect output fd `N` to already open fd `M`  
+`N>>` : `stdout` to file, appending  
+`N< FILE` : redirect input fd to `FILE`  
+*	`< FILE` : default `stdin`
+
+`N<> FILE` : `N` can be used for both r/w  
+
+use as input given multiline text :
+```bash
+COMMAND <<MARKER
+lines here
+MARKER
+```
+*	`MARKER` used as first and last marker, mustn't appear inside lines
+
+`<<< "TEXT"` : use `TEXT` as input  
+
+## Subshell
+Shell calls a `fork` on itself, thus creating its own duplicate; then each resulting shell can invoke a command.  
+
+`CMD1 | CMD2` : **pipe** - 
+*	steps:
+	1.	shell creates a new fd with `pipe`
+	2.	shell forks (`fork`)
+	3.	shell associates pipe's write to `CMD1`, and read to `CMD2` (with `dup2`)
+	4.	shell closes `pipe`, to avoid bad use of pipe
+		*	e.g.: `CMD2` uses pipe for write
+		*	so `CMD1`'s write is `CMD2`'s read
+	5.	each subshell execs its command with `exec`
+
+`(CMD1; CMD2)` :  
+
+
 ## VARIABLES
 `$VAR` : variable val  
 `VAR=VAL` : create/assign  
