@@ -55,17 +55,43 @@ rsa: 2048 bit
 *	**Elliptic Curve Discrete Logarithm Problem** : (**ECDLP**) - hard to find `n` s.t. `Q = nP`
 	*	complexity: `p**1/2`
 *	e.g.: `Q = 2P = P+P` : 
-*	algo: for `n*P` 
-	```python
-	Q = P
-	R = O
-	while n > 0:
-		if n%2 == 1:
-			R = R + Q
-		Q = Q + Q
-		n = floor(n/2)
-	return R
-	```
+*	**double-and-add** : 
+	*	algo: for `n*P`, from lsb
+		```python
+		Q = P
+		R = O
+		while n > 0:
+			if n%2 == 1:
+				R = R + Q
+			Q = Q + Q
+			n = floor(n/2)
+		return R
+		```
+	*	algo: from msb (msb-1)
+		```python
+		R = P
+		for b in bits_representation(n)[1:]: # traversing from second MSB to LSB
+			R = R + R
+			if b == 1:
+				R = R + P
+		return R
+		```
+	*	vulnerability: side-channel; different time for different if branches
+*	**double-and-add** : 
+	*	algo: for `n*P` 
+		```python
+		R0 = O
+		R1 = P
+		for b in bit_representation(n):	# with msb on left
+			if b == 0:
+				R1 = R0 + R1
+				R0 = R1 + R1
+			else:
+				R0 = R0 + R1
+				R1 = R1 + R1
+		return R0
+		```
+	*	if branches require same time
 
 src:
 *	https://curves.xargs.org/
