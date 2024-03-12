@@ -290,15 +290,15 @@ assume:
 *	`Y \in {0,1}` : bool outcome
 
 `log( P(Y=1)/P(Y=0) ) + sum(i)(xi log(teta_i1/teta_i0)) + sum(i)(1-xi) log( (1-teta_i1)/(1-teta_i0) )` : _linear classification_, **boolean case** - `>=0` iff evaluated outcome is `Y=1`, not `Y=0`
-	*	proof:
-		*	classify as `Y=1` iff `P(Y=1|X1..Xn=x)/P(Y=0|X1..Xn=x) >= 1` : val `1` more probable
-		*	iff `(P(Y=1)prod(i)P(Xi=xi|Y=1) )/( P(Y=0)prod(i)P(Xi=xi|Y=0) ) >= 1` : naive, assume indep
-		*	`log( P(Y=1)/P(Y=0) ) + sum(i)(log(P(Xi=xi|Y=1)/P(Xi=xi|Y=0)) ) >= 0` : pass to logs
-		*	knowing that for a bool `f(x) = x f(1) + (1−x) f(0)`
-		*	with `teta_ik=P(Xi=1|y=k)` (hence `P(Xi=0|y=k)=1−teta_ik`)
-		* we conclude the above: `log( P(Y=1)/P(Y=0) ) + sum(i)(xi log(teta_i1/teta_i0)) + sum(i)(1-xi) log( (1-teta_i1)/(1-teta_i0) ) >= 0` iff `1` more probable
-	*	note: that's a linear expression in the set of features xi
-		*	obs: thus evaluates each feature indep
+*	proof:
+	*	classify as `Y=1` iff `P(Y=1|X1..Xn=x)/P(Y=0|X1..Xn=x) >= 1` : val `1` more probable
+	*	iff `(P(Y=1)prod(i)P(Xi=xi|Y=1) )/( P(Y=0)prod(i)P(Xi=xi|Y=0) ) >= 1` : naive, assume indep
+	*	`log( P(Y=1)/P(Y=0) ) + sum(i)(log(P(Xi=xi|Y=1)/P(Xi=xi|Y=0)) ) >= 0` : pass to logs
+	*	knowing that for a bool `f(x) = x f(1) + (1−x) f(0)`
+	*	with `teta_ik=P(Xi=1|y=k)` (hence `P(Xi=0|y=k)=1−teta_ik`)
+	* we conclude the above: `log( P(Y=1)/P(Y=0) ) + sum(i)(xi log(teta_i1/teta_i0)) + sum(i)(1-xi) log( (1-teta_i1)/(1-teta_i0) ) >= 0` iff `1` more probable
+*	note: that's a linear expression in the set of features xi
+	*	obs: thus evaluates each feature indep
 
 #### continuous case
 
