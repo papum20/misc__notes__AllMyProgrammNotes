@@ -54,10 +54,30 @@ Shell calls a `fork` on itself, thus creating its own duplicate; then each resul
 
 ## VARIABLES
 `$VAR` : variable val  
+`${VAR}` : variable val  
+`${VAR:-DFLT}` : if `$VAR` null or not set, return `DFLT` string  
+`${VAR:=DFLT}` : if `$VAR` null or not set, set `VAR=DFLT` and return `DFLT` string  
+`${VAR:?DFLT}` : if `$VAR` null or not set, return `DFLT` and exit (error)  
+`${VAR?DFLT}` : if `$VAR` not set (even if null), return `DFLT` and exit (error)  
+
 `VAR=VAL` : create/assign  
 *	note: no spaces important  
 
 `local VAR=VAL` : local to function  
+
+### Arrays
+`${ARR[N]}` : at index `N`  
+`${ARR[@]}` : values for all defined indexes  
+*	note: `ARR=VAL` : if defined, `ARR[0]=VAL`  
+
+`${ARR[*]}` : values for all defined indexes  
+`${!ARR[@]}` : all defined indexes  
+`${!ARR[*]}` : all defined indexes  
+
+`A=(VAL1 ...)` : assign  
+*	separated by spaces (shell expansion->word splitting)
+*	e.g.: `A=(1 2 3)` :  
+*	e.g.: `IFS='.' ARR=${VAR}` : split `VAR` by `.` and assign to `ARR`
 
 ## VALUES
 `"STRING"|'STRING'` :  
@@ -75,9 +95,9 @@ Shell calls a `fork` on itself, thus creating its own duplicate; then each resul
 `"EXPR"` : string, which allows `${}` evaluation inside  
 
 ### BOOL
+Any bash expression is the result of a command (true if exited with status 0, false if e.g. error).  
 
 `EXPR` : test return value of a command  
-
 `[ EXPR ]` : basic eval  
 *	note: recognized by any terminal/etc.
 *	e.g.: `[ $var == 1 ]` : error if var not defined
@@ -117,6 +137,8 @@ Shell calls a `fork` on itself, thus creating its own duplicate; then each resul
 `$#` : arguments len  
 `$@` : array of arguments  
 `$*` : stringify argv, with spaces between (`"$1 $2 ..."`)
+
+obs: can emulate in terminal without script, creating vars `$N` for argument `N`  
 
 ## STATEMENTS
 
@@ -158,9 +180,11 @@ done
 
 For:
 ```bash
+# ARR is any array, e.g. $@
 for J in ARR 
 do
     ...
+	# $J is a parameter here
 done
 ```
 

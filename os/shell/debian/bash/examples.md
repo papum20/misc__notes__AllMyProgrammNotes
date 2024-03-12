@@ -15,6 +15,15 @@ done
 ```
 ref: [baeldung][BAELDUNG]
 
+`¶ead` command :
+*	```bash
+	IFS='.' while read a b c
+	do
+		echo "a: $a, b: $b, c: $c"
+	done
+	```
+
+
 
 ## BOOL
 

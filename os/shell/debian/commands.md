@@ -136,12 +136,10 @@
   
 ## I/O STREAMS   
 
-`cat [file_name]` : (catenate) redirects stream i/o  
-`cat FILE` : prints file  
-`cat FILE1 FILE2 ...` : prints files one after each other  
-`cat > FILE` : “cout”  
-`cat  FILE` : “cin”  
-`cat  FILE1  FILE2` :  
+`cat [FILE...]` : (catenate) redirects stream input to output   
+*	`FILE` : if specified, used as input (i.e. printed)  
+*	`FILE1 FILE2 ...` : if specifed more, prints files one after each other  
+
 `cut [(-c|-f)LIST] [-dDELIM] [INPUT]` : cut sections  
 *	`-cLIST` : select only these characters  
 *	`-dDELIM` : set delim char  
@@ -150,19 +148,30 @@
 *	`LIST=N|N-|N-M|-M` : ranges of chars/fields  
 
 `echo` :   
-*	``-n`` : no trailing new line  
+*	`-n` : no trailing new line  
 
 `edit [file_name]` : text editor  
 `head INPUT` : print first 10 lines  
-*	``head -N INPUT`` : print first n lines  
+*	`-n N`, `-<N>` : print first `<N>` lines  
+*	`-n -<N>` : all but the last `<N>`
+
+`less` : view file  
+*	commands : internal commands
+	*	`<N>` : go `<N>` lines ahead
+	*	`h` : help
 
 `grep PATTERN [FILE]` : search pattern in file  
 *	`-A|B NUM` : include NUM lines after/before  
 *	`-E` : enable extended regex
 	*	e.g: enable `|`
 *	`-n` : also print in which line was found
+*	`-o` : only print matched
 *	`-r` : recursive - used for searching directory instead of single file
 *	`-v PATTERN` : “inverse”, i.e. excludes pattern  
+
+`read VAR1 ...` : read from input, assign each element to a `VAR`, separated by `IFS`  
+`rev [FILE]` : reverse input lines  
+*	note: doesn't support multi-byte chars and gives problems
 
 `sed '/START/[,/END/]CMD' [FILE]` : "stream editor for filtering and transforming text"  
 *	filter file text from regex `START` (to `END`) and apply command `CMD`  
@@ -176,14 +185,31 @@
 		*	e.g.: `sed 's#.*/##; s#[.][^.]*$##'` : remove extension and path
 	*	`$#` : matched part in REGEX, to refer in REPALCEMENT
 
-`sort TEXT` : (default) sort lines  
-*	``sort -r`` : reverse order  
+`sort [FILE]` : sort input  
+*	`-c` : check if sorted
+*	`-k KEY` : ordering key
+	*	if used multiple times, uses in order from left
+*	`-m` : merge sorted files
+*	`-r` : reverse order  
+*	`-R` : random permutation of lines
+*	`-tSEP` : set chars to separate fields (default spaces)
+*	`-u` : `sort|uniq`
+*	interpreptation and filters :
+	*	`-b` : ignore leading spaces
+	*	`-d` : only use alphanum and spaces
+	*	`-f` : ignore case
+	*	`-h` : 
+	*	`-n` : interpret digits as number values
 
 `strings` : print the sequences of printable characters in files  
 `tail INPUT` : print last 10 lines  
-`tail -N INPUT` : print last n lines  
-`-f` : follow; append elements as file grows  
-`es.: head -n1 INPUT | tail -n2` : print from n1-n2+1 to n1  
+*	`-N` : print last n lines  
+*	`-f` : follow; append elements as file grows  
+*	e.g.: `head -n1 INPUT | tail -n2` : print from n1-n2+1 to n1  
+
+`tac` : redirects stream input to output, but starting from last input line
+*	obs: reverse of cat
+
 `tee` : “redirect from input to output”  
 `tr SET1 [SET2]` : replace SET1 occurrences in input with SET2  
 *	``tr -d SET1`` : delete SET1 occurrences  
@@ -191,13 +217,15 @@
 *	``[:alpha:]`` : all letters (A-Za-z)  
 *	e.g.: ``tr [:alpha:] N-ZA-Mn-za-m`` : shift letters by 13 positions  
 
-`uniq` : (default) merge repeated lines  
-*	``-d`` : only print duplicate lines  
-*	``-u`` : only print unique lines  
+`uniq` : (default) merge adjacent repeated lines  
+*	obs: `sort|uniq` : to remove all duplicates
+*	`-c` : number of lines merged
+*	`-d` : only print duplicate lines  
+*	`-u` : only print unique lines  
 
 `vi [file_name]` : (edit)  
 `wc INPUT` : count things (bytes, words…)  
-*	``wc -l INPUT`` : count lines in input  
+*	`-l` : count lines in input  
   
 ## MEMORY   
 
@@ -218,8 +246,12 @@
   
 ## PROCESSES   
 
-`disown [JOBSPEC|PID]` : unlink process from terminal
+`bg [JOB_SPEC]` : bring job id to bg   
+
+`disown [JOBSPEC|PID]` : unlink process from terminal (remove from hob table)  
 *	default: `JOBSPEC` : current job
+
+`fg [JOB_SPEC]` : job id to fg  
 
 `ltrace FILE` : intercept and record dynamic library calls;  
 *	``(relies on ptrace syscall)  ``
@@ -227,17 +259,26 @@
 *	``FILTER`` : e.g.: +F1-F2+@PATH1-@PATH.so* :  
 + filters in, - filter out, @ indicates library pattern, without is symbol pattern (function), wildcard allowed  
 
+`nice COMMAND` : run command with _niceness_>0 (scheduling priority)   
+*	default: 10
+*	<10 : only used by root
+
 `nohup COMMAND` : make command no hang up when closing terminal  
 *	e.g.: `nohup COMMAND &` :  
 
 `ps` : processes  
 *	`-a` : all associated with a terminal
 *	`-A|-e` : all
+*	`-C` : command name
+	*	obs: better than using `grep`
 *	`-u` : show owner user
 
 `strace PROCESS` : list of system call made;  
 *	``(relies on ptrace syscall)  ``
 *	``-f`` : follow forks  
+
+`wait [PID]` : wait for `PID` to terminate
+*	`PID` : if not specified, waits for all children
   
 ### signals   
 
@@ -294,25 +335,34 @@ di terminazione - tranne ovviamente KILL)
   
 ## MISC  
 
-`source FILE` : execute lines in `FILE` as a script  
-*	`.` : alias for `source`
-
 `alias` : display alias  
 *	``alias [...]`` : define alias  
 
 `clear` : clears terminal and starts from first row  
 `history` : history of commands given  
 `man [SECTION] COMMAND` : manual  
-*	`-k KEYWORD` :  
+*	`-a KEYWORD` : get entries for all sections  
+*	`-k REGEX` : search REGEX in short descriptions and names  
+*	note: many commands need `mandb` updated
 *	e.g.: `man man` : manual for manual  
 *	e.g.: `man ascii` :   
 *	e.g.: `man 2 SYSTEM_CALL` :   
 	*	e.g.: `man 2 write` : write()  
 
+`sudo mandb` : update `man` database  
+
 `md5sum [FILE]` : md5 hash of `FILE`
 *	e.g.: `echo -n STRING | md5sum` : hash of string (remove `\n` with `-n`)  
 
 `reset` : reset terminal  
+`script` : start printing all typed commands in a file
+*	exit with `exit` or `Ctrl+D`
+*	note: also captures special characters used by terminal for coloring (so should like deactivate colors/use another terminal)
+
+`shift` : shift arguments  
+`source FILE` : execute lines in `FILE` as a script  
+*	`.` : alias for `source`
+
 `timedatectl` : time for pc/os/hw…  
 `type COMMAND` : type of command  
 `xargs` : build and execute command lines from standard input  

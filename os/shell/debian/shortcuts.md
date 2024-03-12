@@ -13,3 +13,6 @@ Terminal interprets the following as signals.
 `Ctrl+D` : `eof`  
 `Ctrl+Q` : `start`  
 `Ctrl+S` : `stop`  
+
+## Terminal
+`Ctrl+R` : search command history  

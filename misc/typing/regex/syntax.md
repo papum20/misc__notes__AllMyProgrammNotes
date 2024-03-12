@@ -25,6 +25,7 @@ format, depending on where (different commands, languages, ...)
 *	if N1/N2 missing, means any (start/end)  
 
 `[LIST]` : **bracket expression** - any char in list  
+`[^LIST]` : any char not in list  
 `[A-B]` : any char in range [A;B]  
 `[:CCLASS:]` : **character class** -  
 *	e.g.: `[:alnum:]`  
