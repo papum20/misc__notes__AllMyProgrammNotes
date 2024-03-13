@@ -1,20 +1,19 @@
 # OBJECTS
 
-## Kotlin/Java
 
-### Activities
+## Activities
 
-#### events
+### events
 
 `onRestoreInstanceState(Bundle savedInstanceState)` : called when passing **created**->**resumed**   
 `onSaveInstanceState(Bundle savedInstanceState)` : called when passing **resumed**->**destroyed**  
 `onTouchEvent(event: MotionEvent)` :  
 
-### GUI
+## GUI
 
 `setContentView(?)` :  
 
-### IO
+## IO
 
 `Log` : logging class
 *	categories (from lowest priority) :
@@ -25,21 +24,48 @@
 	5.	`Log.e(TAG, MSG)` : error
 	6.	`Log.wtf(TAG, MSG)` : should never happen in life (unexpected, means logic is wrong)
 
-### Views
+## Resources
+
+### types
+
+#### values
+Tags from any file in `res/values`  
+
+`<string>` : String value
+associated to a key.  
+`<integer>` : Integer value
+associated to a key.    
+`<string-array>` :  
+*	`<item>`
+
+`<integer -array>` :  
+*	`<item>`
+
+`<color>` :  
+`<dimen>` : Dimension units of
+the GUI components  
+`<style>` :  
+
+#### drawable
+Tags from any file in `res/drawable`  
+
+`<drawable>` : Images and everything that can be drawn  
+
+#### mipmap
+`<mipmap>` : images to be used as icons  
+
+## Views
 `findViewById()` :  
 *	java requires cast until api 26
 
-#### button
-`performClick()` :  
-
-## xml
-
-### View
-
+### xml
 `id="@+id/ID` :  
 `padding=PADDING` :  
 
-#### Layout
+### button
+`performClick()` :  
+
+### Layout
 `android:layout_*` : layout attrs, for the layout element or a child of its  
 
 `layout_height=HEIGHT` :   
@@ -50,7 +76,7 @@
 `layout_margin=MARGIN` :  
 `layout_width=WIDTH` :  
 
-##### LinearLayout
+#### LinearLayout
 `layout_gravity=` :  
 `layout_orientation="horizontal"|"vertical"` :  
 `layout_weight=NUMBER` :  

@@ -1,7 +1,26 @@
 # BASICS
 
+## FILE STRUCTURE
 
-## Activity
+`PROJECT_NAME` : 
+*	`java/` : code
+	*	`MainActivity.java`/`MainActivity.kt`
+*	`res/` : XMLs for resources
+	*	`animator/` : XML for property animations - old framework to change properties over time.
+	*	`anim/` : XML for tween animations - newer framework to change properties in a bulk.
+	*	`color/` : XML files that define a state list of colors (simple colors are in values).
+	*	`drawable/` : Bitmap files (.png, .jpg, .gif) or XML files compiled into other resources.
+	*	`layout/` : XML files that define a user interface layout.
+	*	`mipmap/` : Drawable files for different launcher icon densities
+	*	`menu/` : XML files that define application menus.
+	*	`raw/` : Arbitrary files to save in their raw form (they don't have a default implemented behaviour).
+	*	`values/` : XML files that contain simple values, such as strings, integers, arrays.
+		*	`strings.xml` : all strings, labels used in app 
+	*	`xml/` : Arbitrary XML files
+
+## CONCEPTS
+
+### Activity
 
 **activity** : a screen of an app  
 *	contains methods to react to events
@@ -10,7 +29,7 @@
 
 Extend `Activity` class.  
 
-### states/events
+#### states/events
 
 states :
 1.	**created** : `onCreate(Bundle savedInstanceState)` - (app not visible) contains startup logic, load layout
@@ -30,7 +49,23 @@ states :
 
 Can `@Override` default events.  
 
-## Views
+### Resources
+
+**resource** : What is not code   
+*	declared in `xml`
+*	each identified (unique id) by `SUBCLASS.name` (`SUBCLASS` is the **resource type**)
+	*	obs: `name` can repeat in different `SUBCLASS`es
+	*	obs: `xml` file in which declared doesn't matter, as always mapped to same `R.SUBCLASS`
+*	each mapped to `java` code as `public static final int [PACKAGE_NAME.]R.SUBLCLASS.name = VAL`
+
+**resource type** : `xml` tag, subclass of `R`  
+
+`R` : resource base class  
+
+`[PACKAGE_NAME.]R.SUBLCLASS.NAME` : reference to a resource  
+*	`PACKAGE_NAME` : needed if not in same class
+
+### Views
 
 `View` : a self-contained object/component of the screen 
 *	also views containers (`ViewGroup`) 
@@ -49,7 +84,7 @@ Can `@Override` default events.
 		*	`lateinit` : as not exists at compile
 *	e.g.: text, button
 
-### events
+#### events
 Can be handled via:
 *	`android:onClick="FUNCTION"` : xml
 *	`onTouchEvent()` : java/kotlin event handlers
@@ -74,9 +109,9 @@ Can be handled via:
 		```
 		: kotlin lambda
 
-### subclasses
+#### subclasses
 
-### groups and layouts
+#### groups and layouts
 
 `ViewGroup` : invisible container of views, defines layout stucture for views inside
 *	extends `View`
@@ -86,7 +121,7 @@ Can be handled via:
 
 `LinearLayout` : row/col  
 
-### widgets
+#### widgets
 Views with their own behavior implemented.  
 
 `TextView` :   

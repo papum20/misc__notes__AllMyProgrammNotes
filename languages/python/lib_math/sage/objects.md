@@ -43,11 +43,20 @@ e.g.: `x^2 + 2` :
 
 ### EllipticCurve
 `E = EllipticCurve(ring: Ring, invariants: List[float])` :  
+*	`ring` : a commutative ring (but most functionalities need field)
+	*	can be omitted
+*	`invariants` : `[a1,a2,a3,a4,a6]` or `[a4,a6]`, from `y**2+a1 xy+a3 y = x**3+a2 x**2+a4 x+a6`
 
+`E(x,y)` : get point in `E` (`EllipticCurvePoint`)  
 `E.order()` :  
 
+#### EllipticCurvePoint
+
+`discrete_log(Q:EllipticCurvePoint)` : for `P`, get `n` s.t. `P=nQ`  
+`xy()` : get `(x,y)`  
+
 ### finite fields
-`GF(dimension: int)` : finite field/ring of `dimension`  
+`GF(dimension: int)` : finite field of `dimension`  
 `GF(dimension: int, s: string)` : ??  
 *	e.g.:
 		```python
