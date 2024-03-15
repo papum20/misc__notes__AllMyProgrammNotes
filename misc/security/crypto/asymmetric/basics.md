@@ -24,8 +24,13 @@ rsa: 2048 bit
 		*	`a`,`b` are integers in `Fp`
 	*	can be visualized as cartesian plane of integers with `x`,`y` in `[0,p[`
 		*	obs: same cartesian math applies
+	*	vulnerability: choose carefully (use already existing ones), or easy discrete log
 
 **Elliptic Curve** : defined as set of solutions to a **Weierstrass equation** `E`, together with a **point at infinity** `O`   
+*	**cardinality** : number of elements
+*	**order** : number of elements (according to chatgpt, how many times an element can be summed to become again itself)
+	*	`(p+1)−2sqrt(p) <= #E(F) <= (p+1)+2sqrt(p)` : _Hasse's theorem on elliptic curvers_ - order `#E(f)` in range
+		*	src: https://math.stackexchange.com/questions/3166688/find-the-order-of-an-elliptic-curve/3988222#3988222?newreg=d78b4a040b644bbab2aabdced5dc8824
 
 `Y**2 = X**3+aX+b` : **Weierstrass equation** -  
 
@@ -108,6 +113,52 @@ src:
 `sha1(S.x)` : used as key  
 *	e.g.: for **AES**
 *	`x` is enough to know, since only 2 possible `y` associated
+
+### Signing
+
+## ECDSA
+
+_singing_ : 
+*	`G` : generator
+*	`n` : curve's order
+	*	must be prime (...)
+		*	src: wikipedia
+*	`dA` : priv key
+*	`Qa` : pub key
+*	`m` : msg to send (sign)
+*	steps:
+	1.	`e = hash(m)`
+	2.	`Ln = n.bit_length()`
+	3.	`z = e[:Ln]` : (`Ln` leftmost bits)
+	4.	`k` : selected cryptographically secure random from `[1,n-1]`
+	5.	`(x1,y1) = k*G`
+	6.	`r = x1 mod n` : if `0`, back to step 4
+	7.	`s = k**-1 (z+r*dA) mod n` : if `0`, back to step 4
+	8.	`(r,s)` : signature
+		*	note: `(r,-s mod n)` : is also a valid signature
+	*	note: `k` is a `nonce`, and can't be reused
+*	vulnerability: reuse `k`, for 2 different `m1`,`m2`
+	*	`dA = (s*k-z)/r`
+	*	proof:
+		1.	if `k=k1=k2` then `r=r1=r2=(k*G).x`
+		2.	`si = (zi+r*dA)/k`
+		3.	`s1-s2 = (z1-z2)/k`
+		4.	`m = (z1-z2)/(s1-s2)`
+		5.	get `dA = (s*k-z)/r`
+
+_verification_ :
+*	steps:
+	0.	check :
+		*	`Qa != O`
+		*	`Qa` in `E`
+		*	`n*Qa = O`
+	1.	`r`,`s` in `[1,n-1]`
+	2.	`e = hash(m)`
+	3.	`z = e[:Ln]`
+	4.	`u1 = z*s**-1 mod n`, `u2 = r*s**-1 mod n`
+	5.	`(x1,y1) = u1*G + u2*Qa` : if `(x1,y1) = O` signature invalid
+	6.	`r = x1 mod n` : if true, signature valid
+
 
 ## RSA
 

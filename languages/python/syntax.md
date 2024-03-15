@@ -39,3 +39,8 @@ decorator :
 *	e.g.: `@dispatch(int, int)` : function accepts 2 int params
 
 `@staticmethod` :   
+
+## Operators
+
+`*ITERABLE` : unpack iterable  
+*	e.g.: `foo(*[1,2])` 

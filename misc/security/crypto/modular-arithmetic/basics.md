@@ -46,9 +46,6 @@ Properties and definitions:
 
 ## Basic operations
 
-### exponentiation
-`q=gcd(N,mod(q**e,N))` : if `N=pq` primes, for any exp `e`  
-
 ### division
 `a/b mod p = a*inverse(b) mod p` : no need for floats  
 
@@ -72,12 +69,19 @@ src:
 *	https://crypto.stackexchange.com/questions/40654/find-the-generators-of-multiplicative-group-of-units-efficiently?newreg=5899d2f2288b407980ddb4133d7864c5
 *	https://crypto.stackexchange.com/questions/102292/proof-that-checking-if-gk-bmod-p-ne1-finds-a-generator-of-a-cyclic-group/102301#102301
 
-## quadratic residues
+## exponentiation
+
+**modular e'th root** : `x` s.t. `x**e=a mod p`
+*	th: exists if `gcd(e,p)=1`
+
+tip: `q=gcd(N,mod(q**e,N))` : if `N=pq` primes, for any exp `e`  
+
+### quadratic residues
 
 uses:
 *	elliptic curves  
 
-quadratic residue : iff has square root mod n (`a` iff `pow(b,2,n)==a`)  
+**quadratic residue** : iff has square root mod n (`a` iff `pow(b,2,n)==a`)  
 quadratic non-residue : else  
 *	prop: 
 	*	a residue * a residue = a residue
@@ -85,7 +89,9 @@ quadratic non-residue : else
 	*	a non residue * a non residue = a residue
 	*	tip: like `+1,-1`
 	*	e.g.: pow(a residue, n) = a residue, for any n
-
+*	th: there are `(p-1)/2+1` residues in `Fp` (`p` odd prime)
+	*	one is `0`
+	*	other `(p-1)/2` are couples; `a` and `p-a` have the same square root, for `0<a<p` 
 
 Legendre's Symbol : `(a / p) ≡ pow(a,(p-1)/2, p)`, for `p>2` prime
 *	`(a/p) = 1` : if a is a quadratic residue and `a%p != 0`

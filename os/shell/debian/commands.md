@@ -170,6 +170,10 @@
 *	`-v PATTERN` : “inverse”, i.e. excludes pattern  
 
 `read VAR1 ...` : read from input, assign each element to a `VAR`, separated by `IFS`  
+*	`-a ARRAY` : assign tokens to elements of `ARRAY`
+*	`-p PROMPT` : print `PROMPT` before reading
+*	`-u FD` : read from `FD`
+
 `rev [FILE]` : reverse input lines  
 *	note: doesn't support multi-byte chars and gives problems
 
@@ -332,6 +336,13 @@ di terminazione - tranne ovviamente KILL)
 `who` : list connected hosts/users  
   
 ## Variables
+
+`declare NAME[=VAL]` : declare a var or set properties on it  
+*	`-i` : type int
+*	`--` : no type
+
+`let` : eval arithmetic expression  
+*	e.g.: `let N++`
   
 ## MISC  
 

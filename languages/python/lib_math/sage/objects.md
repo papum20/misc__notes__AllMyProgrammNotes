@@ -49,6 +49,8 @@ e.g.: `x^2 + 2` :
 
 `E(x,y)` : get point in `E` (`EllipticCurvePoint`)  
 `E.order()` :  
+`E.set_order()` : set if known  
+*	good for performance?
 
 #### EllipticCurvePoint
 

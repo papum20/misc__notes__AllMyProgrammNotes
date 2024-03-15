@@ -62,6 +62,7 @@ Shell calls a `fork` on itself, thus creating its own duplicate; then each resul
 
 `VAR=VAL` : create/assign  
 *	note: no spaces important  
+*	e.g.: `VAR="3*(2+5)"` 
 
 `local VAR=VAL` : local to function  
 
@@ -88,8 +89,11 @@ Shell calls a `fork` on itself, thus creating its own duplicate; then each resul
 `{}` : separate code blocks (like c)
 *	e.g.: `${VAR}` : is valid, equal to `$VAR`
 
-`(EXPR)` : evaluate expression  
+`(CMD)` : launch command in subshell    
+`{CMD1;CM2;}` : sequence  
+*	doesn't create a subshell
 
+`$((EXPR))` : eval arithmetic expr  
 `` `EXPR` `` : evaluate expr before executing command  
 `'STRING'` : literal string  
 `"EXPR"` : string, which allows `${}` evaluation inside  
@@ -99,6 +103,7 @@ Any bash expression is the result of a command (true if exited with status 0, fa
 
 `EXPR` : test return value of a command  
 `[ EXPR ]` : basic eval  
+*	note: actually a command (a link to `test`)
 *	note: recognized by any terminal/etc.
 *	e.g.: `[ $var == 1 ]` : error if var not defined
 
@@ -127,6 +132,9 @@ Any bash expression is the result of a command (true if exited with status 0, fa
 `s PATH` : file not empty  
 
 `==` :  
+`=~` : regex  
+*	only in `[[ ]]`
+
 `! A == B` : `!=`  
 
 ### MATH
@@ -137,6 +145,9 @@ Any bash expression is the result of a command (true if exited with status 0, fa
 `$#` : arguments len  
 `$@` : array of arguments  
 `$*` : stringify argv, with spaces between (`"$1 $2 ..."`)
+`$?` : arg where to put return val  
+*	`0` : for success
+*	`>1` : error codes
 
 obs: can emulate in terminal without script, creating vars `$N` for argument `N`  
 
@@ -163,20 +174,35 @@ If:
 
 
 Switch:  
-```bash
-case VAR in
-	OPT1) ...;;
-	OPT2) ...;;
-esac
-```
+*	```bash
+	case VAR in
+		OPT1) ...;;
+		OPT2) ...;;
+	esac
+	```
+*	e.g.: 
+	```bash
+	case "$var" in
+	val1) echo val1 ;;
+	val?) echo val2, vala, valz ;;
+	val*) echo val11, val, valfoo ;;
+	[1-9]val) echo 1val, 2val, ..., 9val ;;
+	*) echo none of the above ;;
+	esac
+	```
 
 while :  
-```bash
-while ...
-do
-	...
-done
-```
+*	```bash
+	while ...
+	do
+		...
+	done
+	```
+
+until : while command returns false
+*	```bash
+	until COMMAND
+	```
 
 For:
 ```bash
@@ -189,27 +215,14 @@ done
 ```
 
 ### FUNCTIONS
+Actually a sequence of commands.  
 
-Declare:
-```bash
-FUNCTION () {
-	...
-}
+`FUNCTION () {}` : declare  
+`function FUNCTION {}` : declare  
 
-function FUNCTION {
+`return EXPR` : return  
+`$N` : **arguments** - argument number `N`, from `1` 
+*	note: covers script args, so not accessible anymore thru `$N`
 
-}
-```
+`FUNCTION [ARG1 ARG2 ...]` : call  
 
-Return:
-```bash
-return EXPR
-```
-
-`$...` : **arguments** - same as script  
-
-Call:  
-```bash
-FUNCTION
-FUNCTION ARG1 ARG2 ...
-```
