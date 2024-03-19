@@ -16,6 +16,7 @@
 `max(array, axis=)` :  
 `mean(array, axis=)` : average  
 `min(array, axis=)` :  
+`multiply(a1, a2)` : mul one by one  
 `array ones()` :   
 `outer()` :   
 `prod()` : product over axis  

@@ -247,6 +247,8 @@
 `sudo mount -a` : mount all, according to fstab  
 `sudo resize2fs DEV [SIZE]` : resize
 *	e.g.: if expanding and there's empty space, can omit size and will fill
+
+`testdisk` : find lost partitions, with cli  
   
 ## PROCESSES   
 

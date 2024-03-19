@@ -207,7 +207,7 @@ e.g.: `tot(20)=tot(2**2*5)=20*(1-1/2)*(1-1/5)=2*(2-1)*(5-1)=8`: (wikipedia) ?
 *	method 2 - if you don't know e:
 	1.	get (for instance) `c2=enc(2)`, `c4=enc(4)`, `c8=enc(8)`  
 	2.	calc `pn=c2**2-c4`, `qn=c2**3-c8`
-		*	note: these are multiple of n (`p*n`, `q*n`)  
+		*	note: these are multiples of n (`p*n`, `q*n`)  
 	3.	`n=gcd(pn, qn)`
 	4.	Repeat with different values if necessary  
 *	method 3:  
