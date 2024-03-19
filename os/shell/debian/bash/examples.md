@@ -1,21 +1,32 @@
 # EXAMPLES
 
 ## ARGUMENTS
-passing short arguments :  
-```bash
-# userReg-flags.sh -f 'John Smith' -a 25 -u john
-while getopts u:a:f: flag
-do
-    case "${flag}" in
-        u) username=${OPTARG};;
-        a) age=${OPTARG};;
-        f) fullname=${OPTARG};;
-    esac
-done
-```
-ref: [baeldung][BAELDUNG]
 
-`¶ead` command :
+arguments, arrays :
+*	```bash
+	./my_command a b "c d"
+	# looping on $*, splits with spaces: a, b, c, d
+	# looping on "$*", stringifies all: "a b c d"
+	# looping on $@, splits with spaces, treats each elem as unquoted string: a, b, c, d
+	# looping on "$@", splits quoted elements, treats each elem as quoted string: a, b, "c d"
+	```
+	*	ref: [unix.stackexchange][unix.stackexchange_args]
+
+passing short arguments :  
+*	```bash
+	# userReg-flags.sh -f 'John Smith' -a 25 -u john
+	while getopts u:a:f: flag
+	do
+		case "${flag}" in
+			u) username=${OPTARG};;
+			a) age=${OPTARG};;
+			f) fullname=${OPTARG};;
+		esac
+	done
+	```
+	*	ref: [baeldung][baeldung_while]
+
+`read` command :
 *	```bash
 	IFS='.' while read a b c
 	do
@@ -40,4 +51,5 @@ check file extension:
 
 <!-- LINKS & REFS -->
 
-[BAELDUNG]: https://www.baeldung.com/linux/use-command-line-arguments-in-bash-script
+[baeldung_while]: https://www.baeldung.com/linux/use-command-line-arguments-in-bash-script
+[unix.stackexchange_args]: https://unix.stackexchange.com/questions/129072/whats-the-difference-between-and

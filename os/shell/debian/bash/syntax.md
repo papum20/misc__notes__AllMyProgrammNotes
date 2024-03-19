@@ -74,6 +74,7 @@ Shell calls a `fork` on itself, thus creating its own duplicate; then each resul
 `${ARR[*]}` : values for all defined indexes  
 `${!ARR[@]}` : all defined indexes  
 `${!ARR[*]}` : all defined indexes  
+`{N..M}` : range `N` to `M`  
 
 `A=(VAL1 ...)` : assign  
 *	separated by spaces (shell expansion->word splitting)
@@ -93,6 +94,7 @@ Shell calls a `fork` on itself, thus creating its own duplicate; then each resul
 `{CMD1;CM2;}` : sequence  
 *	doesn't create a subshell
 
+`$'\x0A'` : eval char (hex)  
 `$((EXPR))` : eval arithmetic expr  
 `` `EXPR` `` : evaluate expr before executing command  
 `'STRING'` : literal string  
@@ -111,9 +113,6 @@ Any bash expression is the result of a command (true if exited with status 0, fa
 *	recognizes regex, empty var
 *	note: specific to bash not recognized by any terminal/etc.
 
-`[ -z $VAR ]` : true if variable not set (i.e. not set or set to empty (string))  
-`[ -n $VAR ]` : true if variable set to non empty string  
-
 `((EXPR))` : evaluate expressions with "normal" operators  
 `! CONDITION` : not  
 *	`CONDITION=((EXPR))|[ EXPR ]` :  
@@ -125,17 +124,22 @@ Any bash expression is the result of a command (true if exited with status 0, fa
 `-OP` :  
 *	note: use **spaces** around compare operator  
 
-`le|ne|ge` : 
-
-`e PATH` : file exists  
-`r|w|x PATH` : file has r|w|x access  	
-`s PATH` : file not empty  
+`-e PATH` : file exists  
+`-r|w|x PATH` : file has r|w|x access  	
+`-s PATH` : file not empty  
 
 `==` :  
 `=~` : regex  
 *	only in `[[ ]]`
 
 `! A == B` : `!=`  
+`ARG1 -le|ne|ge ARG2` : 
+
+`-z VAR` : true if variable not set
+*	i.e. not set or set to empty (string)
+
+`-n VAR` : true if variable set to non empty string  
+
 
 ### MATH
 `%` :  
@@ -145,11 +149,23 @@ Any bash expression is the result of a command (true if exited with status 0, fa
 `$#` : arguments len  
 `$@` : array of arguments  
 `$*` : stringify argv, with spaces between (`"$1 $2 ..."`)
+`$1` : pid of most recent bg program  
 `$?` : arg where to put return val  
 *	`0` : for success
 *	`>1` : error codes
 
 obs: can emulate in terminal without script, creating vars `$N` for argument `N`  
+
+## Pattern
+
+### extglob
+The following need `extglob` (`shopt`).  
+
+`?(PATTERN)` : 0|1   
+`*(PATTERN)` : 0+   
+`+(PATTERN)` : 1+   
+`@(PATTERN)` : 1  
+`!(PATTERN)` : all except  
 
 ## STATEMENTS
 
@@ -175,9 +191,11 @@ If:
 
 Switch:  
 *	```bash
-	case VAR in
+	case $VAR in
 		OPT1) ...;;
 		OPT2) ...;;
+		# OPTs can be any shell expression, e.g. including *
+		?) ...;; # default
 	esac
 	```
 *	e.g.: 
@@ -212,6 +230,7 @@ do
     ...
 	# $J is a parameter here
 done
+for ((i=0; i<10; i++)); do {} done
 ```
 
 ### FUNCTIONS

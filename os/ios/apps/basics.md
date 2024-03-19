@@ -11,7 +11,7 @@ _ios philosophy_ : only use provided ways of programming, provided methods, apps
 ios apps use mvc.  
 
 **MVC** : Model-View-Controller design pattern
-*	**controller** : controls
+*	**controller**/**ViewController** : controls
 	*	**outlet** : to interact (control) with **view**
 *	**model** : keeps data
 	*	e.g.: data structs
@@ -25,3 +25,15 @@ ios apps use mvc.
 
 More MVCs can be combined
 *	e.g.: a controller controls all
+
+## Concepts
+
+**action**/**target** : in **ViewController**, called on an event happened in **view**  
+**outlet** : in **view**, event?? for **action**  
+
+## Elements
+
+### Attribute/Property
+In xcode, you can set init val in right tab.  
+
+
