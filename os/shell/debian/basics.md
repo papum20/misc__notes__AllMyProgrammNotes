@@ -17,7 +17,7 @@
 Way of communication.  
 
 Signals are only read by proc at wakeup
-*	e.g. after exception or called by scheduler
+*	e.g.: after exception or called by scheduler, not if not scheduled
 
 Signals of same type aren't collected, while proc is inactive; just a flag is set to `1` for such signal.  
 

@@ -10,7 +10,7 @@ Shell can close a proc's stream to a file, and replace it with another file desc
 _precedence_ : right to left 
 *	e.g.: `ls > file 2>&1` : first redirects `stderr` to `stdout`, then `stdout` to `file` (so both go to `file`)
 
-`N> FILE` : redirect output fd number `N` to `FILE`, overwriting it  
+`[N]> FILE` : open `FILE` for writing on fd `N`
 *	if `N` doesn't exist, the new fd is **created** for `FILE` for the process
 *	`> FILE` : if `N` omitted, it's `stdout`
 *	e.g.: `1` for `stdout`, `2` for `stderr`
@@ -21,7 +21,7 @@ _precedence_ : right to left
 
 `N>&M` : redirect output fd `N` to already open fd `M`  
 `N>>` : `stdout` to file, appending  
-`N< FILE` : redirect input fd to `FILE`  
+`[N]< FILE` : open `FILE` for reading on fd `N`
 *	`< FILE` : default `stdin`
 
 `N<> FILE` : `N` can be used for both r/w  
@@ -33,6 +33,7 @@ lines here
 MARKER
 ```
 *	`MARKER` used as first and last marker, mustn't appear inside lines
+*	`<<-MARKER...` : (with `-`) input stripped from input lines and line containing MARKER
 
 `<<< "TEXT"` : use `TEXT` as input  
 

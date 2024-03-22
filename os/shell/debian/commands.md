@@ -299,9 +299,8 @@
 *	signals :
 	*	`DEBUG` : thrown by shell before executing each command
 	*	`RETURN` : thrown by shell after a function call return, or the import of a source file
-	*	`ERR` : è lanciato dalla shell ad ogni comando che fallisce
-	*	`EXIT` : è lancato dalla shell in uscita (sia causata da exit, fine script, o qualsiasi segnale
-di terminazione - tranne ovviamente KILL)
+	*	`ERR` : launched by shell on error
+	*	`EXIT` : launched by shell on exit (for any reason, except kill)
 *	e.g.: if executed from terminal, it's for terminal's process signals
 *	e.g.: if in a script, it's for that script
   
