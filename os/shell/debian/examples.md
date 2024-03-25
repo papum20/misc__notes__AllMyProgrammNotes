@@ -7,6 +7,19 @@ Remove extension and path from filename (filenames in all directories):
 find . -name '*' | sed 's#.*/##; s#[.][^.]*$##'
 ```
 
+## Functions
+
+get return value from background processes, and also be able to manage job ids :
+*	```bash
+	out_file_1=$(mktemp)
+	out_file_2=$(mktemp)
+	( proc_1 > $out_file_1 ) &
+	( proc_1 > $out_file_2 ) &
+	wait
+	out_1=$(cat $out_file_1)
+	out_2=$(cat $out_file_2)
+	```
+
 ## Misc
 
 ### getopts
