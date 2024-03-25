@@ -27,7 +27,7 @@ _joint distribution_ :
 assume:
 *	`Y` : bool rand var
 	*	`pi` : `Y` has **bernoulli distribution**
-*	`Xi` : cont rand var, indep from each other `Y`
+*	`Xi` : const rand var, indep from each other `Y`
 *	`P(Xi|Y=k)` : _gaussian distribution_ `N(mu_ik,sigma_i)`
 	*	obs: not `delta_ik`
 

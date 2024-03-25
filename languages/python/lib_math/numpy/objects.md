@@ -2,6 +2,7 @@
   
 
 ## numpy  
+
 `arange(int n)` : array={0..n-1}  
 `atleast_2d(array)` :  
 *	`for 1d array, adds empty dimension (useful for transpose)`  
@@ -29,7 +30,8 @@
 *	`do instead `np.atleast_2d(A).T`  
 `tril(matrix)` :   
 `triu(marix)` : upper diagonal  
-`array zeros(lunghezza(int)/dimensioni(tupla), tipo(default:float), qualcosa di memoria('C'/'F', default) )` : array full of zeroes  
+`unique(array, return_counts: bool)` : list of unique element, and counts if specified  
+`zeros(lunghezza(int)/dimensioni(tupla), tipo(default:float), qualcosa di memoria('C'/'F', default) ) -> array` : array full of zeroes  
 
 ### functions
 
