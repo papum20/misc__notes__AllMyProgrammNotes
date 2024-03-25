@@ -285,6 +285,16 @@
 
 `wait [PID]` : wait for `PID` to terminate
 *	`PID` : if not specified, waits for all children
+
+## SYSTEM
+
+#### debug
+
+`dmesg` : kernel messages  
+`systemctl
+`journalctl` : system logs?  
+*	run as `sudo` to see all, like kernel stuff
+*	`-b` : boot logs (same you see at boot)
   
 ### signals   
 

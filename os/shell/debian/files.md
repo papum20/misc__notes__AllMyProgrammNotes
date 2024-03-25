@@ -2,13 +2,30 @@
   
 ## FOLDERS  
 
+### /boot
+
+`/boot/grub/grub.cfg` : automatically generated from `update-grub`, from `/etc/default/grub`
+*	so don't edit
+*	`menuentry` : indicates a menu entry
+*	`submenu` : 
+	*	e.g.: other boot entries
+
 ### /dev
 `/dev/null` : false path to write: writes nowhere  
 `/dev/urandom` : when read file, gives random number  
 
 ### /etc
 `/etc/default/grub` : grub config  
-*	fix disappeared other os dual boot entry: uncomment GRUB_DISABLE_OS_PROBER=false` 
+*	`GRUB_DEFAULT` : default after timeout
+	*	`=saved` : default
+		*	e.g.: set with `grub-set-default`
+	*	`MENU_ENTRY[>SUBMENU_ENTRY]` : set to static
+		*	entries are either names, or numbers (from 0, according to order you see in grub menu and `grub.cfg`)
+		*	you can find entries in `/boot/grub/grub.cfg`
+		* e.g.: `"gnulinux-advanced-a705c24f-2f92-4728-b22f-0692f79d2952>gnulinux-6.1.0-18-amd64-advanced-a705c24f-2f92-4728-b22f-0692f79d2952"` : 
+*	`GRUB_DISABLE_OS_PROBER=false` : 
+	*	fix disappeared other os dual boot entry (uncomment) 
+*	`GRUB_TIMEOUT` : 
 
 `/etc/fstab` : statuc fs info/boot  
 *	`FS	MOUNT_POINT TYPE OPTS DUMP PASS` : format of an entry in the file

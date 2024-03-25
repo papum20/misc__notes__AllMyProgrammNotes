@@ -50,7 +50,7 @@ tree construction : choice of order of evaluated attributes
 *	**code theory (shannon)** : entropy measures average nmber of bits required to transmit outcomes produced by stochastic process `X`
 	*	`log(n)` : bits to encode `n` possible outcomes (of an event), equiprobable
 		*	`H(X) = -sum(i=1..n)( P(X=i)log2(P(X=i)) ) = -sum(i=1..n)( (1/n)log2(1/n) ) = log(n)` : 
-	*	note: if not equiprobable, we can do better (see _codnitional entropy_)
+	*	note: if not equiprobable, we can do better (see _conditional entropy_)
 
 `H(X|Y=v) = -sum(i=1..n)( P(X=i|Y=v)log2(P(X=i|Y=v)) )` : _conditional entropy_ : of `X` given a specific `Y=v`
 `H(X|Y) = -sum(v=1..m)( P(Y=v)H(X|Y=v) )` : _conditional entropy_ : of `X` given `Y`

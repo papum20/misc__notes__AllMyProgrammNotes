@@ -74,6 +74,7 @@ Shell calls a `fork` on itself, thus creating its own duplicate; then each resul
 `${ARR[*]}` : values for all defined indexes  
 `${!ARR[@]}` : all defined indexes  
 `${!ARR[*]}` : all defined indexes  
+`${#ARR[@]}` : len  
 
 `A=(VAL1 ...)` : assign  
 *	separated by spaces (shell expansion->word splitting)

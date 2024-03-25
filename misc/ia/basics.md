@@ -28,6 +28,22 @@ steps :
 *	`y^(i) \in Y` : 
 *	`i` : instance of the training sample
 
+### development of a model
+
+phases of development of a model : 
+1.	built-in datasets
+2.	data preprocessing
+	1.	_normalization_ : to give all features same scale
+		*	e.g.: `sklearn.preprocessing.StandardScaler()` 
+	2.	classes unbalancing
+	3.	(_stratified_) _train test split_ : split data in train and test
+		*	_stratification_ : keep same proportions between classes in train and test as in data
+			*	helps generalize and prevent bias, especially when data unbalanced
+	4.	_undersampling_/_oversampling_ : increase/decrease dataset size
+3.	predictive models training
+4.	models evaluation
+
+
 ### overfitting
 
 _overfitting_ : `h` **overfits** train set `train`, on the full data domain set `D`, iff `\exist h' | error_train(h)<error_train(h') && error_D(h)>error_D(h')`  
@@ -44,14 +60,25 @@ estimate : we don't have `D`, so divide available data in _train set_ (to choose
 
 ### types of learning tasks 
 
-**_supervised learning_** : inputs + outputs (labels)  
+**_supervised learning_** : inputs + outputs   
+*	`[(x0,y0),...], xi \in X, yi \in Y` : inputs have labels 
+*	`[(x0',y0'),...], xi' \in X, yi' \in Y` : tests (outputs) have labels 
 *	use: classification
 *	use: regression
 
-**_unsupervised learning_** : inputs  
+**_semi-supervised learning_** : inputs  
+*	`[(x0,y0),...], xi \in X, yi \in Y` : inputs have labels 
+*	`[x0',...], xi' \in X` : tests (outputs) don't have labels 
+
+**_unsupervised learning_** : inputs unlabeled  
+*	`[x0,...], xi \in X` : inputs don't have labels 
+*	`[x0',...], xi' \in X` : tests (outputs) don't have labels 
 *	use: clustering
 *	use: component analysis
 *	use: autoencoding
+*	use: reducing dimensions
+*	use: outliar detection
+*	use: hidden features discovery
 
 **_reinforcement learning_** : actions and rewards 
 *	use: learning long-term gains
@@ -81,7 +108,7 @@ modern/**deep** approach : supply raw data to machine, which computes features
 
 ### function approximation
 
-**_function approximation_** : from `<x^i,y^i>`, learn function mapping `x^i` to `y^i`
+**_function approximation_** : from `<x^i,y^i>`, learn function mapping `x^i` to `y^i`  
 **_classification problem_** : if `Y` discrete  
 *	impl: _class prediction_
 
@@ -104,3 +131,5 @@ modern/**deep** approach : supply raw data to machine, which computes features
 		*	Gradient technique
 	*	Naive Bayes
 *	Random forest
+
+

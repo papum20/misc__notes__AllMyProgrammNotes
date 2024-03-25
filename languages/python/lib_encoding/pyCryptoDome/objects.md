@@ -1,5 +1,19 @@
 # OBJECTS  
   
+  
+## Crypto.Cipher
+  
+### AES
+`cipher=AES.new(key, mode, iv=)` : create new AES cipher
+*	`MODE_*` : modes names
+
+#### GCM
+`update(aad)` : add **aad** to cipher  
+
+
+  
+## old
+  
 ## import 
 pycryptodome  
 import Crypto  
@@ -23,7 +37,7 @@ padded = pad(plaintext, size)
 cipher = AES.new(...)  
 encrypted = AES.encrypt(...)  
 decrypted = AES.decrypt(...)		# using new cipherw  
-  
+
 ## Crypto.Hash.*  
 *.new(...)->* : return object hashed with * method  
 <hashed>.hexdigest()	: in hex  
