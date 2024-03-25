@@ -10,7 +10,7 @@ Shell can close a proc's stream to a file, and replace it with another file desc
 _precedence_ : right to left 
 *	e.g.: `ls > file 2>&1` : first redirects `stderr` to `stdout`, then `stdout` to `file` (so both go to `file`)
 
-`N> FILE` : redirect output fd number `N` to `FILE`, overwriting it  
+`[N]> FILE` : open `FILE` for writing on fd `N`
 *	if `N` doesn't exist, the new fd is **created** for `FILE` for the process
 *	`> FILE` : if `N` omitted, it's `stdout`
 *	e.g.: `1` for `stdout`, `2` for `stderr`
@@ -21,7 +21,7 @@ _precedence_ : right to left
 
 `N>&M` : redirect output fd `N` to already open fd `M`  
 `N>>` : `stdout` to file, appending  
-`N< FILE` : redirect input fd to `FILE`  
+`[N]< FILE` : open `FILE` for reading on fd `N`
 *	`< FILE` : default `stdin`
 
 `N<> FILE` : `N` can be used for both r/w  
@@ -33,6 +33,7 @@ lines here
 MARKER
 ```
 *	`MARKER` used as first and last marker, mustn't appear inside lines
+*	`<<-MARKER...` : (with `-`) input stripped from input lines and line containing MARKER
 
 `<<< "TEXT"` : use `TEXT` as input  
 
@@ -75,6 +76,7 @@ Shell calls a `fork` on itself, thus creating its own duplicate; then each resul
 `${!ARR[@]}` : all defined indexes  
 `${!ARR[*]}` : all defined indexes  
 `${#ARR[@]}` : len  
+`{N..M}` : range `N` to `M`  
 
 `A=(VAL1 ...)` : assign  
 *	separated by spaces (shell expansion->word splitting)
@@ -94,6 +96,7 @@ Shell calls a `fork` on itself, thus creating its own duplicate; then each resul
 `{CMD1;CM2;}` : sequence  
 *	doesn't create a subshell
 
+`$'\x0A'` : eval char (hex)  
 `$((EXPR))` : eval arithmetic expr  
 `` `EXPR` `` : evaluate expr before executing command  
 `'STRING'` : literal string  
@@ -112,9 +115,6 @@ Any bash expression is the result of a command (true if exited with status 0, fa
 *	recognizes regex, empty var
 *	note: specific to bash not recognized by any terminal/etc.
 
-`[ -z $VAR ]` : true if variable not set (i.e. not set or set to empty (string))  
-`[ -n $VAR ]` : true if variable set to non empty string  
-
 `((EXPR))` : evaluate expressions with "normal" operators  
 `! CONDITION` : not  
 *	`CONDITION=((EXPR))|[ EXPR ]` :  
@@ -126,17 +126,22 @@ Any bash expression is the result of a command (true if exited with status 0, fa
 `-OP` :  
 *	note: use **spaces** around compare operator  
 
-`le|ne|ge` : 
-
-`e PATH` : file exists  
-`r|w|x PATH` : file has r|w|x access  	
-`s PATH` : file not empty  
+`-e PATH` : file exists  
+`-r|w|x PATH` : file has r|w|x access  	
+`-s PATH` : file not empty  
 
 `==` :  
 `=~` : regex  
 *	only in `[[ ]]`
 
 `! A == B` : `!=`  
+`ARG1 -le|ne|ge ARG2` : 
+
+`-z VAR` : true if variable not set
+*	i.e. not set or set to empty (string)
+
+`-n VAR` : true if variable set to non empty string  
+
 
 ### MATH
 `%` :  
@@ -146,11 +151,23 @@ Any bash expression is the result of a command (true if exited with status 0, fa
 `$#` : arguments len  
 `$@` : array of arguments  
 `$*` : stringify argv, with spaces between (`"$1 $2 ..."`)
+`$1` : pid of most recent bg program  
 `$?` : arg where to put return val  
 *	`0` : for success
 *	`>1` : error codes
 
 obs: can emulate in terminal without script, creating vars `$N` for argument `N`  
+
+## Pattern
+
+### extglob
+The following need `extglob` (`shopt`).  
+
+`?(PATTERN)` : 0|1   
+`*(PATTERN)` : 0+   
+`+(PATTERN)` : 1+   
+`@(PATTERN)` : 1  
+`!(PATTERN)` : all except  
 
 ## STATEMENTS
 
@@ -176,9 +193,11 @@ If:
 
 Switch:  
 *	```bash
-	case VAR in
+	case $VAR in
 		OPT1) ...;;
 		OPT2) ...;;
+		# OPTs can be any shell expression, e.g. including *
+		?) ...;; # default
 	esac
 	```
 *	e.g.: 
@@ -213,6 +232,7 @@ do
     ...
 	# $J is a parameter here
 done
+for ((i=0; i<10; i++)); do {} done
 ```
 
 ### FUNCTIONS

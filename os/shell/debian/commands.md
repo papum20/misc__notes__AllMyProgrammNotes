@@ -309,9 +309,8 @@
 *	signals :
 	*	`DEBUG` : thrown by shell before executing each command
 	*	`RETURN` : thrown by shell after a function call return, or the import of a source file
-	*	`ERR` : è lanciato dalla shell ad ogni comando che fallisce
-	*	`EXIT` : è lancato dalla shell in uscita (sia causata da exit, fine script, o qualsiasi segnale
-di terminazione - tranne ovviamente KILL)
+	*	`ERR` : launched by shell on error
+	*	`EXIT` : launched by shell on exit (for any reason, except kill)
 *	e.g.: if executed from terminal, it's for terminal's process signals
 *	e.g.: if in a script, it's for that script
   
@@ -355,6 +354,11 @@ di terminazione - tranne ovviamente KILL)
 
 `let` : eval arithmetic expression  
 *	e.g.: `let N++`
+
+`shopt [-pqsu] [-o] [OPTNAME...]` : set shell options
+*	`-s` : set
+*	`-u` : unset
+*	e.g.: `shopt -s extglob` : enable extended pattern matching
   
 ## MISC  
 
@@ -362,6 +366,15 @@ di terminazione - tranne ovviamente KILL)
 *	``alias [...]`` : define alias  
 
 `clear` : clears terminal and starts from first row  
+`getopts OPTSTRING NAME [ARGS...]` : (built-in) get options  
+*	`OPTSTRING`: made of...
+	*	`A` : letter - flag
+	*	`A:` : letter - flag with required arg
+		*	e.g.: `-a arg` 
+*	`OPTIND` : set to `1` at script start, increased at each arg or arg value read
+*	`OPTAGR` : stores value for arg currently read
+*	e.g.: see [examples.md](examples.md)
+
 `history` : history of commands given  
 `man [SECTION] COMMAND` : manual  
 *	`-a KEYWORD` : get entries for all sections  
@@ -382,7 +395,7 @@ di terminazione - tranne ovviamente KILL)
 *	exit with `exit` or `Ctrl+D`
 *	note: also captures special characters used by terminal for coloring (so should like deactivate colors/use another terminal)
 
-`shift` : shift arguments  
+`shift [N]` : shift arguments, of `N` positions  
 `source FILE` : execute lines in `FILE` as a script  
 *	`.` : alias for `source`
 
@@ -422,7 +435,9 @@ di terminazione - tranne ovviamente KILL)
 `lsusb` : devices  
 `top` : processes / resources used  
   
-## apt  
+## Packages
+  
+### apt  
 `apt autoremove` : remove unnecessary packages  
 `apt search APPLICATION_NAME` :  
 `apt show ` :   
@@ -431,8 +446,8 @@ di terminazione - tranne ovviamente KILL)
 `apt update` : check updatable packages  
 `apt upgrade` : update updatable packages  
 
-## dpkg
+### dpkg
 
-## apt
+### apt
 `update-grub` : update grub  
 *	e.g.: boot options  
