@@ -9,14 +9,16 @@
 
 `atq [-V] [-q QUEUE] [-v]` : list jobs waiting in queue  
 `atrm [-V] JOB [JOB...]` : remove planned from queue  
+*	you can see job id from `atq`
+
 `batch [-V] [-q queue] [-f file] [-mv] [TIME]` : ?  
 
 ## cron
 
 `crontab [-el] [-u USERNAME] [NEW_TAB]` :   
-*	`NEW_TAB` : new to create
+*	`NEW_TAB` : replace current table with new
 *	`-e` : edit
-*	`-l` : list
+*	`-l` : list (show table)
 
 
 ## systemd

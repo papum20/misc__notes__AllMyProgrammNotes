@@ -17,7 +17,9 @@ Checks which to exe every minute.
 ## systemd
 Big single program to replace many others.  
 
-
+### rsyslogd
+For logging.  
+Can put conf files in its folder, then `systemctl restart rsyslog`.  
 
 ## sysVinit
 

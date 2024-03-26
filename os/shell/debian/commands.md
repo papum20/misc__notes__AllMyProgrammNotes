@@ -436,6 +436,7 @@
 `lspci -kd` ::300 : gpu info (including driver if available)  
 `lsusb` : devices  
 `top` : processes / resources used  
+`uptime` : uptime and system load (last 15,5,1 minutes)  
   
 ## Packages
   

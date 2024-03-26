@@ -83,6 +83,10 @@ Shell calls a `fork` on itself, thus creating its own duplicate; then each resul
 *	e.g.: `A=(1 2 3)` :  
 *	e.g.: `IFS='.' ARR=${VAR}` : split `VAR` by `.` and assign to `ARR`
 
+### Known variables
+`$$` : current pid (of base process, doesn't change for subprocesses)  
+`$BASPID` : current pid (subprocess)  
+
 ## VALUES
 `"STRING"|'STRING'` :  
 `NUM` :  
