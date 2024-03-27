@@ -165,10 +165,12 @@
 *	`-A|B NUM` : include NUM lines after/before  
 *	`-E` : enable extended regex
 	*	e.g: enable `|`
+*	`-F` : match fixed string
 *	`-n` : also print in which line was found
 *	`-o` : only print matched
 *	`-r` : recursive - used for searching directory instead of single file
 *	`-v PATTERN` : “inverse”, i.e. excludes pattern  
+*	`-x` : match only whole lines  
 
 `read VAR1 ...` : read from input, assign each element to a `VAR`, separated by `IFS`  
 *	`-a ARRAY` : assign tokens to elements of `ARRAY`
