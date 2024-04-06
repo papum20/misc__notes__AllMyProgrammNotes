@@ -33,6 +33,10 @@
 `unique(array, return_counts: bool)` : list of unique element, and counts if specified  
 `zeros(lunghezza(int)/dimensioni(tupla), tipo(default:float), qualcosa di memoria('C'/'F', default) ) -> array` : array full of zeroes  
 
+### creation
+
+`meshgrid(x1:ndarray, x2, ...)` : create grid, combining vectors; return `x`, `y` of coordinates  
+
 ### functions
 
 `cos(array:Array)` : (like `sin`)  

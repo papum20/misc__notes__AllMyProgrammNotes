@@ -7,8 +7,13 @@
 `find_factor(N)` : return 2 factors of `N`, of which one is prime  
 
 ## equations
+`solve(eqns:List[equation],vars...)->List[]` : return solutions to equations, using variables `vars`  
+*	e.g.: `var('x y')` : can use `x`, `y` as vars
+
+### modular
 `crt(a,b,m,n)` : chinese remainder theorem, solve for `x=a mod m`, `x=b mod n`    
 `crt(a:[], b:[])` : chinese remainder theorem, solve for `x=a_i mod b_i`  
+
 `solve_mod(eqns,modulus)->List[]` : return solutions to modular equation  
 
 ### (Equation)
