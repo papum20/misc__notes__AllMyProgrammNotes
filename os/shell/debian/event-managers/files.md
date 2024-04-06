@@ -11,6 +11,8 @@
 
 ## systemd
 
+`/etc/rsyslog.d/*` : `rsyslog` files  
+
 ## sysVinit
 
 ## upstart

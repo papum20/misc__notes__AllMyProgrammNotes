@@ -75,6 +75,7 @@
 `file FILE` : info about file  
 `gdb` : (disassemble)  
 `ldd` : print shared object dependencies  
+`mktemp` : create temporary file  
 `nm FILE` : symbol table  
 *	note: U=not found  
 
@@ -164,10 +165,12 @@
 *	`-A|B NUM` : include NUM lines after/before  
 *	`-E` : enable extended regex
 	*	e.g: enable `|`
+*	`-F` : match fixed string
 *	`-n` : also print in which line was found
 *	`-o` : only print matched
 *	`-r` : recursive - used for searching directory instead of single file
 *	`-v PATTERN` : “inverse”, i.e. excludes pattern  
+*	`-x` : match only whole lines  
 
 `read VAR1 ...` : read from input, assign each element to a `VAR`, separated by `IFS`  
 *	`-a ARRAY` : assign tokens to elements of `ARRAY`
@@ -298,7 +301,7 @@
   
 ### signals   
 
-`kill [-N] PID` : send signal number `N` 
+`kill [-N] {PID|%JOBSPEC}` : send signal number `N` 
 *	`-l`,`-L` : list signal names
 *	default: `N=9`
 *	signals :
@@ -306,6 +309,7 @@
 	*	`9` : force interrupt
 
 `trap [-lp] [[CODE] SIGNAL ...]` : register **signal handler** to os, so on `SIGNAL` from the calling process, `CODE` is executed  
+*	`-l` : list signals
 *	signals :
 	*	`DEBUG` : thrown by shell before executing each command
 	*	`RETURN` : thrown by shell after a function call return, or the import of a source file
@@ -434,6 +438,7 @@
 `lspci -kd` ::300 : gpu info (including driver if available)  
 `lsusb` : devices  
 `top` : processes / resources used  
+`uptime` : uptime and system load (last 15,5,1 minutes)  
   
 ## Packages
   
