@@ -35,6 +35,15 @@
 
 ### sklearn.model_selection
 
+#### cross validation
+`cross_val_score(estimator, X, y, cv:int)` : cross validation, return result for each fold  
+*	`estimator` : a model
+	*	e.g.: `LogisticRegression`
+
+`StratifiedKFold(n_splits:int)` : cross validator obj  
+*	`n_splits` : folds n
+
+#### split
 `train_test_split(X, y, test_size:float, stratify, random_state)` : split train and test 
 *	`stratify` : label to use to stratify (`y`), if want to split with stratification
 
@@ -55,13 +64,22 @@
 
 ## learning
 
+### sklearn.ensemble
+
+`VotingClassifier(estimators:List, voting:str)` : ensemble model, with voting method
+*	`estimators` : list of models
+*	`voting='soft'` : weighted average of probabilities
+
 ### sklearn.linear_model
 
 #### LogisticRegression
 
 `coef_` : regression weights  
 
-`LogisticRegression(C=0.01,multi_class='multinomial',penalty='l1',solver='saga', tol=0.1)` :  
+`LogisticRegression(C:float, multi_class='multinomial', penalty:str, solver='saga', tol:float, random_state)` :  
+*	`C` : inverse of regularization strength
+	*	e.g.: `0.01`, `1.0`
+*	`penalty='l1'|'l2'` : regularization type
 *	`tolerance` : turn up for faster convergence
 
 `fit(X,Y)` :  
@@ -79,5 +97,5 @@ Decision trees.
 
 `DecisionTreeClassifier(criterion='entropy', random_state=0)` : get the tree  
 
-`fit(X,Y)` :  
-`predict(X)`:  
+`fit(X,Y)` : train model, with train data  
+`predict(X)`: predict classes for test data  

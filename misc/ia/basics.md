@@ -33,7 +33,7 @@ steps :
 phases of development of a model : 
 1.	built-in datasets
 2.	data preprocessing
-	1.	_normalization_ : to give all features same scale
+	1.	_normalization_ : (_scaling_) to give all features same scale
 		*	e.g.: `sklearn.preprocessing.StandardScaler()` 
 	2.	classes unbalancing
 	3.	(_stratified_) _train test split_ : split data in train and test
@@ -94,15 +94,9 @@ _generative_ : can model underlying data distribution, generate new data samples
 *	use: data augmentation (with cautions)
 *	use: anomaly detection
 
-### types of probles
+### types of problems
 
 _classification_ : learn the _decision boundary_, separating classes in data  
-
-### learning approaches
-
-old approach : you choose and compute good features, then use algo  
-modern/**deep** approach : supply raw data to machine, which computes features  
-*	impl: neural networks
 
 ## problems
 
@@ -122,7 +116,37 @@ modern/**deep** approach : supply raw data to machine, which computes features
 
 ...  
 
-## methods
+## evaluation
+
+### metrics
+
+results : 
+*	_true positive_ : `TP` - correct positive prediction
+*	_false positive_ : `FP` - 
+*	_true negative_ : `TN` - 
+*	_false negative_ : `FN` - 
+
+_accuracy_ : `(TP+TN) / (TP+TN+FP+FN)`  
+_precision_ : `TP / (TP+FP)`  
+_recall_ : `TP / (TP+FN)`  
+_F1-score_ : `2 * (precision * recall) / (precision + recall)` - armonic mean of _precision_ and _recall_  
+
+### methods
+
+_**cross validation**_ : split data in `k` parts (_fold_ s), train on `k-1`, test on `1` (formed with data from each fold)
+_confusion matrix_ : matrix with true label on left, predicted label on top
+*	shows `TP`, `FP`, `TN`, `FN`
+
+
+## learning
+
+### approaches
+
+old approach : you choose and compute good features, then use algo  
+modern/**deep** approach : supply raw data to machine, which computes features  
+*	impl: neural networks
+
+### methods/models
 
 *	Decision trees
 *	Probabilistic approaches
@@ -131,5 +155,10 @@ modern/**deep** approach : supply raw data to machine, which computes features
 		*	Gradient technique
 	*	Naive Bayes
 *	Random forest
+*	_**ensemble**_ : combine multiple models, with a chosen method
+	*	obs: can be used to improve accuracy
+		*	e.g.: if folds are different
+	*	methods :
+		*	**Voting classifier** : weighted average of probabilities 
 
 

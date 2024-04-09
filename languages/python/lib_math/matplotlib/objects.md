@@ -46,6 +46,9 @@
 
 `rc()` : global configurations  
 *	`rc(“font”, size=INT)` : font size  
+
+`tight_layout()` : adjust so all fit
+*	e.g.: labels dont overlap or go out
   
 ### matplotlib.pyplot.axis
 // returned by subplot
