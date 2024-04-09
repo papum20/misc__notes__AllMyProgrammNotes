@@ -14,6 +14,11 @@ rsa: 2048 bit
 
 **safe prime** : `p=2q+1` with `p`,`q` prime - avoid efficient attacks if not safe (_pohlig hellman_)  
 
+### DLP
+
+**Index Calculus** : best algo
+*	`2048b` for `112b` security
+
 
 ## ECC
 
@@ -114,11 +119,15 @@ src:
 *	e.g.: for **AES**
 *	`x` is enough to know, since only 2 possible `y` associated
 
+##### ECDLP
+
+best algo : `224b` for `112b` security
+
 ### Signing
 
-## ECDSA
+#### ECDSA
 
-_singing_ : 
+_signing_ : 
 *	`G` : generator
 *	`n` : curve's order
 	*	must be prime (...)
@@ -171,6 +180,9 @@ _verification_ :
 `e=` :   
 
 ### factorization
+
+**General Number Field Sieve for integer factorization** : best algo  
+*	`2048b` for `112b` security
 
 #### elliptic curve factorization method
 Much more effective if there's at least one small prime (up to approximately 80 bits / 25 decimal digits).  
@@ -228,7 +240,7 @@ e.g.: `tot(20)=tot(2**2*5)=20*(1-1/2)*(1-1/5)=2*(2-1)*(5-1)=8`: (wikipedia) ?
 *	note: used in Rabin system.  
 *	`n`, `p`, `q`, `e`, `ct` are given.  
 *	work in q (don't know why):
-	```
+	```python
 	ct_q = ct % q
 	phi_q = q-1
 	d_q = inverse_mod(e, phi_q / gcd(e,phi_q) )

@@ -11,7 +11,7 @@ _precedence_ : right to left
 *	e.g.: `ls > file 2>&1` : first redirects `stderr` to `stdout`, then `stdout` to `file` (so both go to `file`)
 
 `[N]> FILE` : open `FILE` for writing on fd `N`
-*	if `N` doesn't exist, the new fd is **created** for `FILE` for the process
+*	if `N` doesn't exist, a new fd is **created** for `FILE` for the process
 *	`> FILE` : if `N` omitted, it's `stdout`
 *	e.g.: `1` for `stdout`, `2` for `stderr`
 *	e.g.: `exec 2>/dev/null` : redirect **permanently** for all executions

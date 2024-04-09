@@ -29,7 +29,8 @@ More MVCs can be combined
 ## Concepts
 
 **action**/**target** : in **ViewController**, called on an event happened in **view**  
-**outlet** : in **view**, event?? for **action**  
+**outlet** : in **view**, event for **action**  
+*	thru which _controller_ controls _view_
 
 ## Elements
 

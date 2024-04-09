@@ -48,6 +48,10 @@ e.g.: `x^2 + 2` :
 *	`invariants` : `[a1,a2,a3,a4,a6]` or `[a4,a6]`, from `y**2+a1 xy+a3 y = x**3+a2 x**2+a4 x+a6`
 
 `E(x,y)` : get point in `E` (`EllipticCurvePoint`)  
+`E.base_extend(F)` : return with changed field as base  
+`E.defining_polynomial()` : polynomial using projective coordinates (points `x`,`y`,`z`)
+*	with `z=1` it's the form with `x`,`y`, with `z=0` it's the solution at infinity
+
 `E.order()` :  
 `E.set_order()` : set if known  
 *	good for performance?
@@ -75,6 +79,9 @@ e.g.: `x^2 + 2` :
 		8 1
 		```
 
+### finite rings
+`IntegerModRing(n)` :  
+`Integers(n)` : (same)  
 
 ### Mod
 `M = Mod(a, m)` : create class `a` mod `m`  
