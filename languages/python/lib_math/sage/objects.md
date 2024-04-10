@@ -57,6 +57,7 @@ e.g.: `x^2 + 2` :
 `E.defining_polynomial()` : polynomial using projective coordinates (points `x`,`y`,`z`)
 *	with `z=1` it's the form with `x`,`y`, with `z=0` it's the solution at infinity
 
+`E.lift_x(x)` : get all points with `x`  
 `E.order()` :  
 `E.set_order()` : set if known  
 *	good for performance?
@@ -64,9 +65,10 @@ e.g.: `x^2 + 2` :
 #### EllipticCurvePoint
 
 `discrete_log(Q:EllipticCurvePoint)` : for `P`, get `n` s.t. `P=nQ`  
+`list()` : coefficients of polynomial  
 `xy()` : get `(x,y)`  
 
-### finite fields
+### finite field
 `GF(dimension: int)` : finite field of `dimension`  
 `GF(dimension: int, s: string)` : ??  
 *	e.g.:
@@ -84,7 +86,11 @@ e.g.: `x^2 + 2` :
 		8 1
 		```
 
-### finite rings
+#### finite field element
+`list()` : coefficients  
+`polynomial()` : polynomial representation  
+
+### finite ring
 `IntegerModRing(n)` :  
 `Integers(n)` : (same)  
 
@@ -97,3 +103,10 @@ e.g.: `x^2 + 2` :
 	```  
 
 `M.sqrt()` : self sqrt mod n  
+
+### polynomial
+`coefficients()` : element coefficients
+*	`sparse=False` : coefficients??
+*	e.g.: `2*u + 1` : coeffiecients are `(1,2)`
+
+
