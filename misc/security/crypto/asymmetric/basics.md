@@ -119,6 +119,64 @@ src:
 *	e.g.: for **AES**
 *	`x` is enough to know, since only 2 possible `y` associated
 
+_cofactor_ : `h=E.order/n`
+*	should be as small as possible
+	*	e.g.: `1` ; `h<=4` ok
+
+_domain parameters_ : `(p,a,b,G,n,h)`  
+*	`a`,`b` : curve parameters
+*	`n` : `G.order`
+
+
+##### MOV attack
+
+**MOV attack** : reduce _ECDLP_ to _DLP_, when _embedding degree_ `k` is small
+*	e.g.: `k > 20` is secure; ed25519 has `k=8`
+*	src: [https://risencrypto.github.io/WeilMOV/](https://risencrypto.github.io/WeilMOV/)
+*	src: [https://crypto.stackexchange.com/a/1875/115423](https://crypto.stackexchange.com/a/1875/115423)
+*	src: [www.github.com/papum20/tasks__security__cryptohack/elliptic/moving_exploit.py](www.github.com/papum20/tasks__security__cryptohack/elliptic/moving_exploit.py)  
+*	steps:
+	0.	given `E` in `F` (finite field in prime `p`), with (main) generator `G`, and _embedding degree_ `k` of `p` wrt `G.order()`; we want the discrete log `r` of `P=rQ` with base `Q`
+		*	e.g.: `Q=G`
+	1.	compute :
+		*	the _extension field_ `Fpk` (over `p^k`)
+		*	`Epk` on `Fpk`
+		*	orders `m=#E`, `n=#Epk`
+		*	note: since the m-_Torsion group_ of `E` is a subgroup of `Epk`, `m` divides `n` (lagrange's th)
+	2.	Choose a random point `T` in `Epk` (and not in `E` ?? )
+	3.	if `S=(n/m)*T == O`, choose another `T`, else it means `T` is a point of order `m`
+	4.	compute _Weil Pairing_ values (in `Fpk`) :
+		*	`u = em(Q,S)`
+		*	`v = em(P,S) = em(rQ,S)`
+		*	note: src #1 uses `S`, i (in my example) used `T`
+		*	note: since the _Weil Pairing_ is _bilinear_ and `r` is a scalar, `v=em(P,S)^r`
+	5.	we can solve the discrete log of `v` with base `u`
+		*	(if `p^k` not too big ?? )
+
+_linear map_ : `f1:V->W` (from `V` to `W`) if has properties
+*	U,V,W vector spaces
+*	{u,u1,u2∈U}
+*	{v,v1,v2∈V}
+*	a is a scalar
+*	properties :
+	*	f1(v1+v2)=f1(v1)+f1(v2)
+	*	f1(a v)=a f1(v)
+ 
+_bilinear map_ : `f2:V->W` 
+*	properties :
+	*	f2(u1+u2,v)=f2(u1,v)+f2(u2,v)
+	*	f2(u,v1+v2)=f2(u,v1)+f2(u,v2)
+	*	f2(a u,v)=a f2(u,v)=f2(u,a v)
+*	note: then linear in u if v
+ is fixed, and in v if u fixed.
+
+_embedding degree_ : wrt `m`, smallest `k` s.t. `p^k%m = 1`  
+_extension field_ : `Fpk` of `Fp`, on `p^k`, with `p` prime (??)  
+_torsion point_ : `P` is `m`-_torsion_ if `mP=O`  
+_torsion group_ : `m`-_torsion_ group is set of all `m`-_torsion_ points  
+_Weil pairing_ : a _bilinear map_ from `E` to `F`  
+
+
 ##### ECDLP
 
 best algo : `224b` for `112b` security
