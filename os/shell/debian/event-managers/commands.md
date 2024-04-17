@@ -25,13 +25,18 @@
 
 `systemctl {start|stop|status|restart|reload} SERVICE` :  
 *	`-H [HOSTNAME]` : first connect with ssh
-
-**service** :
-*	**reload** : if such services defines and specifed a way to reload, `systemd reload SERVICE` uses that
-	*	e.g.: `SERVICE` reloads on `SIGUSR1`
-
-**target** : a goal, for which the specified processes must be executed (with success)
-*	replaced **runlevel**s
+*	`status`
+	*	output: 
+		```
+		~$ sudo systemctl status networking.service
+		networking.service - Raise network interfaces
+		Loaded: loaded (/lib/systemd/system/networking.service; enabled; preset: enabled)
+		# path to service file, enabled at boot, enabled by default (as specified by service file)
+    	Active: active (exited) since Tue 2024-04-16 15:02:31 CEST; 31min ago
+       	Docs: man:interfaces(5)
+   		Main PID: 856 (code=exited, status=0/SUCCESS)
+        CPU: 39ms
+		```
 
 ## sysVinit
 

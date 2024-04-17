@@ -35,6 +35,10 @@
 `/etc/hostname` :   
 `/etc/os-release` : contains linux version/distro  
 `/etc/passwd` : users passwords / login info  
+`/etc/profile/` : profile applied to all users  
+`/etc/skel/` : files used as default for creation of new user  
+*	defined in `/etc/default/useradd`
+
 `/etc/ssh/CONFIG_FILES` :   
 `/etc/sudoers` : sudo config file  
 *	**Runas_Spec** : specify commands a user can execute as sudo

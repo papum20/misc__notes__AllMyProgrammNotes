@@ -6,22 +6,17 @@
 
 
 ## FILE SYSTEM   
-### cd
-`cd` :  
-*	`-L` : follow symbolic link  
 
-`cd -` : to previous directory  
-`cd` : = `cd /home/USER/`  
-
-### find
 `find DIR` : list (recursively) elements in dir  
-*	```-maxdepth LEVELS``` : 	  
-*	```-mindepth LEVELS``` :   
+*	`-name FILENAME` : match basename with file_name  
+*	`-path PATTERN` : match linux path pattern  
+*	`-maxdepth LEVELS` : 	  
+*	`-mindepth LEVELS` :   
+*	`-exec COMMAND \;` : exec command for each file found
+	*	`\;` : needed to end command
+	*	`{}` : can be used and will be replaced with file name
+*	numbers preceded by `-` : less than
 
-`find DIR -name FILENAME` : find files (recursively) in dir matching basename with file_name  
-`find DIR -path PATTERN` : find files with path matching pattern  
-
----  
 `ln FILE` : create (hard) link to file (in current directory, with same name)  
 *	`note: `file must be precise path, not relative  ``
 *	``-s`` : symbolic link  
@@ -37,12 +32,14 @@
 *	`-i` : show inodes  
 *	`-l` : long  
 *	`-o` : -l without groups  
-*	output format: `crwxrwxrwx+` : (access rights, special modes)  
+*	output: `crwxrwxrwx+` : (access rights, special modes)  
 	*	c=type flag; rwx= for User, Groups, Others; +=special character(s)  
 	*	`special bits` : SUID, GUID, sticky bit (no effect on executables)  
 	*	`suid` : (s at user x) when executing, take owner's rights  
 	*	`sgid` : (s at group x) take owner’s group  
 	*	`sticky bit` : (t at other x) only owner can delete files in folder (if folder has write right for others)  
+	*	special bit uppercase, means `s` and no `x` (else `s+x`)
+		*	e.g.: `rwS`
 
 `mkdir DIR` :  
 *	``-p`` : ignore errors; also make parent dirs if needed  
@@ -66,8 +63,17 @@
 *	e.g.: remove extension
 
 `cp SRC DST` : copy  
-`cp SRCS.. DST` : copy all files in dir  
-`dd if=FROM_PATH of=TO_PATH` : Copy a file, converting and formatting according to the operands  
+*	`cp SRCS.. DST` : copy all files in dir  
+*	`cd -` : to previous directory  
+*	`cd` : = `cd /home/USER/`  
+*	`-L` : follow symbolic link  
+
+`dd if=FROM_PATH of=TO_PATH` : Copy a file, byte by byte, from input file to out file, converting and formatting according to the operands  
+*	`bs`  : block size - bytes to copy at a time
+	*	e.g.: `bs=4k`
+*	`count` : number of blocks to copy
+*	use: copy large files; also keep track of where you are (e.g. if need to stop)
+
 `diff FILE1 FILE2` : difference  
 *	`q` : files summary
 *	`u` : unified - nicer, like git diff (with context, +,-)
