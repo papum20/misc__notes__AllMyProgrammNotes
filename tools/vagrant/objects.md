@@ -41,10 +41,22 @@ end
 *	obs: copy full os img
 
 #### provision
-Executed (only once) at vagrant up.  
+Executed (only once) at first vagrant up (unless `vagrant up --provision` or `vagrant provision`).  
 
 ```bash
 config.vm.provision "shell", inline: <<-SHELL
 	# shell commands here
 SHELL  
 ```
+
+ansible :
+*	```bash
+	Vagrant.configure("2") do|config|
+	#
+	# Run Ansible from the Vagrant Host
+	#
+	   	config.vm.provision "ansible" do |ansible|
+			ansible.playbook = "playbook.yml"
+		end
+	end
+	```

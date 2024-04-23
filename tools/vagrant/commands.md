@@ -15,7 +15,11 @@
 *	create `Vagrant` config file  
 
 `init BOX` : init using BOX vm img  
+`provision` : exec provision  
+*	even if up
+
 `status` :   
 `ssh` : connect to started vagrant  
 `ssh-config` : generate ssh config to connect  
 `up` : start vm (with `Vagrant` file)  
+*	`--provision` : exec provision (even if not first `up`)

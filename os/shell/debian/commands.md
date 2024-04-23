@@ -106,9 +106,10 @@
 `od FILE` : (octal dump) to octal (from char)  
 `od -cx FILE` : (hexadecimal) to hexadecimal  
 `tar` : tar files  
+*	if no other complex options before these, can omit `-`
 *	`-c` : compress  
 *	`-f` : use file ARCHIVE (?)  
-*	`-t` : list archive content  
+*	`-t` : test - list archive content  
 *	`-v` : verbose  
 *	`-x` : extract  
 *	`-z` : gzip  
@@ -376,6 +377,9 @@
 *	``alias [...]`` : define alias  
 
 `clear` : clears terminal and starts from first row  
+`date` : date formats converter 
+*	`+%s` : epoch  
+
 `getopts OPTSTRING NAME [ARGS...]` : (built-in) get options  
 *	`OPTSTRING`: made of...
 	*	`A` : letter - flag
