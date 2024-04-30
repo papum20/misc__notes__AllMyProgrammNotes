@@ -1,56 +1,13 @@
 # COMMANDS
 // networks commands  
-  
-## IP - SYNTAX   
-`::` : (IPv6) short for more than one zero  
-*	e.g.: `:: = 0.0.0.0.0.0` :  
-*	e.g.: `::1 = 0.0.0.0.0.1` :  
-  
+
+## Kernel
+
+`sysctl` :
+*	`-p [FILE]` : from file
+	*	default: `/etc/sysctl.conf`
+ 
 ## NETWORK  
-`ip` :   
-`ip addr add [ipaddress/netmask] dev [devicename]` :  
-*	assign address to interface devicename  
-*	`ip a` : same
-
-`ip addr del [ipaddress/netmask] dev [devicename]` :  
-*	remove address assigned to interface devicename  
-
-`ip route` : list routes  
-*	`ip r` : same
-*	`add` :  
-*	`change` :  
-*	`del` :  
-*	`replace` :  
-
-`ip route add [remotenet_ipaddress/netmask] via [nexthop_ipaddress]` :   
-*	`add static route to remote network, updating routing table of a node`  
-*	e.g. `add 192.168.0.0/16` : wildcard : anything matching mask  
-
-`iptables [-t TABLE] {-A|-C|-D|-V} CHAIN RULE_SPECIFICATION` : ip tables manager  
-*	`-t TABLE` : specify table  
-	*	default tables: `nat`, `filter`, `docker`, others
-*	`-A` : append rule(s) to end of chain  
-*	`-D` : delete  
-*	`-F, --flush [CHAIN]` : delete all rules in chain, or all chains if not speficifed  
-*	`-R CHAIN RULENUM RULE` : replace rulenum with rule (numbered from 1)
-*	`CHAIN`:
-	*	`PREROUTING` : altering pkt as soon as comes in  
-	*	`POSTROUTING` : altering packets as about to go out  
-*	`RULE` :   
-	*	`-d, --destination ADDR[/mask][,...]`  
-	*	`-i, --in-interface NAME` : interface via which pkt was received (INPUT/PREROUTING)  
-	*	`-j EXTENSION` : action to perform if matched rule  
-		*	if not specified j or g, nothing is done
-	*	`-o, --out-interface NAME` : interface via which pkt will be sent  
-	(OUTPUT/POSTROUTING)  
-	*	`-p PROT` : protocol to match 
-		*	e.g.: `-p tcp` : 
-	*	`-s, --source ADDRESS[/MASK][,...]`  
-	*	`DNAT [--to-destination ADDR]` : (only for nat) change dest addr  
-		*	e.g.: `iptables -t nat -A PREROUTING -p [protocol] -d [source_ip] --dport [source_port] -j DNAT --to-destination [destination_ip]:[destination_port]` : port forwarding (change destination NAT)
-	*	`MASQUERADE` : (only for `nat`) forwarding, i.e. replace with own ip  
-		*	e.g.: `iptables -t nat -A POSTROUTING -o [devicename] --source [sourcenet_ipadress/netmask] -j MASQUERADE` : masquerade (change source NAT)  
-	*	`SNAT [--to-source ADDR]` : (nat) change src addr  
 
 `netstat` : (deprecated, use ss, or other commands suggested in man)   
 *	show active/inactive connections  
@@ -90,7 +47,71 @@ nmap asks underlying os to establish connection with target machine:port by issu
 *	`-t` : only tcp  
 *	`-u` : only udp  
 *	e.g. `ss -t -a` : all tcp  
+
+### ifup
+
+`ifdown` : 
+`ifup` : bring interface up
+*	`-a` : all defined in `/etc/network/interfaces`
+*	e.g.: `ifup -no-act -i %s eth3` : dry run
+	*	e.g.: use to validate cp in `/etc/network/interfaces` in ansible
+
+### ip
+
+`ip` :   
+`ip addr add [ipaddress/netmask] dev [devicename]` :  
+*	add/assign new address to interface devicename  
+	*	obs: can have more
+*	`ip a` : same
+
+`ip addr del [ipaddress/netmask] dev [devicename]` :  
+*	remove address assigned to interface devicename  
+
+`ip route` : list routes  
+*	`ip r` : same
+*	`add` :  
+*	`change` :  
+*	`del` :  
+*	`replace` :  
+*	out:
+	*	`default via GATEWAY_IP dev DEVICENAME` : default route (dhcp)
+
+`ip route add [remotenet_ipaddress/netmask] via [nexthop_ipaddress]` :   
+*	`add static route to remote network, updating routing table of a node`  
+*	e.g. `add 192.168.0.0/16` : wildcard : anything matching mask  
+
+`iptables [-t TABLE] {-A|-C|-D|-V} CHAIN RULE_SPECIFICATION` : ip tables manager  
+*	`-t TABLE` : specify table  
+	*	default tables: `nat`, `filter`, `docker`, others
+*	`-A` : append rule(s) to end of chain  
+*	`-D` : delete  
+*	`-F, --flush [CHAIN]` : delete all rules in chain, or all chains if not speficifed  
+*	`-R CHAIN RULENUM RULE` : replace rulenum with rule (numbered from 1)
+*	`CHAIN`:
+	*	`PREROUTING` : altering pkt as soon as comes in  
+	*	`POSTROUTING` : altering packets as about to go out  
+*	`RULE` :   
+	*	`-d, --destination ADDR[/mask][,...]`  
+	*	`-i, --in-interface NAME` : interface via which pkt was received (INPUT/PREROUTING)  
+	*	`-j EXTENSION` : action to perform if matched rule  
+		*	if not specified j or g, nothing is done
+	*	`-o, --out-interface NAME` : interface via which pkt will be sent  
+	(OUTPUT/POSTROUTING)  
+	*	`-p PROT` : protocol to match 
+		*	e.g.: `-p tcp` : 
+	*	`-s, --source ADDRESS[/MASK][,...]`  
+	*	`DNAT [--to-destination ADDR]` : (only for nat) change dest addr  
+		*	e.g.: `iptables -t nat -A PREROUTING -p [protocol] -d [source_ip] --dport [source_port] -j DNAT --to-destination [destination_ip]:[destination_port]` : port forwarding (change destination NAT)
+	*	`MASQUERADE` : (only for `nat`) forwarding, i.e. replace with own ip  
+		*	e.g.: `iptables -t nat -A POSTROUTING -o [devicename] --source [sourcenet_ipadress/netmask] -j MASQUERADE` : masquerade (change source NAT)  
+	*	`SNAT [--to-source ADDR]` : (nat) change src addr  
   
+#### ips syntax   
+`::` : (IPv6) short for more than one zero  
+*	e.g.: `:: = 0.0.0.0.0.0` :  
+*	e.g.: `::1 = 0.0.0.0.0.1` :  
+
+
 ## openssl COMMAND   
 connection:  
 `s_client -connect HOSTNAME:PORT` : connect and print ssl certificate  

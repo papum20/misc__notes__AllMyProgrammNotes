@@ -86,6 +86,8 @@
 `w` : start of next word  
 `G` : last line  
 `gg` : first line  
+`gg` : first line  
+`<number>gg` : go to line number  
 `<number>G` : go to line number  
 `Ctrl+g` : filename and line number  
   

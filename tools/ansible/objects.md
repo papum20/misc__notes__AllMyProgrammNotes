@@ -90,6 +90,10 @@ roles/
 *	`validate: COMMAND` : exec command to validate, passing the file as parameter usable as `%s`
 	*	e.g.: `validate: /usr/sbin/visudo -cf %s`
 
+`ansible.builtin.service:` : 
+*   `name` : 
+*   `state` : 
+
 `ansible.builtin.systemd:` :  
 *	`enabled: bool` : 
 *	`name: rsyslog.service` :
@@ -109,3 +113,15 @@ roles/
 *	`state: present` : 
 *	`key: str` : 
 	*	e.g.: `key: "{{ lookup('file', '~/.ssh/id_rsa_ansible.pub') }}"` : from file
+
+### community.general
+
+`community.general.interfaces_file:` : manage interfaces file
+*   `inface: str` : interface name
+*   netmask :
+    *   ```
+        option: 'netmask'
+        value: '255.255.255.0'
+        ```
+*   `backup: yes` : 
+*   `state: present|absent` :

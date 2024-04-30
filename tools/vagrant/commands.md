@@ -19,7 +19,10 @@
 *	even if up
 
 `status` :   
-`ssh` : connect to started vagrant  
+`ssh [VM_NAME]` : connect to started vagrant  
+*	`VM_NAME` : name of vm to connect to
+	*	required if more vms defined in `Vagrantfile`
+
 `ssh-config` : generate ssh config to connect  
 `up` : start vm (with `Vagrant` file)  
 *	`--provision` : exec provision (even if not first `up`)
