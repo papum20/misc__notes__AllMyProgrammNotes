@@ -7,11 +7,27 @@ Sometimes (like in some docker containers) `apt` won't find stuff like `ss`: ins
 apt install net-tools
 ```
 
+## concepts
+
+### socket
+
+Only 2 ends will see it, as pair local-remote
+*	inverted pair between local and remote
+*	intermediate routers won't
+*	e.g.: with `ss`
+
 ## linux
 
 By default, linux doesn't forward packets between interfaces
 *	for security...
 *	so need to neable from `/etc/sysctl.conf` (see [files](files.md))
+
+### name-service
+Association ip-hostname, handled by default by linux, with `C` dflt library, with **Name Service Switch** (NSS)  
+*	associates an entry with one ore more databases where to lookup some information
+
+#### dns
+Done in `C` with **resolver**  
 
 ## tools
 

@@ -2,6 +2,31 @@
 
 ## kernel
 
+### /etc/nsswitch.conf
+
+entry :
+*   a database can return a status
+    *   if `success`, stop searching
+    *   else, apply the specified `action`, or continue with next db if not specified
+*   format : ```
+    <entry> ::= <database> ":" [<source> [<criteria> ]]*
+    <criteria> ::= "[" <criterion> + "]"
+    <criterion> ::= <status> "= " <action>
+    <status> ::= "success" | "notfound " | "unavail" | "tryagain"
+    <action> ::= "return" | "continue"
+    ```
+*   e.g.: `hosts: ldap [NOTFOUND=return] dns files`
+
+databases :
+*   `files`
+    *   source in `/etc/hosts`
+        *   entry format : `<IP> <FQDN> [<ALIAS> ...]`
+        *   e.g.: `8.8.8.8 dns.google.com gdns`
+*   `dns` : 
+    *   configured from `/etc/resolv.conf`
+        *   configured not manually (will be overwritten)
+        *   entry format : `<nameserver|...> <IP>`
+
 ### /etc/sysctl.conf
 
 `net.ipv4.ip_forward=1` : enable ip forwarding  
@@ -48,3 +73,14 @@ obs: reload with `systemctl restart networking.service`
 ## sshd_config
 
 `/etc/ssh/sshd_config` :  
+
+
+## WHERE KEYS ARE FOUND  
+// when trying to connect to host with ssh, it reads config files  
+
+/etc/ssh/ssh_config   
+~.ssh/config  
+*	ssh_config looks for keys in default names, written in it (id_rsa, …).  
+*	in ~/.ssh/config, you can add personalized names, different from defaults, with the line  
+*	IdentityFile ~/.ssh/your_key_name  
+

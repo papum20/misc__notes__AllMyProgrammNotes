@@ -1,13 +1,62 @@
 # COMMANDS
 // networks commands  
 
+`telnet IP PORT` : establish connection with telnet protocol  
+commands:  
+GET http://IP/file HTTP/1.0 //get file  
+Host: PORT //end connection  
+return codes:  
+`404` : file not found  
+`200` : ok  
+  
+`traceroute IP` : sends package increasing ttl (time to live) each time,  
+*	`to calculate routers path`  
+
+`traceroute -m MAX_TTL` :   
+`wget URL` : download url here  
+*	`--cut-dirs=NUM` : parent directories levels to skip  
+*	`-l NUM` : level of subdirectories (0=infinite)  
+*	`-np` : no parent directories  
+*	`-nH` : no hostname/host-directories (prefixed by hostname)  
+*	`-r` : recursive	  
+*	`-O NEW-NAME` : save as  
+*	`-P DIR` : save in dir	  
+*	`--reject html,tmp` : reject “index.html” files  
+
+`who` : 	  
+  
+`ssh [PARAMS] HOST [COMMAND]` :   
+*	`COMMAND` : if specfìified, exec command directly
+*	`-i KEY` : (identity file) use private key  
+*	`-J` : proxy jump  
+*	`-l NAME` : login name  
+	*	e.g.: ssh -l daniele.dugo@studio.unibo.it dalibor.cs.unibo.it  
+*	`-X …` : enable X11, i.e. allow graphic applications  
+  
+`ssh-agent` :   
+`eval “$(ssh-agent -s)”` : start ssh-agent  
+  
+`ssh-add PATH_TO_KEY` : add ssh key to ssh agent (when ssh-agent started, key private)  
+`ssh-add -l` : list saved keys 
+
 ## Kernel
 
 `sysctl` :
 *	`-p [FILE]` : from file
 	*	default: `/etc/sysctl.conf`
+
+### NSS
+
+`dig [OPTIONS] HOST` : interrogate dns for additional info on ip/name, without passing thru NSS
+*	e.g.: `dig {mx|ns} HOST`
+
+`getent DB_NAME KEYWORD` : get entry `KEYWORD` from db  
+*	e.g.: `getent passwd USERNAME`
+
+`host HOSTNAME [IP]` : interrogate dns for conversion ip-name, without passing thru NSS
+*	`IP` : specify server
  
-## NETWORK  
+## scan
 
 `netstat` : (deprecated, use ss, or other commands suggested in man)   
 *	show active/inactive connections  
@@ -40,15 +89,17 @@ nmap asks underlying os to establish connection with target machine:port by issu
 *	-p U:[RANGE],T:[RANGE]...` :  
 *	specify ranges for each protocol (TCP, U=UDP, S=SCTP, P=IP)  
 
-`ss` : show active/inactive connections  
+`ss` : _socket status_ - show active/inactive connections  
 *	`-a` : all types  
 *	`-n, --numeric` : don’t resolve names, keep numbers  
 *	`-p` : show pid, process  
 *	`-t` : only tcp  
 *	`-u` : only udp  
-*	e.g. `ss -t -a` : all tcp  
+*	e.g.: `ss -t -a` : all tcp  
+*	e.g.: `sudo ss -naup | grep 127.0.1.1:53`
+	*	out: `UNCONN 0 0 127.0.1.1:53 *:* users:(("dnsmasq",pid=2154,fd=4))` : with process using the socket
 
-### ifup
+## ifup
 
 `ifdown` : 
 `ifup` : bring interface up
@@ -56,7 +107,7 @@ nmap asks underlying os to establish connection with target machine:port by issu
 *	e.g.: `ifup -no-act -i %s eth3` : dry run
 	*	e.g.: use to validate cp in `/etc/network/interfaces` in ansible
 
-### ip
+## ip
 
 `ip` :   
 `ip addr add [ipaddress/netmask] dev [devicename]` :  
@@ -106,7 +157,7 @@ nmap asks underlying os to establish connection with target machine:port by issu
 		*	e.g.: `iptables -t nat -A POSTROUTING -o [devicename] --source [sourcenet_ipadress/netmask] -j MASQUERADE` : masquerade (change source NAT)  
 	*	`SNAT [--to-source ADDR]` : (nat) change src addr  
   
-#### ips syntax   
+### ips syntax   
 `::` : (IPv6) short for more than one zero  
 *	e.g.: `:: = 0.0.0.0.0.0` :  
 *	e.g.: `::1 = 0.0.0.0.0.1` :  
@@ -133,46 +184,9 @@ misc:
 `scp FROM TO` : ssh copy  
 *	e.g.: `nome.cognome@studio.unibo.it:~/directory/file` : remote file  
 *	`from, to, for remote, in format: login_name@host:path`  
+   
   
-`telnet IP PORT` : establish connection with telnet protocol  
-commands:  
-GET http://IP/file HTTP/1.0 //get file  
-Host: PORT //end connection  
-return codes:  
-`404` : file not found  
-`200` : ok  
-  
-`traceroute IP` : sends package increasing ttl (time to live) each time,  
-*	`to calculate routers path`  
-
-`traceroute -m MAX_TTL` :   
-`wget URL` : download url here  
-*	`--cut-dirs=NUM` : parent directories levels to skip  
-*	`-l NUM` : level of subdirectories (0=infinite)  
-*	`-np` : no parent directories  
-*	`-nH` : no hostname/host-directories (prefixed by hostname)  
-*	`-r` : recursive	  
-*	`-O NEW-NAME` : save as  
-*	`-P DIR` : save in dir	  
-*	`--reject html,tmp` : reject “index.html” files  
-
-`who` : 	  
-  
-`ssh [PARAMS] HOST [COMMAND]` :   
-*	`COMMAND` : if specfìified, exec command directly
-*	`-i KEY` : (identity file) use private key  
-*	`-J` : proxy jump  
-*	`-l NAME` : login name  
-	*	e.g.: ssh -l daniele.dugo@studio.unibo.it dalibor.cs.unibo.it  
-*	`-X …` : enable X11, i.e. allow graphic applications  
-  
-`ssh-agent` :   
-`eval “$(ssh-agent -s)”` : start ssh-agent  
-  
-`ssh-add PATH_TO_KEY` : add ssh key to ssh agent (when ssh-agent started, key private)  
-`ssh-add -l` : list saved keys  
-  
-## WEB
+## web
 `curl HOST` : transfer data (send request) from/to server  
 *	`-X METHOD=GET` : select method  
 *	`-d DATA` : data to transfer (i.e. body)  
@@ -180,15 +194,3 @@ return codes:
 	*	note: with `OPTIONS` method, allowed methods are returned in `Allow` header
 *	`-H HEADER` : header to send  
   
-## WHERE KEYS ARE FOUND  
-// when trying to connect to host with ssh, it reads config files  
-
-/etc/ssh/ssh_config   
-~.ssh/config  
-*	ssh_config looks for keys in default names, written in it (id_rsa, …).  
-*	in ~/.ssh/config, you can add personalized names, different from defaults, with the line  
-*	IdentityFile ~/.ssh/your_key_name  
-
-## README.md  
-*	[README.md](./README.md)  
-
