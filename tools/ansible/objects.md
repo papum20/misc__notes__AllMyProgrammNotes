@@ -9,6 +9,10 @@
 *	`all`
 
 `become: bool` : become root to exec all tasks  
+`become_user: string` : become user  
+*	requires `become: true`
+*	if user non-privileged, install `apt install acl`
+	*	ref: https://stackoverflow.com/a/56379678/20607105
 
 `tasks:` : list of tasks  
 
@@ -69,9 +73,15 @@ roles/
 
 ### ansible.builtin
 
+`ansible.builtin.apt` :
+*	`name: APT_PKG_NAME` : 
+*	`state: present` : 
+*	`update_cache: yes` : `apt update` before 
+
 `ansible.builtin.copy:` : 
 *	`src: str` : source path (on local)
 *	`dest: str` : destination path (on managed node)
+*	`group: str` : 
 *	`mode: str` : octals
 *	`owner: str` : 
 
@@ -82,13 +92,23 @@ roles/
 *	`job: "/usr/bin/copy.sh >/dev/null"` :  
 
 `ansible.builtin.lineinfile:` : check/change line(s)
-*	`line: str` : line to add
+*	`line: str` : line to add after `regexp`
 *	`path: str` : 
 *	`regexp: ` : to match
 	*	e.g.: for `present`/`absent`
 *	`state: present|absent` : wether to add (if not present, otherwise just check) or remove
 *	`validate: COMMAND` : exec command to validate, passing the file as parameter usable as `%s`
 	*	e.g.: `validate: /usr/sbin/visudo -cf %s`
+
+`ansible.builtin.service:` : 
+*	`path: str` : 
+*	`regexp: ` : to match
+*	`replace` : line to replace `regexp` (only matched part)
+	*	e.g.: replace final part of each line
+		```yaml
+		regexp: 'main$'
+		replace: 'main contrib non-free-firmware$'
+		```
 
 `ansible.builtin.service:` : 
 *   `name` : 
@@ -113,6 +133,17 @@ roles/
 *	`state: present` : 
 *	`key: str` : 
 	*	e.g.: `key: "{{ lookup('file', '~/.ssh/id_rsa_ansible.pub') }}"` : from file
+
+`ansible.posix.sysctl` :
+*	e.g.:
+	```yml
+	-	ansible.posix.sysctl:
+			name: net.ipv4.ip_forward
+			value: '1'
+			sysctl_set: true
+			state: present
+			reload: true
+	```
 
 ### community.general
 

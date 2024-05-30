@@ -118,6 +118,7 @@ Any bash expression is the result of a command (true if exited with status 0, fa
 `[[ EXPR ]]` : advanced eval  
 *	recognizes regex, empty var
 *	note: specific to bash not recognized by any terminal/etc.
+*	for floats, use `bc` (or `awk`)
 
 `((EXPR))` : evaluate expressions with "normal" operators  
 `! CONDITION` : not  

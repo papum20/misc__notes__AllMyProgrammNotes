@@ -109,6 +109,11 @@ Can be handled via:
 		```
 		: kotlin lambda
 
+#### fragments
+
+`Fragment` : modular section of an activity, can be reused in multiple activities  
+*	needs someone to contain it
+
 #### subclasses
 
 #### groups and layouts
@@ -119,7 +124,11 @@ Can be handled via:
 `Layout` : extends `ViewContainer`
 *	needs to specify `layout_height`, `layout_width`
 
+##### static
 `LinearLayout` : row/col  
+
+##### dynamic
+Dynamic layouts (which can change at runtime) need an adapter, so they can map data to a view, via a view template (a view).  
 
 #### widgets
 Views with their own behavior implemented.  

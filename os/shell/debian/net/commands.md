@@ -39,6 +39,10 @@ return codes:
 `ssh-add PATH_TO_KEY` : add ssh key to ssh agent (when ssh-agent started, key private)  
 `ssh-add -l` : list saved keys 
 
+## DNS
+
+`sudo dhclient [-v]` : get ip from dhcp server (force immediately, otherwise would probably get it automatically periodically)  
+
 ## Kernel
 
 `sysctl` :

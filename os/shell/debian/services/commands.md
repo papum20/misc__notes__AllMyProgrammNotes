@@ -6,6 +6,8 @@
 `at [-V] [-q QUEUE] [-f FILE] [-mldbv] TIME` : plan a command at `TIME`  
 *	if no file, use stdin
 *	e.g.: `echo A | at 08:00`
+*	e.g.: `at now +2 minutes`
+
 
 `atq [-V] [-q QUEUE] [-v]` : list jobs waiting in queue  
 `atrm [-V] JOB [JOB...]` : remove planned from queue  
