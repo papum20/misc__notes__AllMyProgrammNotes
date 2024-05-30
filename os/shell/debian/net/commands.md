@@ -31,7 +31,7 @@ return codes:
 *	`-J` : proxy jump  
 *	`-l NAME` : login name  
 	*	e.g.: ssh -l daniele.dugo@studio.unibo.it dalibor.cs.unibo.it  
-*	`-X …` : enable X11, i.e. allow graphic applications  
+*	`-X` : enable X11, i.e. allow graphic applications  
   
 `ssh-agent` :   
 `eval “$(ssh-agent -s)”` : start ssh-agent  
@@ -86,7 +86,7 @@ nmap asks underlying os to establish connection with target machine:port by issu
 *	-p ,B` : default start=1 (if not specified)  
 *	-p A,` : default end=65535 (if not specified)  
 *	note: `0 is only scanned if specified`  
-*	-p U:[RANGE],T:[RANGE]...` :  
+*	`-p U:[RANGE],T:[RANGE]...` :  
 *	specify ranges for each protocol (TCP, U=UDP, S=SCTP, P=IP)  
 
 `ss` : _socket status_ - show active/inactive connections  
@@ -157,11 +157,10 @@ nmap asks underlying os to establish connection with target machine:port by issu
 		*	e.g.: `iptables -t nat -A POSTROUTING -o [devicename] --source [sourcenet_ipadress/netmask] -j MASQUERADE` : masquerade (change source NAT)  
 	*	`SNAT [--to-source ADDR]` : (nat) change src addr  
   
-### ips syntax   
+### IPs syntax   
 `::` : (IPv6) short for more than one zero  
 *	e.g.: `:: = 0.0.0.0.0.0` :  
 *	e.g.: `::1 = 0.0.0.0.0.1` :  
-
 
 ## openssl COMMAND   
 connection:  
@@ -185,6 +184,14 @@ misc:
 *	e.g.: `nome.cognome@studio.unibo.it:~/directory/file` : remote file  
 *	`from, to, for remote, in format: login_name@host:path`  
    
+## packets
+
+`tcpdump [OPTIONS] [FILTER]` : 
+*	`-i INTERFACE` : 
+	*	`any` : all
+*	`-l` : out buffered
+*	`-n` : don’t resolve names
+*	`-p` : no promiscuous mode
   
 ## web
 `curl HOST` : transfer data (send request) from/to server  

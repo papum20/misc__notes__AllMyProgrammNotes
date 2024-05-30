@@ -69,6 +69,10 @@ roles/
 
 ### ansible.builtin
 
+`ansible.builtin.apt:` :
+*    `name: str` : list packages names
+*    `update_cache: bool` : apt update first
+
 `ansible.builtin.copy:` : 
 *	`src: str` : source path (on local)
 *	`dest: str` : destination path (on managed node)
@@ -82,6 +86,7 @@ roles/
 *	`job: "/usr/bin/copy.sh >/dev/null"` :  
 
 `ansible.builtin.lineinfile:` : check/change line(s)
+*	`create: bool` : if file not exists, crate
 *	`line: str` : line to add
 *	`path: str` : 
 *	`regexp: ` : to match

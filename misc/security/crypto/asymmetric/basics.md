@@ -134,7 +134,7 @@ _domain parameters_ : `(p,a,b,G,n,h)`
 *	e.g.: `k > 20` is secure; ed25519 has `k=8`
 *	src: [https://risencrypto.github.io/WeilMOV/](https://risencrypto.github.io/WeilMOV/)
 *	src: [https://crypto.stackexchange.com/a/1875/115423](https://crypto.stackexchange.com/a/1875/115423)
-*	src: [www.github.com/papum20/tasks__security__cryptohack/elliptic/moving_exploit.py](www.github.com/papum20/tasks__security__cryptohack/elliptic/moving_exploit.py)  
+*	src: [https://github.com/papum20/security__cryptohack-challenges/blob/master/elliptic/moving_exploit.py](https://github.com/papum20/security__cryptohack-challenges/blob/master/elliptic/moving_exploit.py)  
 *	steps:
 	0.	given `E` in `F` (finite field in prime `p`), with (main) generator `G`, and _embedding degree_ `k` of `p` wrt `G.order()`; we want the discrete log `r` of `P=rQ` with base `Q`
 		*	e.g.: `Q=G`

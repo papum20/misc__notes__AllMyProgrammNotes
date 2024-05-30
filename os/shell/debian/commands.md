@@ -192,12 +192,17 @@
 *	`/REGEX/` : REGEX between slashes
 *	`-E` : extended (modern) regex
 *	default: old regex
+*	`-i` : in place - edit file
 *	`-n` : don't print all
 *	commands:
 	*	`p` : print (like grep)  
 	*	`s/REGEX/REPLACEMENT/` : replace `REGEX`
+		*	`s/REGEX/REPLACEMENT/g` : global - apply to all occurrences in line
 		*	e.g.: `sed 's#.*/##; s#[.][^.]*$##'` : remove extension and path
 	*	`$#` : matched part in REGEX, to refer in REPALCEMENT
+*	e.g.: `sed -i '$a TEXT' FILE` : add line at end of file
+*	e.g.: `sed -i 'Ni TEXT' FILE` : add line at line `N` (start from `1`)
+*	e.g.: `sed -i '/PATTERN/a TEXT' FILE` : add line after each line matching `PATTERN`
 
 `sort [FILE]` : sort input  
 *	`-c` : check if sorted
@@ -461,7 +466,15 @@
 `apt update` : check updatable packages  
 `apt upgrade` : update updatable packages  
 
+### debconf
+
+`debconf-show PKG` : show package configuration
+*	also shows questions and answers given in config phase
+
 ### dpkg
+
+`dpkg-reconfigure PKG` : reconfigure package
+*	e.g.: restart configuration if it has one
 
 ### apt
 `update-grub` : update grub  

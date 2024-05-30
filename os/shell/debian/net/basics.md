@@ -26,6 +26,21 @@ By default, linux doesn't forward packets between interfaces
 Association ip-hostname, handled by default by linux, with `C` dflt library, with **Name Service Switch** (NSS)  
 *	associates an entry with one ore more databases where to lookup some information
 
+**object class** : type of entry, specify some attributes on entry
+*	and entry can have more classes
+
+#### libnss-ldapd
+
+pkg `libnss-ldapd` : also installs `nsldc`  
+
+#### libpam-ldapd
+
+pkg `libpam-ldapd` : config pam with ldap  
+
+#### nslcd
+
+pkg `nslcd` : on install, configure nss with ldap  
+
 #### dns
 Done in `C` with **resolver**  
 
