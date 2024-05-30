@@ -7,3 +7,14 @@ define an object `NAME` and work on it, calling it `machine` :
 		...
 	end
 	```
+
+iterate :
+*	```ruby
+	(1..3).each do |i|
+		config.vm.define "machine#{i}" do |machine|
+			machine.vm.box = "debian/bookworm64"
+			machine.vm.hostname = "hostname#{i}"
+		end
+	end
+	```
+	

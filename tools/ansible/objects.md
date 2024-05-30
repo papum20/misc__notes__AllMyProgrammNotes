@@ -75,6 +75,7 @@ roles/
 
 `ansible.builtin.apt` :
 *	`name: APT_PKG_NAME` : 
+	*	`[PKG1, PKG2]` : list of packages
 *	`state: present` : 
 *	`update_cache: yes` : `apt update` before 
 
@@ -92,6 +93,7 @@ roles/
 *	`job: "/usr/bin/copy.sh >/dev/null"` :  
 
 `ansible.builtin.lineinfile:` : check/change line(s)
+*	`create: bool` : if file not exists, crate
 *	`line: str` : line to add after `regexp`
 *	`path: str` : 
 *	`regexp: ` : to match

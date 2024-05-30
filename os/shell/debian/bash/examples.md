@@ -33,6 +33,12 @@ passing short arguments :
 		echo "a: $a, b: $b, c: $c"
 	done
 	```
+*	```bash
+	cat $FILE | while read A ; do
+		echo "A: $A"
+	done
+	```
+
 
 
 

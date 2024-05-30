@@ -22,8 +22,12 @@ end
 *	e.g.: `config.vm.disk :disk, name: "backup", size: "1GB"` : additional (vm/virtualbox?) disks  
 
 `config.vm.define "NAME"` : define machine with name `NAME`, and refer to it in the following block (ruby syntax)    
-`config.vm.network "private_network", ip: "192.168.33.10"` : ?  
-`config.vm.network "public_network"` : ?  
+`config.vm.network "TYPE", ip: "192.168.33.10"` : config network, with static ip  
+*	`TYPE=private_network` : private network, only host can access
+*	`TYPE=public_network` : public network, accessible from outside
+*	`auto_config=false` : disable auto config (dflt=`true`)
+	*	don't use if specify static ip
+
 `config.vm.network "forwarded_port", guest: 80, host: 8080` : ?  
 `config.vm.synced_folder LOCAL_PATH REMOTE_PATH` : specify additional sync folder path  
 
@@ -32,6 +36,9 @@ end
 `machine.vm.hostname="HOSTNAME"` : set hostname for machine  
 `machine.vm.network "private_network", virtualbox__intnet: "LAN1", auto_config: false` : add `machine` to network named `private_network` with `virtualbox__intnet` name `LAN1`    
 *	e.g.: to connect more vms to same network, use same `LAN1`
+
+`machine.vm.synced_folder ".", "/vagrant", disabled: true` : dont sync folder
+*	obs: faster up
 
 
 #### provider

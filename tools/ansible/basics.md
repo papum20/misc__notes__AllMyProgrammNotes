@@ -9,6 +9,11 @@ Tool for infrastructure as code.
 
 **provision** : install stuff on new pc  
 
+### Syntax concepts
+
+**handler** : a task triggered by another one 
+*	all handlers triggered after all tasks in role are done
+
 ## Files
 
 Files in `yaml`.  

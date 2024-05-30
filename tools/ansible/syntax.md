@@ -7,7 +7,7 @@ loop, using `item` in vals :
 *	```yaml
 	-	name: TASK NAME
 		some.task:
-			arg: "val{{ item }}"
+			somearg: "text...{{ item }}...text"	# use {{ item }} to refer to current value
 		loop:
 			- val1
 			- val2
