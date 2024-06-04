@@ -189,7 +189,7 @@ misc:
 `tcpdump [OPTIONS] [FILTER]` : 
 *	`-i INTERFACE` : 
 	*	`any` : all
-*	`-l` : out buffered
+*	`-l` : out buffered (don't wait for buffer to fill of packets before printing, just print as soon as one received)
 *	`-n` : don’t resolve names
 *	`-p` : no promiscuous mode
   
