@@ -54,9 +54,44 @@ Tags from any file in `res/drawable`
 #### mipmap
 `<mipmap>` : images to be used as icons  
 
-## Views
+## View
+
+`visibility` : if visible
+*	`GONE` : not visible and doesn't take space
+*	`INVISIBLE` : still takes space
+*	`VISIBLE` : 
+
 `findViewById()` :  
 *	java requires cast until api 26
+
+### Fragment
+
+`parentFragmentManager` : parent's `supportFragmentManager`  
+
+#### DialogFragment
+
+`show(fragmentManager, TAG)` :
+*	`TAG` : can be used to retrieve
+
+##### AlertDialog
+the actual dialog  
+
+`activity` :  
+
+`AlertDialog.Builder(activity)` : get builder, for creating dialog  
+
+###### AlertDialog.Builder
+
+`create()` : create alert dialog with arg supplied to builder  
+
+`set*()` : setters for adding views to the dialog  
+`setTitle()` :  
+`setView()` : set any other, non pre-defined, view  
+
+### FragmentActivity
+e.g.: `AppCompatActivity`  
+
+`supportFragmentManager` : FragmentManager for interacting with fragments associated with this activity  
 
 ### xml
 `id="@+id/ID` :  

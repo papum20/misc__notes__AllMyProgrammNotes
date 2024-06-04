@@ -303,6 +303,11 @@
 
 ## SYSTEM
 
+#### configure
+
+`sysctl` : 
+*	`-p [FILE]` : load file, default is `/etc/sysctl.conf`
+
 #### debug
 
 `dmesg` : kernel messages  
@@ -381,6 +386,7 @@
 `alias` : display alias  
 *	``alias [...]`` : define alias  
 
+`bc` : calculator, allows floats  
 `clear` : clears terminal and starts from first row  
 `date` : date formats converter 
 *	`+%s` : epoch  

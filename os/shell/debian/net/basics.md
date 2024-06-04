@@ -41,8 +41,14 @@ pkg `libpam-ldapd` : config pam with ldap
 
 pkg `nslcd` : on install, configure nss with ldap  
 
-#### dns
-Done in `C` with **resolver**  
+### dns
+
+**nss** : does it in `C` with **resolver**  
+
+`dnsmasq` : 
+*	`sudo apt install dnsmasq`
+*	`/etc/dnsmasq.conf` : config file
+
 
 ## tools
 
