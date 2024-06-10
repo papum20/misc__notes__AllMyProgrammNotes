@@ -87,6 +87,7 @@ roles/
 *	`owner: str` : 
 
 `ansible.builtin.cron:` : like cron, add a job
+*	`name` : 
 *	`minute: "*/2"` :  
 *	`weekday: "1-5"` :  
 *	`month: "1-7,9-12"` :  

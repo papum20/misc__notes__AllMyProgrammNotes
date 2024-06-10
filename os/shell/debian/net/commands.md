@@ -108,8 +108,8 @@ nmap asks underlying os to establish connection with target machine:port by issu
 `ifdown` : 
 `ifup` : bring interface up
 *	`-a` : all defined in `/etc/network/interfaces`
-*	e.g.: `ifup -no-act -i %s eth3` : dry run
-	*	e.g.: use to validate cp in `/etc/network/interfaces` in ansible
+*	e.g.: `ifup --no-act -i FILE eth3` : dry run
+	*	e.g.: use to validate cp in `/etc/network/interfaces` in ansible (use `%s` as `FILE`)
 
 ## ip
 
@@ -191,11 +191,14 @@ misc:
 ## packets
 
 `tcpdump [OPTIONS] [FILTER]` : 
+*	`-c COUNT` : number of packets to capture (then stop)
 *	`-i INTERFACE` : 
 	*	`any` : all
 *	`-l` : out buffered
 *	`-n` : don’t resolve names
 *	`-p` : no promiscuous mode
+*	`-w FILE` : write raw packets to file, no stdout
+
   
 ## web
 `curl HOST` : transfer data (send request) from/to server  

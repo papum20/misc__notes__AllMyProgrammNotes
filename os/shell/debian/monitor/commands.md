@@ -17,8 +17,14 @@
 *	`TYPE` :
 	*	`s` : string
 *	obs: needs `-c` with a community with write permission
-*	e.g.: `snmpget -v 1 -c public 10.2.2.1 .1.3.6.1.1.2.1.1.6.0 s "new value"`
+*	e.g.: `snmpset -v 1 -c public 10.2.2.1 .1.3.6.1.1.2.1.1.6.0 s "new value"`
 
 `snmpwalk [OPTIONS] AGENT [OID]` : walk full sub-tree, from root `OID`  
 *	obs: useful when don't know where to search
 *	e.g.: `OID=1.` : root  
+
+## logging
+
+`logger -p local1.info <<< "INPUT"` : log `INPUT` to `local1.info` (`rsyslog` facility)   
+*	`-n SERVER` : write to
+*	`-p FACILITY.PRIORITY` : priority

@@ -6,6 +6,8 @@
 
 On the **agent**, `snmpd` runs as a standard user, so remember it when executing privileged commands (see[notes.md](notes.md)).  
 
+Arrays are also entries, and if entry is `1.1`, row `2` col `3` is `1.1.2.3`.  
+
 ### install
 
 note: require append `contrib non-free` to `/etc/apt/sources.list` lines  

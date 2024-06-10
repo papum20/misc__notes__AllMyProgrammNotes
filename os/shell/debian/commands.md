@@ -231,6 +231,8 @@
 
 `tee` : “redirect from input to output”  
 `tr SET1 [SET2]` : replace SET1 occurrences in input with SET2  
+*	`-c` : take complement of first set
+	*	e.g.: `tr -cd '[:print:]'` : remove non-printable characters
 *	``tr -d SET1`` : delete SET1 occurrences  
 *	``CHAR1-CHAR2`` : all chars from CHAR1 to CHAR2  
 *	``[:alpha:]`` : all letters (A-Za-z)  

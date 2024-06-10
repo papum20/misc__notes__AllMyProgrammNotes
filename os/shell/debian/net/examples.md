@@ -1,5 +1,14 @@
 # EXAMPLES
 
+
+## ip
+
+get ip knowing prefix :
+*	```bash
+	ip a | grep "10.1.1." | awk '{ print $2 }' | awk -F '/' '{ print $1 }'
+	```
+
+
 ## ssh tunnel
 Create an **ssh tunnel**: a way to pass info from A to C passing through B.  
 Assume A can reach B and B can reach C.  

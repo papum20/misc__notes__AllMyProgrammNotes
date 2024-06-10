@@ -22,6 +22,13 @@ get return value from background processes, and also be able to manage job ids :
 
 ## Misc
 
+generate random password :
+*	```bash
+	# remove all characters that are not alphanumeric, and only take 6
+	tr -dc A-Za-z0-9 </dev/urandom | head -c 6; echo
+	```
+	*	src: https://unix.stackexchange.com/a/230676
+
 ### getopts
 ```bash
 #!/usr/bin/env bash

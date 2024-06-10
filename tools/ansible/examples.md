@@ -3,7 +3,7 @@
 ## net
 
 setup interface, copying local file `interfaces` :
-*	```
+*	```yml
 	- name: Set eth3 netmask
 	  community.general.interfaces_file:
 	    iface: eth3
@@ -22,7 +22,7 @@ setup interface, copying local file `interfaces` :
 	```  
 
 Alternative with copy :
-*	```
+*	```yml
 	- name: Copy a new network configuration "interfaces" file into place, after passing validation with ifup 
 	ansible.builtin.copy:
 		src: eth3
@@ -36,3 +36,15 @@ Alternative with copy :
 		state: restarted
 	```
 
+add privileged command :
+*	```yml
+	- name: Add privileged actions for snmp agent scripts
+	ansible.builtin.copy:
+		src: Debian-snmp
+		dest: '/etc/sudoers.d/'
+		owner: 'root'
+		group: 'root'
+		mode: '0440'
+		validate: '/usr/sbin/visudo -csf %s'
+	```
+  

@@ -2,6 +2,10 @@
 
 ## dns
 
+### dhcp
+
+`/var/lib/dhcp/*.leases` : ips leased (as server) or got in lease (from server)  
+
 ### dnsmasq
 
 `/etc/dnsmasq.conf` : 
@@ -14,6 +18,7 @@
 	# disable default behaviour, by which client would use this server as default gateway
 	# e.g. useful with VirtualBox, where we want the default gateway to be VirtualBox (e.g. 10.0.2.2) and not this dns server (10.1.1.254)
 	dhcp-option=3                            
+	#dhcp-option=3,10.1.1.254	# instead, set the default gateway
 											
 	dhcp-option=option:ntp-server,10.1.1.254
 	dhcp-option=option:dns-server,10.1.1.254
@@ -25,7 +30,9 @@
 	dhcp-range=interface:eth1,10.1.1.1,10.1.1.253,12h
 	dhcp-range=interface:eth2,10.2.2.1,10.2.2.253,12h
 	dhcp-option=3
-	# option 121, then list of routes
+	# option 6: dns servers addresses to tell to clients
+	dhcp-option=6,10.1.1.254,10.2.2.254
+	# option 121, then list of routes (net via gateway, net via gateway, ...)
 	dhcp-option=121,10.1.1.0/24,10.2.2.254,10.2.2.0/24,10.1.1.254
 	```
 *	specific to host :
@@ -126,7 +133,7 @@ obs: reload with `systemctl restart networking.service`
 
 /etc/ssh/ssh_config   
 ~.ssh/config  
-*	ssh_config looks for keys in default names, written in it (id_rsa, …).  
+*	ssh_config looks for keys in default names, written in it (id_rsa, ...).  
 *	in ~/.ssh/config, you can add personalized names, different from defaults, with the line  
 *	IdentityFile ~/.ssh/your_key_name  
 
