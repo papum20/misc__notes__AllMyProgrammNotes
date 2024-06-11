@@ -1,5 +1,24 @@
 # EXAMPLES
 
+## builtin
+
+replace final part of each line :
+*	```yml
+	- name: Replace final part of each line
+	  ansible.builtin.lineinfile:
+	   - regexp: 'main$'
+	   - replace: 'main contrib non-free-firmware$'
+	   ...
+	```
+
+## ldap
+
+add if not present :
+*	```bash
+	ldapsearch -x -b "ou=People,dc=labammsis" -s base > /dev/null || 
+		ldapadd -x -H ldap:/// -D "cn=admin,dc=labammsis" -w "gennaio.marzo" -f /tmp/people.ldif
+	```
+
 ## net
 
 setup interface, copying local file `interfaces` :
@@ -47,4 +66,5 @@ add privileged command :
 		mode: '0440'
 		validate: '/usr/sbin/visudo -csf %s'
 	```
-  
+
+

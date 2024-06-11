@@ -118,22 +118,20 @@ obs: reload with `systemctl restart networking.service`
 
 ## ssh
 
+where keys are searched :
+*	when trying to connect to host with ssh, it reads config files  
+	*	`/etc/ssh/ssh_config`   
+		*	`ssh_config` looks for keys in default names, written in it (`id_rsa`, ...) 
+	*	`~/.ssh/config`  
+		*	`IdentityFile ~/.ssh/your_key_name` : add custom keys names
+
 ### ssh_config
 
 `/etc/ssh/ssh_config` :  
 `~/.ssh/config` :  
 
-## sshd_config
+### sshd_config
 
 `/etc/ssh/sshd_config` :  
 
-
-## WHERE KEYS ARE FOUND  
-// when trying to connect to host with ssh, it reads config files  
-
-/etc/ssh/ssh_config   
-~.ssh/config  
-*	ssh_config looks for keys in default names, written in it (id_rsa, ...).  
-*	in ~/.ssh/config, you can add personalized names, different from defaults, with the line  
-*	IdentityFile ~/.ssh/your_key_name  
 

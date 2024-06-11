@@ -109,6 +109,7 @@
 *	if no other complex options before these, can omit `-`
 *	`-c` : compress  
 *	`-f` : use file ARCHIVE (?)  
+*	`--files-from FILE` : read list of files from `FILE`
 *	`-t` : test - list archive content  
 *	`-v` : verbose  
 *	`-x` : extract  

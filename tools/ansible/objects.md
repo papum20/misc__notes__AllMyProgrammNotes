@@ -73,61 +73,86 @@ roles/
 
 ### ansible.builtin
 
-`ansible.builtin.apt` :
-*	`name: APT_PKG_NAME` : 
-	*	`[PKG1, PKG2]` : list of packages
-*	`state: present` : 
-*	`update_cache: yes` : `apt update` before 
-
-`ansible.builtin.copy:` : 
-*	`src: str` : source path (on local)
-*	`dest: str` : destination path (on managed node)
-*	`group: str` : 
-*	`mode: str` : octals
-*	`owner: str` : 
-
-`ansible.builtin.cron:` : like cron, add a job
-*	`name` : 
-*	`minute: "*/2"` :  
-*	`weekday: "1-5"` :  
-*	`month: "1-7,9-12"` :  
-*	`job: "/usr/bin/copy.sh >/dev/null"` :  
-
-`ansible.builtin.lineinfile:` : check/change line(s)
-*	`create: bool` : if file not exists, crate
-*	`line: str` : line to add after `regexp`
-*	`path: str` : 
-*	`regexp: ` : to match
-	*	e.g.: for `present`/`absent`
-*	`state: present|absent` : wether to add (if not present, otherwise just check) or remove
-*	`validate: COMMAND` : exec command to validate, passing the file as parameter usable as `%s`
-	*	e.g.: `validate: /usr/sbin/visudo -cf %s`
-
-`ansible.builtin.service:` : 
-*	`path: str` : 
-*	`regexp: ` : to match
-*	`replace` : line to replace `regexp` (only matched part)
-	*	e.g.: replace final part of each line
-		```yaml
-		regexp: 'main$'
-		replace: 'main contrib non-free-firmware$'
-		```
-
-`ansible.builtin.service:` : 
-*   `name` : 
-*   `state` : 
-
-`ansible.builtin.systemd:` :  
-*	`enabled: bool` : 
-*	`name: rsyslog.service` :
-*	`state: started|restarted|...` :  
-
-`ansible.builtin.user:` : create user
-*	`name: str` : user name 
-*	`comment: str` :  
-*	`expires: float` : user expiry, in epoch
-*	`password: str` : hashed password (will be put in shadow as hash)
-	*	so generate in one of many ways... `openssl passwd "PASSWORD"`
+*	```yml
+	ansible.builtin.apt:
+	 # `[PKG1, PKG2]` : list of packages
+	  name: APT_PKG_NAME 
+	  state: present
+	 #  `apt update` before
+	  update_cache: yes 
+	```
+*	```yml
+	ansible.builtin.copy: 
+	 # source path (on local)
+	  src: 
+	 # destination path (on managed node)
+	  dest: 
+	  group: 
+	 # octals
+	  mode: 
+	  owner: 
+	```
+*	```yml
+	# like cron, add a job
+	ansible.builtin.cron:
+	  name : 
+	  minute: "*/2"
+	  weekday: "1-5"
+	  month: "1-7,9-12"
+	  # whose crontab to add to (default: current)
+	  user : 
+	  job: "/usr/bin/copy.sh >/dev/null" 
+	```
+*	```yml
+	ansible.builtin.file:
+		path: /etc/foo.conf
+		# touch: create if not present, otherwise update other params
+		state: touch
+		owner: root
+	    group: root
+		# also: `u=rw,g=r,o=r`
+    	mode: '1777'
+	```
+*	```yml
+	# check/change line(s)
+	ansible.builtin.lineinfile:
+	 # bool, if file not exists, crate
+	  create: 
+	 # line to add after `regexp`
+	  line: 
+	  path: 
+	 # to match, e.g. for `present`/`absent`
+	  regexp: 
+	 # wether to add (if not present, otherwise just check) or remove
+	 # present|absent
+	  state: present
+	 #  exec command to validate, passing the file as parameter usable as `%s`
+	  validate: /usr/sbin/visudo -cf %s
+	 # line to replace `regexp` (only matched part)
+	  replace: 
+	```
+*	```yml
+	ansible.builtin.service: 
+	  name: 
+	  state: 
+	```
+*	```yml
+	ansible.builtin.systemd:  
+	  enabled: 
+	  name: rsyslog.service
+	 # started|restarted|...
+	  state: 
+	```
+*	```yml
+	ansible.builtin.user:` : create user
+	  name: USERNAME 
+	  comment:  
+	 #  user expiry, in epoch (float)
+	  expires: 
+	 # hashed password (will be put in shadow as hash)
+	 # so generate in one of many ways... `openssl passwd "PASSWORD"`
+	  password: 
+	```
 
 ### ansible.posix
 
