@@ -174,6 +174,7 @@
 *	`-E` : enable extended regex
 	*	e.g: enable `|`
 *	`-F` : match fixed string
+*	`-I` : exclude binary matches
 *	`-n` : also print in which line was found
 *	`-o` : only print matched
 *	`-r` : recursive - used for searching directory instead of single file
@@ -204,6 +205,7 @@
 *	e.g.: `sed -i '$a TEXT' FILE` : add line at end of file
 *	e.g.: `sed -i 'Ni TEXT' FILE` : add line at line `N` (start from `1`)
 *	e.g.: `sed -i '/PATTERN/a TEXT' FILE` : add line after each line matching `PATTERN`
+*	note: `-Ei` and not `-iE`
 
 `sort [FILE]` : sort input  
 *	`-c` : check if sorted

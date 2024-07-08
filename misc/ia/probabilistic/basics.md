@@ -170,7 +170,7 @@ _gaussian distribution_ : assume input has gaussian distribution
 1.	`Ynew = argmax(k)( pi_k prod(i)(N(ai|mu_ik,sigma_ik)) )` : 
 	*	proof: `Ynew = argmax(k)( P(Y=yk)prod(i)(P(Xi=ai|Y=yk)) )`, hence follows above
 	*	idea: (boolean case) choose _decision boundary_ = `xk` (x axis)
-		*	idea: on a graph, _decision boundary_ is a vertical line, classes are each a different _gaussian distribution_ (i.e. with own params) 
+		*	idea: on a plot, _decision boundary_ is a vertical line, classes are each a different _gaussian distribution_ (i.e. with own params) 
 		*	classify `0` if sample to classify `xi<xk`, else `1`
 
 **classification results** : (bool case)

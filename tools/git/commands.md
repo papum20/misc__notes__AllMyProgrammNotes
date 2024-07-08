@@ -1,5 +1,7 @@
 # COMMANDS
 
+## git
+
 // status: untracked/modified -> tracked/to be committed -> “saved”  
 `add FILENAME` : add filename to git repo in same folder  
 (untracked/modified -> to be committed)  
@@ -97,13 +99,23 @@
 *	and “leave a local link to it”  
 `git remote remove REPO` : remove repo (es. origin)  
   
-## config  
+### config  
 // email and username are to identify who made a change to file  
 `--global` : (parameter) : global for this host  
 `config --global --list` : list of config options (file .config)  
 `config --global user.name USERNAME` : set username  
 `config --global user.email EMAIL` : set email  
-  
+
+## git-lfs
+
+`git-lfs SUBCOMMAND` :
+
+`install` : install git-lfs (once)
+`track "*.ext"` : track all files with extension `ext`
+*	this is handled automatically if you create a `.gitattributes` file
+`track` : list all tracked files
+
+
 ## ssh  
 //ssh generation: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent  
 `pbcopy < <file.pub>` : copy public key text  

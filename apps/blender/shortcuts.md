@@ -1,5 +1,35 @@
 # SHORTCUTS  
   
+## General
+
+`Ctrl+Tab` : change mode  
+`Shift+Tab` : toggle snap  
+
+
+## Edit mode
+
+`Alt+Left` : select edge loop  
+`E` : extrude  
+`I` : insert  
+`M` : merge  
+`Alt+S` : shrink/flatten (bulge up)  
+`Shift+Alt+S` : to sphere (`0` to `1`)  
+`Shift+Alt+S, Numpad 1` : to sphere (`=1`)  
+
+
+### Tools
+
+`Ctrl+B` : bevel - create faces from edges  
+`Ctrl+R` : loop  
+
+## Object mode
+
+`Shift+A` : add object  
+`X` : delete  
+
+
+## old
+
 y VIEW		Numpad 1  
 x VIEW		Numpad 3  
 z VIEW		Numpad 7  
@@ -17,7 +47,7 @@ SELECT Linked		Ctrl+L
 		  
 Apply Object Transformations	resets pos, rot, scale values	Ctrl+A  
 FLIP object		Ctrl+M  
-Allign (on axises)		S, Axis, Numpad0  
+Allign (on axes)		S, Axis, Numpad0  
 		  
 ARMATURE B-Bone Size		Ctrl+Alt+S  
 		  
@@ -30,6 +60,7 @@ File View	in Shader mode	Shift+Ctrl+T
 		  
 RIGGING:		  
 Paste mirrored		Ctrl+Shift+V  
+
 ## README.md  
 *	[README.md](./README.md)  
 

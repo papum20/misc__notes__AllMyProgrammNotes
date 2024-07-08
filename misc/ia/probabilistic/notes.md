@@ -23,11 +23,11 @@
 ### Theorems
 
 `P(A|B) = ( P(A)P(B|A) )/P(B)` : _Bayes' rule_ -  
-*	`P(Y=yi|X=xj) = ( P(Y=yi)P(X=xj|Y=yi) )/( sum(i)( P(Y=yi)P(X=xj|Y0yi) ) )` : other formulation
+*	`P(Y=yi|X=xj) = ( P(Y=yi)P(X=xj|Y=yi) )/( sum(k)( P(Y=yk)P(X=xj|Y=yk) ) )` : other formulation
 *	`P(Y|X)` : _posterior_
 *	`P(X|Y)` : _likelihood_
 *	`P(Y)` : _prior_
-*	`P(Y) = sum(Y)( P(X|Y)P(Y) )` : _marginal likelihood_
+*	`P(X) = sum(Y)( P(X|Y)P(Y) )` : _marginal likelihood_
 	*	obs: _marginal_ because marginalized (i..e.. integrated) over `Y`
 
 

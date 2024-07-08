@@ -133,7 +133,7 @@ _F1-score_ : `2 * (precision * recall) / (precision + recall)` - armonic mean of
 
 ### methods
 
-_**cross validation**_ : split data in `k` parts (_fold_ s), train on `k-1`, test on `1` (formed with data from each fold)
+_**cross validation**_ : split data in `k` parts (_fold_ s), train on `k-1`, test on `1` (formed with data from each fold)  
 _confusion matrix_ : matrix with true label on left, predicted label on top
 *	shows `TP`, `FP`, `TN`, `FN`
 

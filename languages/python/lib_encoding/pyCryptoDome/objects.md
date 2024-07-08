@@ -38,8 +38,8 @@ cipher = AES.new(...)
 encrypted = AES.encrypt(...)  
 decrypted = AES.decrypt(...)		# using new cipherw  
 
-## Crypto.Hash.*  
-*.new(...)->* : return object hashed with * method  
+## Crypto.Hash.\*  
+\*.new(...)->\* : return object hashed with * method  
 <hashed>.hexdigest()	: in hex  
   
 ## Crypto.PublicKey  
