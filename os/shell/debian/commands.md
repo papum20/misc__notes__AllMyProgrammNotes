@@ -288,11 +288,15 @@
 *	e.g.: `nohup COMMAND &` :  
 
 `ps` : processes  
-*	`-a` : all associated with a terminal
+*	`-a` : all users
 *	`-A|-e` : all
 *	`-C` : command name
 	*	obs: better than using `grep`
+*	`-h` : no header
+*	`-o COLUMN1,COLUMN2...` : select format columns
+	*	e.g.: `-o pid,user,cmd` 
 *	`-u` : show owner user
+*	`-x` : include processes without associated terminal
 
 `strace PROCESS` : list of system call made;  
 *	``(relies on ptrace syscall)  ``
