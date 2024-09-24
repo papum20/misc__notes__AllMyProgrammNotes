@@ -4,5 +4,5 @@
 *	[README.md](./README.md)  
 
 ## guide-italian
-just a guide - in italian
+a guide - in italian
 

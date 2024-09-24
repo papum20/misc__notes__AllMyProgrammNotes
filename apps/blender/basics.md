@@ -19,7 +19,7 @@ EDITOR TYPE: in alto a destra
 SPLIT AREA / JOIN AREAS: Right click on boundary  
 FOCUS ON AREA: Ctrl+Space  
 TOOLS: T / Shift+Space (labelled)  
-altro menu: N / drage da destra  
+altro menu: N / drag da destra  
 altro menu -> view -> 3d cursor: Shift+Right piazza cursore  
 altri menu: Z, Shift+S  
 SCENE: in alto a destra: più scene  

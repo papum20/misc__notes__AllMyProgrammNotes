@@ -7,6 +7,17 @@ Remove extension and path from filename (filenames in all directories):
 find . -name '*' | sed 's#.*/##; s#[.][^.]*$##'
 ```
 
+## Files
+
+`find` and `exec` with more complex commands (like pipe) :
+*	```bash
+	`find . -name '*.hpp' -exec sh -c "COMMAND {} ..." \;
+	```
+*	e.g.: move all `.hpp` files to include, in the same current subdirectory :
+	*	```bash
+		find . -name '*.hpp' -exec sh -c 'mv {} include/$(echo {} | egrep -o "/.*")' \;
+		```
+
 ## Functions
 
 get return value from background processes, and also be able to manage job ids :
@@ -21,6 +32,13 @@ get return value from background processes, and also be able to manage job ids :
 	```
 
 ## Misc
+
+generate random password :
+*	```bash
+	# remove all characters that are not alphanumeric, and only take 6
+	tr -dc A-Za-z0-9 </dev/urandom | head -c 6; echo
+	```
+	*	src: https://unix.stackexchange.com/a/230676
 
 ### getopts
 ```bash

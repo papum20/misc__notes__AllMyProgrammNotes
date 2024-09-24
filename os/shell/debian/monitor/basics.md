@@ -14,7 +14,7 @@ note: require append `contrib non-free` to `/etc/apt/sources.list` lines
 *	```bash
 	sudo apt install snmp
 	sudo apt install snmp-mib-downloader
-	sudo sed -i `s/^#mibs :/#mibs :/g` /etc/snmp/snmp.conf	# as comments say, uncomment mibs to load them
+	sudo sed -i 's/^#mibs :/#mibs :/g' /etc/snmp/snmp.conf	# as comments say, uncomment mibs to load them
 	```
 
 **agent** : who provides data

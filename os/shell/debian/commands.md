@@ -109,6 +109,7 @@
 *	if no other complex options before these, can omit `-`
 *	`-c` : compress  
 *	`-f` : use file ARCHIVE (?)  
+*	`--files-from FILE` : read list of files from `FILE`
 *	`-t` : test - list archive content  
 *	`-v` : verbose  
 *	`-x` : extract  
@@ -173,6 +174,7 @@
 *	`-E` : enable extended regex
 	*	e.g: enable `|`
 *	`-F` : match fixed string
+*	`-I` : exclude binary matches
 *	`-n` : also print in which line was found
 *	`-o` : only print matched
 *	`-r` : recursive - used for searching directory instead of single file
@@ -203,6 +205,7 @@
 *	e.g.: `sed -i '$a TEXT' FILE` : add line at end of file
 *	e.g.: `sed -i 'Ni TEXT' FILE` : add line at line `N` (start from `1`)
 *	e.g.: `sed -i '/PATTERN/a TEXT' FILE` : add line after each line matching `PATTERN`
+*	note: `-Ei` and not `-iE`
 
 `sort [FILE]` : sort input  
 *	`-c` : check if sorted
@@ -231,6 +234,8 @@
 
 `tee` : “redirect from input to output”  
 `tr SET1 [SET2]` : replace SET1 occurrences in input with SET2  
+*	`-c` : take complement of first set
+	*	e.g.: `tr -cd '[:print:]'` : remove non-printable characters
 *	``tr -d SET1`` : delete SET1 occurrences  
 *	``CHAR1-CHAR2`` : all chars from CHAR1 to CHAR2  
 *	``[:alpha:]`` : all letters (A-Za-z)  

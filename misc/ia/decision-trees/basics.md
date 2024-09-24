@@ -23,6 +23,7 @@ visualized
 *	little or no data preprocessing is required
 *	very low prediction cost
 *	can be used with both discrete and continuous features
+
 con:
 *	high risk of overfitting
 *	selection of attributes quite unstable
@@ -38,7 +39,7 @@ tree construction : choice of order of evaluated attributes
 3.	if `y^(i)=y` for each child node `x^(i)`, mark the _leaf_ with _label_ `y`, else iterate to 1.
 
 `H(X)=-sum(i=1..n)(P(X=i)log2(P(X=i)) )` : _entropy_ - of a random variable `X`
-*	`n` : nomber of possible values of `X`
+*	`n` : number of possible values of `X`
 *	measures degree of impurity of information
 *	obs: max when `X` uniformly distributed over all values
 *	obs: min when concentrated on single value
@@ -47,16 +48,16 @@ tree construction : choice of order of evaluated attributes
 	*	obs: `I(1)=0` : no surprise
 	*	obs: `I(p1p2)=I(p1)+I(p2)` : if `p1`,`p2` indep
 	*	`I(p)=-log(p)` : works like log, info of product is sum of infos
-*	**code theory (shannon)** : entropy measures average nmber of bits required to transmit outcomes produced by stochastic process `X`
+*	**code theory (shannon)** : entropy measures average number of bits required to transmit outcomes produced by stochastic process `X`
 	*	`log(n)` : bits to encode `n` possible outcomes (of an event), equiprobable
 		*	`H(X) = -sum(i=1..n)( P(X=i)log2(P(X=i)) ) = -sum(i=1..n)( (1/n)log2(1/n) ) = log(n)` : 
 	*	note: if not equiprobable, we can do better (see _conditional entropy_)
 
-`H(X|Y=v) = -sum(i=1..n)( P(X=i|Y=v)log2(P(X=i|Y=v)) )` : _conditional entropy_ : of `X` given a specific `Y=v`
-`H(X|Y) = -sum(v=1..m)( P(Y=v)H(X|Y=v) )` : _conditional entropy_ : of `X` given `Y`
+`H(X|Y=v) = -sum(i=1..n)( P(X=i|Y=v)log2(P(X=i|Y=v)) )` : _conditional entropy_ - of `X` given a specific `Y=v`  
+`H(X|Y) = -sum(v=1..m)( P(Y=v)H(X|Y=v) )` : _conditional entropy_ - of `X` given `Y`
 *	weighted average over all `m` possible values of `Y`
 
-`I(X,Y) = H(X)-H(X|Y) = H(Y)-H(Y|X)` : _information gain_ : **between** `X` and `Y`
+`I(X,Y) = H(X)-H(X|Y) = H(Y)-H(Y|X)` : _information gain_ - **between** `X` and `Y`
 
 _best attribute_ : the one bringing more information gain  
 
