@@ -1,10 +1,5 @@
-# WINDOWS PowerShell  
-  
-INFO:  
-TYPES OF COMMANDS: cmdlet, function, alias  
-cmdlet: command format : verb-command <object> -parameter(s)  
-  
-COMMANDS:  
+# COMMANDS
+
 Set-Location : (cd) change directory  
   
 Get-Childitem : (dir) list of files in current directory  
@@ -24,15 +19,3 @@ Stop-Computer : (shutdown /s) shutdown
 Test-Connection -ComputerName (hostname) : (ipconfig)  
   
 gcm : path of PATH executable file  
-  
-CONSTANTS:  
-(hostname) : system name  
-  
-ENVIRONMENT VARIABLES:  
-Get-ChildItem Env:	: list of env.vars.  
-[Environment]::GetEnvironmentVariables(“Machine”)	: list of only system vars.  
-[Environment]::GetEnvironmentVariables(“User”) 	: // user  
-
-## README.md  
-*	[README.md](./README.md)  
-
