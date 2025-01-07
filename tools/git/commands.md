@@ -3,9 +3,10 @@
 ## git
 
 // status: untracked/modified -> tracked/to be committed -> “saved”  
-`add FILENAME` : add filename to git repo in same folder  
-(untracked/modified -> to be committed)  
-`add .` : add all  
+`add FILENAME` : add filename to git repo in same folder (recursive, if it's a directory)  
+*	(untracked/modified -> to be committed)   
+*	`--renormalize` :
+	*	e.g.: `git add --renormalize .` : if forgot to add `git-lfs` and only adding it now, do it and then `git-lfs track`
 `branch BRANCH-NAME` : new branch (named …), but current doesn’t change  
 `branch` : list of branches (with star next to current one)  
 *	`-r` : list remote branches  
