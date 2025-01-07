@@ -16,6 +16,27 @@ git filter-repo --invert-paths --path PATH
 git push origin --force --all
 ```
 
+### fork
+
+You can't fork a repository twice, or fork your own. But you can do it through another upstream :
+*	```bash
+	git remote add upstream OLD-REPO-URL
+	git fetch upstream
+	git checkout -b master upstream/master
+	```
+*	src: https://github.com/orgs/community/discussions/62467
+
+
+### lfs
+
+When using a different upstream, also fetch and push with lfs :
+*	```bash
+	git lfs fetch --all old-origin
+	git lfs push --all origin
+	```
+*	src: https://stackoverflow.com/a/64675176/20607105
+
+
 ## files
 
 ### .gitattributes

@@ -113,6 +113,13 @@ Can be handled via:
 
 `Fragment` : modular section of an activity, can be reused in multiple activities  
 *	needs someone to contain it
+*	**arguments** : data passed to fragment
+	*	in constructor : to avoid, as each fragment must have a no-arg constructor, which is the one called by the system when recreating the fragment
+		*	e.g. after screen rotation
+	*	good alternatives :
+		*	bundle
+		*	factory method
+		*	navigation args
 
 #### subclasses
 

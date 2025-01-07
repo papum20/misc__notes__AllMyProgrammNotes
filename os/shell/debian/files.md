@@ -59,10 +59,12 @@
 
 ### /usr
 `/usr/include/x86_64-linux-gnu/asm/unistd_64.h` : syscalls numbers  
+`/usr/share/applications` : desktop shortcuts, for all users  
+`/usr/local/share/applications` : alternative for desktop shortcuts
 `/usr/share/dict/words` : list of english words  
-
 ### $HOME
 `~/.bashrc` : executed at startup for user  
+`~/.local/share/applications` : desktop shortcuts, for the user  
 `~/.profile` : executed at login for user  
 `~/.ssh/config` : config for ssh; see `man ssh_config`  
 *	e.g.: `IdentityFile ~/.ssh/PRIVATE_RSA` : (line in config) use rsa key

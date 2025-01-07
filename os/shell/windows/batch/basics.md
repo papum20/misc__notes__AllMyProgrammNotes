@@ -1,5 +1,5 @@
-# batch  
-  
+# BASICS
+
 OPERATORS:  
 EQU : ==  
 NEQ : !=  

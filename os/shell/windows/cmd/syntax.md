@@ -1,0 +1,5 @@
+# SYNTAX
+
+## Variables
+
+`%VAR%` : `${VAR}`  
