@@ -28,6 +28,8 @@ return codes:
 `ssh [PARAMS] HOST [COMMAND]` :   
 *	`COMMAND` : if specfìified, exec command directly
 *	`-i KEY` : (identity file) use private key  
+*	`-o OPTION` :
+	*	e.g.:  `-o StrictHostKeyChecking=no` : add automatically to `known_hosts` 
 *	`-J` : proxy jump  
 *	`-l NAME` : login name  
 	*	e.g.: ssh -l daniele.dugo@studio.unibo.it dalibor.cs.unibo.it  
@@ -38,6 +40,11 @@ return codes:
   
 `ssh-add PATH_TO_KEY` : add ssh key to ssh agent (when ssh-agent started, key private)  
 `ssh-add -l` : list saved keys 
+
+`ssh-keygen` : 
+*	`-R HOSTNAME` : remove from known hosts
+*	`-H -F HOSTNAME` : find in known hosts
+	*	note: if `hashKnownHosts` is set to `yes` in `ssh_config`, known hosts are hashed, but you can find one if you know the host name
 
 ## DNS
 
