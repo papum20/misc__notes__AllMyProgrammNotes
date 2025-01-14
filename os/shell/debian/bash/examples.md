@@ -40,6 +40,19 @@ passing short arguments :
 	```
 
 
+## Comments
+
+Comments inside multiline command :
+*	```bash
+	echo hello \
+		`# comment` \
+		world
+	```
+*	```bash
+	echo hello world | 
+		# comment
+		grep -o hello
+	```
 
 
 ## BOOL

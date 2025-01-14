@@ -25,4 +25,8 @@
 `stop-master.sh` : stop master  
 
 
+## History server
+
+`start-history-server.sh` : start history server
+*	then u can open `http://127.0.0.1:18080/` to see past jobs
 
