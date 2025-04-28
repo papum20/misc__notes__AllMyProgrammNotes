@@ -5,6 +5,14 @@
 `Ctrl+Tab` : change mode  
 `Shift+Tab` : toggle snap  
 
+`Alt+D` : duplicate linked (don't duplicate all data)  
+*	use same mesh
+	*	in vertices panel, will see them as using same mesh (vertex group)
+	*	e.g.: if edit one, all will be edited
+	
+`Shift+R` : repeat last (last done thing)
+*	e.g.: `Alt+D`, `Shift+R` : duplicate and do it again, with same params
+
 
 ## Edit mode
 
@@ -26,6 +34,11 @@
 
 `Shift+A` : add object  
 `X` : delete  
+
+### Modifiers
+
+`displace` : displace mesh
+*	e.g.: based on texture, like terrain displaced basing on height map
 
 
 ## old
