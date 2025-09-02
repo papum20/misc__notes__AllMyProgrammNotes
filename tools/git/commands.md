@@ -7,6 +7,8 @@
 *	(untracked/modified -> to be committed)   
 *	`--renormalize` :
 	*	e.g.: `git add --renormalize .` : if forgot to add `git-lfs` and only adding it now, do it and then `git-lfs track`
+		*	src: `https://github.com/git-lfs/git-lfs/issues/874`
+		*	actually, better to checkout back and git-add files lfs and not separately
 `branch BRANCH-NAME` : new branch (named …), but current doesn’t change  
 `branch` : list of branches (with star next to current one)  
 *	`-r` : list remote branches  
