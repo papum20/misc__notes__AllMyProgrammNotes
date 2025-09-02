@@ -9,6 +9,14 @@ machine learning :
 steps :
 1.	**model** : define a model for the task to solve, depending on **parameters**
 2.	`loss function` : `error function` - **performance metrics** - error measure to eval and choose best model
+	*	used to iteratively improve model
+		*	e.g.: loss is `negative log likelihood average` :
+			1.	compute `negative log likelihood` for each training example, and then `average negative log likelihood`
+			2.	to improve weights, "subtract" the loss from each, i.e. subtract the gradient of the loss from each weight (they are tensors, so component by component)
+				*	thru `torch`, use the `backward()` function (`backpropagation`), which computes the gradient of the loss w.r.t. each weight and updates the weights gradients
+			*	obs: diff ways
+				*	e.g.: `mean` and `sum`, and `sum` will reduce the loss more each time
+					*	e.g.: use `sum` soon, to be fast, and `mean` later, when trying to converge
 3.	**parameters** : tune to minimize error
 *	e.g.: regression problem : 
 	1.	fix parametric class of models, like `y=ax+b`, where params are `a`,`b`
@@ -161,4 +169,8 @@ modern/**deep** approach : supply raw data to machine, which computes features
 	*	methods :
 		*	**Voting classifier** : weighted average of probabilities 
 
+### steps
 
+1.	**fit** : fit model on train dataset, i.e. learn from it  
+2.	**transform** : transform test data, i.e. apply model to it  
+	*	i.e. transform the test data according to the learned model

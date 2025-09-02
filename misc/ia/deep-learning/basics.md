@@ -45,3 +45,7 @@ _neuron_ : `I^n W^n + B^1 = O^1` - compute a weighted sum of its inputs, then ap
 *	`b` : bias (constant)
 *	`I^n W^n*m + B^m = O^m` : vectorized operation on `m` neurons, to produce `m` outputs in parallel
 
+## Misc
+
+**logit** : probability of a certain output
+*	e.g.: probability of different predictions at a certain step, useful to understand why one was chosen

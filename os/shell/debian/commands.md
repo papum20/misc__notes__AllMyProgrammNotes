@@ -474,9 +474,12 @@
   
 ### apt  
 `apt autoremove` : remove unnecessary packages  
+`apt install` : 
+*	`-t` : target release
+	*	e.g.: `-t testing` 
 `apt search APPLICATION_NAME` :  
 `apt show ` :   
-*	``-a`` : all entries  
+*	`-a` : all entries  
 
 `apt update` : check updatable packages  
 `apt upgrade` : update updatable packages  

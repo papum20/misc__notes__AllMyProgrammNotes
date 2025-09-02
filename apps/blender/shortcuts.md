@@ -4,6 +4,9 @@
 
 `Ctrl+Tab` : change mode  
 `Shift+Tab` : toggle snap  
+`N` : toggle `properties panel` (aka `N-panel`, `side panel`, `tool shelf`, `properties shelf`)
+`View, Frame Selected` : set view towards selected object(s)  
+`View, Frame All` : set view towards all objects  
 
 
 ## Edit mode
@@ -27,6 +30,12 @@
 `Shift+A` : add object  
 `X` : delete  
 
+### object
+
+With an object selected.  
+
+`Right, Shade Smooth` : apply smooth shading  
+`Right, Shade Flat` : apply flat shading (opposite of `smooth`)  
 
 ## old
 
