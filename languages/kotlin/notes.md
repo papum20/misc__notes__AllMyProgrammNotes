@@ -3,7 +3,7 @@
 ```kt
 val myLiveData0: LiveData<String> = myLiveData1.switchMap { it -> MutableLiveData(it) }
 val myLiveData1: LiveData<String>
-	get() = myLiveData1.switchMap { it -> MutableLiveData(it) }
+	get() = myLiveData2.switchMap { it -> MutableLiveData(it) }
 val myLiveData2: LiveData<String> = MutableLiveData("value")
 ```
 *	`myLiveData0` is initialized immediately, with the given value
